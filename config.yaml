@@ -1,0 +1,16 @@
+cookie:
+  expiry_days: 30
+  key: prudentsigma_dashboard_key
+  name: prudentsigma_auth
+credentials:
+  usernames:
+    admin:
+      email: admin@prudentsigma.com
+      name: Administrator
+      password: $2b$12$QNEJLdnqNZthPdGeQR1Kue2njh4.HnPfvEXUWK.OGO1Bl9SykSIdO
+    trader:
+      email: trader@prudentsigma.com
+      name: Trader
+      password: $2b$12$VisQEOfbGWQDDw.1Hd4Yl.tmDpUE2MpdzuiRL6/cXTH0nGQfOsLfe
+preauthorized:
+  emails: []
