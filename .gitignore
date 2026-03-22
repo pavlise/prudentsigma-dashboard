@@ -1,0 +1,32 @@
+# Environment
+.env
+.venv/
+venv/
+*.egg-info/
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Sensitive files
+config.yaml
+.streamlit/secrets.toml
+
+# Logs
+*.log
+reports/*.md
+.claude/
+
+# Temporary
+temp_prompt*.txt
+*.tmp
