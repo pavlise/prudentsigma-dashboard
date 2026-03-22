@@ -72,20 +72,36 @@ if st.session_state["authentication_status"]:
                 
                 # Display file info
                 file_size = os.path.getsize(latest_report)
-                st.info(f"📄 Report size: {file_size:,} bytes | Last updated: {datetime.fromtimestamp(os.path.getmtime(latest_report)).strftime('%Y-%m-%d %H:%M:%S')}")
+                st.info(f"Report size: {file_size:,} bytes | Last updated: {datetime.fromtimestamp(os.path.getmtime(latest_report)).strftime('%Y-%m-%d %H:%M:%S')}")
                 
                 st.markdown(content)
             except Exception as e:
                 st.error(f"Error loading report: {e}")
 
             # Manual refresh button
-            if st.button("🔄 Refresh Dashboard"):
+            if st.button("Refresh Dashboard"):
                 st.rerun()
         else:
-            st.warning("📭 No reports found in the reports directory yet.")
-            st.info("The automated report generation will create its first report according to the schedule.")
+            st.info("No reports found in the reports directory.")
     else:
-        st.error("❌ Reports directory not found.")
+        st.info("""
+        **Reports Directory Note:**
+        
+        This dashboard is running on Streamlit Cloud. Reports are generated locally on your PC and not synced to the cloud.
+        
+        **To view reports, use one of these options:**
+        
+        1. **Local Dashboard** (Recommended)
+           - Access: http://localhost:8501
+           - Reports generated daily at 6:00 AM
+           - Already set up with Windows Task Scheduler
+        
+        2. **Set up Cloud Sync** (Coming soon)
+           - Automatically upload reports to cloud storage
+           - View them here on the online dashboard
+        
+        For now, use your local dashboard to view today's reports!
+        """)
 
 elif st.session_state["authentication_status"] is False:
     st.error('Username/password is incorrect')
