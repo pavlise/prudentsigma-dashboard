@@ -12,5 +12,3 @@ credentials:
       email: trader@prudentsigma.com
       name: Trader
       password: $2b$12$VisQEOfbGWQDDw.1Hd4Yl.tmDpUE2MpdzuiRL6/cXTH0nGQfOsLfe
-preauthorized:
-  emails: []
