@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — PrudentSigma</title>
+  <meta name="description" content="PrudentSigma is built on real market experience. Learn the story, philosophy, and perspective behind the brand.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .philosophy-item {
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+      padding: 40px 0;
+      border-bottom: 1px solid var(--navy-600);
+    }
+    .philosophy-item:last-child { border-bottom: none; }
+    .philosophy-body h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.5rem;
+      color: var(--text-1);
+      margin-bottom: 12px;
+    }
+    .not-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+    .not-item {
+      padding: 32px 36px;
+      background: var(--navy-800);
+      border: 1px solid var(--navy-600);
+    }
+    .not-item:first-child { border-radius: var(--radius-md) 0 0 0; }
+    .not-item:nth-child(2) { border-radius: 0 var(--radius-md) 0 0; }
+    .not-item:nth-child(3) { border-radius: 0 0 0 var(--radius-md); }
+    .not-item:last-child  { border-radius: 0 0 var(--radius-md) 0; }
+    .not-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.625rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #c06060;
+      margin-bottom: 12px;
+      opacity: 0.8;
+    }
+    .not-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.1875rem;
+      color: var(--text-2);
+      margin-bottom: 10px;
+    }
+    @media (max-width: 900px) {
+      .not-grid { grid-template-columns: 1fr; }
+      .not-item { border-radius: 0 !important; }
+      .not-item:first-child { border-radius: var(--radius-md) var(--radius-md) 0 0 !important; }
+      .not-item:last-child  { border-radius: 0 0 var(--radius-md) var(--radius-md) !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="60" r="56" stroke="url(#abt-nfg)" stroke-width="1" opacity="0.35"/>
+        <path d="M28 32 L92 32 L57 59 L92 86 L28 86" stroke="url(#abt-nsg)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+        <defs>
+          <linearGradient id="abt-nsg" x1="28" y1="32" x2="92" y2="86" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#C5923A"/>
+            <stop offset="50%" stop-color="#DFB06A"/>
+            <stop offset="100%" stop-color="#C5923A"/>
+          </linearGradient>
+          <linearGradient id="abt-nfg" x1="4" y1="4" x2="116" y2="116" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#C5923A" stop-opacity="0.6"/>
+            <stop offset="1" stop-color="#C5923A" stop-opacity="0.1"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      PrudentSigma
+    </a>
+    <div class="nav-links">
+      <a href="about.html" class="active">About</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="consulting.html">Consulting</a>
+      <a href="insights.html">Insights</a>
+      <a href="tools.html">Tools</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary">Book a Call</a>
+      <button class="nav-burger" id="nav-burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="label anim-1">About PrudentSigma</span>
+    <h1 class="display anim-2" style="max-width:760px;">Built on disciplined<br><em style="font-style:italic; background:linear-gradient(135deg,#C5923A,#DFB06A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">financial thinking.</em></h1>
+    <p class="subtitle anim-3" style="max-width:580px; margin-top:24px;">Not another loud finance brand. A credible, measured platform for people who want to think better about markets, wealth, and risk.</p>
+  </div>
+</section>
+
+<!-- BRAND STORY -->
+<section class="section">
+  <div class="container">
+    <div class="grid-2-col">
+      <div class="reveal">
+        <span class="label">Why PrudentSigma exists</span>
+        <h2 class="title" style="margin-bottom:32px;">The problem with financial content today.</h2>
+      </div>
+      <div class="reveal">
+        <p class="body-text" style="margin-bottom:20px;">
+          The world of finance is crowded with noise, opinion, and false confidence. Most people are taught to chase returns before understanding risk, consume endless information without building judgment, and react emotionally instead of thinking structurally.
+        </p>
+        <p class="body-text" style="margin-bottom:20px;">
+          Most of what passes for financial content falls into predictable, useless categories: shallow motivation disguised as advice, hyper-technical material with no practical application, sensationalist market commentary, or generic personal finance education suited only for beginners.
+        </p>
+        <p class="body-text" style="margin-bottom:20px;">
+          PrudentSigma exists to push in the opposite direction. It is built on the belief that better outcomes come from better decisions, and better decisions come from disciplined thinking, practical frameworks, and genuine respect for uncertainty.
+        </p>
+        <p class="body-text">
+          This is not about having a website. It is about building a credible platform around a distinctive worldview: that most people lose money and make poor financial decisions not from lack of information, but from lack of structure, patience, and judgment.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- FOUNDER BACKGROUND -->
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <span class="label">The perspective</span>
+    </div>
+    <div class="card card--accent reveal" style="padding:48px; max-width:860px;">
+      <h2 style="font-family:'Cormorant Garamond',serif; font-weight:300; font-size:clamp(1.5rem,3vw,2.25rem); color:var(--text-1); margin-bottom:28px; line-height:1.2;">A perspective forged in real markets.</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px;">
+        <div>
+          <p class="body-text" style="margin-bottom:18px;">
+            The foundation of PrudentSigma is practical experience at the intersection of brokerage operations, dealing desk management, market risk, and execution quality. This is the perspective that most financial voices lack entirely.
+          </p>
+          <p class="body-text">
+            Exposure to institutional product governance, regulatory frameworks, and the mechanics of how markets actually function gives PrudentSigma a rare ability to bridge what happens behind the scenes with what serious individual investors and professionals need to understand.
+          </p>
+        </div>
+        <div>
+          <p class="body-text" style="margin-bottom:18px;">
+            Most personal finance creators cannot speak credibly about execution quality, dealing risk, brokerage operations, or product governance. PrudentSigma can — and that depth is reflected in everything published here.
+          </p>
+          <p class="body-text">
+            The goal is not to impress with jargon. The goal is to translate institutional-level understanding into formats that help serious people make better decisions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- PHILOSOPHY -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:16px;">
+      <span class="label">Brand philosophy</span>
+      <h2 class="title">Five non-negotiable beliefs.</h2>
+    </div>
+    <div style="max-width:800px; margin-top:48px;">
+
+      <div class="philosophy-item reveal">
+        <span class="num-accent">01</span>
+        <div class="philosophy-body">
+          <h3>Risk comes first.</h3>
+          <p class="body-text">Most people obsess over upside and ignore fragility. That is amateur behaviour. Every serious financial decision starts with a clear-eyed assessment of what can go wrong, not what could go right.</p>
+        </div>
+      </div>
+
+      <div class="philosophy-item reveal">
+        <span class="num-accent">02</span>
+        <div class="philosophy-body">
+          <h3>Clarity beats complexity.</h3>
+          <p class="body-text">If something cannot be explained simply, it is either poorly understood or deliberately dressed up. We believe the best financial thinking is clear, accessible, and honest — not intentionally dense.</p>
+        </div>
+      </div>
+
+      <div class="philosophy-item reveal">
+        <span class="num-accent">03</span>
+        <div class="philosophy-body">
+          <h3>Discipline compounds.</h3>
+          <p class="body-text">Wealth is not built by occasional brilliance. It is built by repeated, controlled decisions made over time. Consistency and process matter more than any single insight or opportunity.</p>
+        </div>
+      </div>
+
+      <div class="philosophy-item reveal">
+        <span class="num-accent">04</span>
+        <div class="philosophy-body">
+          <h3>Process matters more than prediction.</h3>
+          <p class="body-text">Forecasting is overrated. Robust frameworks and decision processes produce better outcomes than confident predictions over any meaningful time horizon. We focus on the former, not the latter.</p>
+        </div>
+      </div>
+
+      <div class="philosophy-item reveal">
+        <span class="num-accent">05</span>
+        <div class="philosophy-body">
+          <h3>Trust is the moat.</h3>
+          <p class="body-text">In finance, one bad impression can destroy years of credibility. We take no shortcuts. No manufactured urgency, no fake certainty, no overpromising. Every word published is a reflection of the standard we hold ourselves to.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- WHAT WE ARE NOT -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:48px;">
+      <span class="label">Positioning</span>
+      <h2 class="title">What PrudentSigma is not.</h2>
+    </div>
+    <div class="not-grid reveal">
+      <div class="not-item">
+        <div class="not-label">Not this</div>
+        <div class="not-title">A trading tips or signals service</div>
+        <p class="body-text" style="font-size:0.875rem;">We do not publish buy or sell recommendations, price targets, or market calls designed to generate clicks.</p>
+      </div>
+      <div class="not-item">
+        <div class="not-label">Not this</div>
+        <div class="not-title">A finance influencer operation</div>
+        <p class="body-text" style="font-size:0.875rem;">No meme content, no fake urgency, no lifestyle finance, no chest-beating about returns. The space is full of it. We are not adding to it.</p>
+      </div>
+      <div class="not-item">
+        <div class="not-label">Not this</div>
+        <div class="not-title">Academic theory without application</div>
+        <p class="body-text" style="font-size:0.875rem;">Dense jargon with no real-world utility is not depth. It is decoration. Everything here has a practical purpose.</p>
+      </div>
+      <div class="not-item">
+        <div class="not-label">Not this</div>
+        <div class="not-title">Shallow motivation disguised as advice</div>
+        <p class="body-text" style="font-size:0.875rem;">Mindset content and vague positivity dressed up as financial guidance. That is not what serious people need.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER STRIP -->
+<section class="newsletter-strip section--sm">
+  <div class="container">
+    <div class="grid-2-col">
+      <div class="reveal">
+        <span class="label">The Prudentsigma Note</span>
+        <h2 class="title">Clarity, once a week.</h2>
+        <p class="body-text" style="margin-top:16px; max-width:420px;">A note on markets, risk, capital allocation, and financial judgment. Written for people who want signal over noise.</p>
+      </div>
+      <div class="reveal" style="display:flex; flex-direction:column; justify-content:center;">
+        <form class="newsletter-inline-form" id="newsletter-form">
+          <input type="email" class="form-input" placeholder="your@email.com" required>
+          <button type="submit" class="btn btn-primary">Join</button>
+        </form>
+        <p class="newsletter-note">No spam. No clickbait. Unsubscribe anytime.</p>
+        <div class="form-success" id="newsletter-success">You're in. First note arrives this week.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <svg width="24" height="24" viewBox="0 0 120 120" fill="none">
+            <path d="M28 32 L92 32 L57 59 L92 86 L28 86" stroke="url(#abt-ffg)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+            <defs>
+              <linearGradient id="abt-ffg" x1="28" y1="32" x2="92" y2="86" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#C5923A"/>
+                <stop offset="50%" stop-color="#DFB06A"/>
+                <stop offset="100%" stop-color="#C5923A"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          PrudentSigma
+        </div>
+        <p class="footer-tagline">A finance and decision-intelligence platform for serious people.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="newsletter.html">Newsletter</a></li>
+          <li><a href="insights.html">Insights</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="consulting.html">Consulting</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Philosophy</h4>
+        <div class="footer-beliefs">
+          <div class="footer-belief">
+            <span class="footer-belief-num">01</span>
+            <span class="footer-belief-text">Risk comes before return</span>
+          </div>
+          <div class="footer-belief">
+            <span class="footer-belief-num">02</span>
+            <span class="footer-belief-text">Clarity beats complexity</span>
+          </div>
+          <div class="footer-belief">
+            <span class="footer-belief-num">03</span>
+            <span class="footer-belief-text">Discipline compounds</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom-copy">&copy; 2025 PrudentSigma. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const ro = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }});
+  }, { threshold: 0.1 });
+  reveals.forEach(r => ro.observe(r));
+
+  const burger = document.getElementById('nav-burger');
+  const nav = document.getElementById('main-nav');
+  if (burger) burger.addEventListener('click', () => nav.classList.toggle('nav-open'));
+
+  const form = document.getElementById('newsletter-form');
+  const success = document.getElementById('newsletter-success');
+  if (form) form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    form.style.display = 'none';
+    if (success) success.classList.add('visible');
+  });
+</script>
+
+</body>
+</html>

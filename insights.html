@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights — PrudentSigma</title>
+  <meta name="description" content="Frameworks, market thinking, and financial judgment. Essays and analysis from PrudentSigma.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .featured-article {
+      background: var(--navy-800);
+      border: 1px solid var(--navy-600);
+      border-radius: var(--radius-lg);
+      padding: 56px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.25s ease;
+    }
+    .featured-article::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold-deep), var(--gold-warm), transparent);
+      opacity: 0.6;
+    }
+    .featured-article:hover {
+      border-color: rgba(197,146,58,0.3);
+    }
+    .featured-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      line-height: 1.15;
+      color: var(--text-1);
+      margin: 20px 0 20px;
+    }
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .filter-btn {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      font-size: 0.8125rem;
+      padding: 7px 18px;
+      border-radius: 40px;
+      border: 1px solid var(--navy-600);
+      color: var(--text-3);
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      border-color: rgba(197,146,58,0.4);
+      color: var(--gold-warm);
+      background: rgba(197,146,58,0.06);
+    }
+    @media (max-width: 900px) {
+      .featured-article { padding: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="60" r="56" stroke="url(#ins-nfg)" stroke-width="1" opacity="0.35"/>
+        <path d="M28 32 L92 32 L57 59 L92 86 L28 86" stroke="url(#ins-nsg)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+        <defs>
+          <linearGradient id="ins-nsg" x1="28" y1="32" x2="92" y2="86" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#C5923A"/>
+            <stop offset="50%" stop-color="#DFB06A"/>
+            <stop offset="100%" stop-color="#C5923A"/>
+          </linearGradient>
+          <linearGradient id="ins-nfg" x1="4" y1="4" x2="116" y2="116" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#C5923A" stop-opacity="0.6"/>
+            <stop offset="1" stop-color="#C5923A" stop-opacity="0.1"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      PrudentSigma
+    </a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="consulting.html">Consulting</a>
+      <a href="insights.html" class="active">Insights</a>
+      <a href="tools.html">Tools</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary">Book a Call</a>
+      <button class="nav-burger" id="nav-burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="label anim-1">Insights</span>
+    <h1 class="display anim-2" style="max-width:680px;">Frameworks, market thinking, and financial judgment.</h1>
+    <p class="subtitle anim-3" style="max-width:560px; margin-top:24px;">Essays and analysis built on one standard: every piece should make you think better, act better, or avoid a costly mistake.</p>
+  </div>
+</section>
+
+<!-- FEATURED ARTICLE -->
+<section class="section--sm">
+  <div class="container">
+    <div class="reveal">
+      <span class="label" style="margin-bottom:24px;">Featured</span>
+    </div>
+    <a href="#" class="featured-article reveal" style="display:block; text-decoration:none;">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <span class="badge badge-gold">Risk</span>
+        <span style="font-family:'DM Mono',monospace; font-size:0.6875rem; color:var(--text-3);">January 2025</span>
+        <span style="font-family:'DM Mono',monospace; font-size:0.6875rem; color:var(--text-3);">7 min read</span>
+      </div>
+      <h2 class="featured-title">Why Risk Comes Before Return</h2>
+      <p class="body-text" style="max-width:760px; margin-bottom:32px;">
+        The most persistent error in investing is not picking the wrong stock. It is structuring decisions around the best case rather than the worst. Every serious framework for financial decision-making begins with a clear-eyed assessment of downside, not upside. Understanding asymmetric outcomes is the foundation of durable edge. Most investors never internalize this — and it costs them for decades.
+      </p>
+      <div style="display:flex; align-items:center; gap:8px; color:var(--gold-mid); font-size:0.8125rem; font-weight:400; letter-spacing:0.06em; text-transform:uppercase;">
+        Read this essay <span style="display:inline-block; transition:transform 0.2s ease;">&#8594;</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ALL ARTICLES -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:32px;">
+      <span class="label">All insights</span>
+      <div class="filter-bar" style="margin-top:16px;">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">Risk</button>
+        <button class="filter-btn">Markets</button>
+        <button class="filter-btn">Wealth</button>
+        <button class="filter-btn">Industry</button>
+        <button class="filter-btn">Frameworks</button>
+      </div>
+    </div>
+    <div class="grid-3">
+
+      <a href="#" class="article-card reveal">
+        <div><span class="badge badge-gold">Risk</span></div>
+        <div class="article-card-title">Why Risk Comes Before Return</div>
+        <p class="article-card-excerpt">The most persistent error in investing is structuring decisions around the best case rather than the worst. Understanding asymmetric outcomes changes everything about how you deploy capital.</p>
+        <div class="article-card-meta">
+          <span class="article-card-date">Jan 2025</span>
+          <span style="font-size:0.75rem; color:var(--gold-mid);">Read &#8594;</span>
+        </div>
+      </a>
+
+      <a href="#" class="article-card reveal">
+        <div><span class="badge badge-muted">Frameworks</span></div>
+        <div class="article-card-title">Most Financial Decisions Fail Before the First Number Is Calculated</div>
+        <p class="article-card-excerpt">The failure usually happens in the framing, not the arithmetic. How you define a financial decision determines the quality of the outcome before any analysis begins.</p>
+        <div class="article-card-meta">
+          <span class="article-card-date">Jan 2025</span>
+          <span style="font-size:0.75rem; color:var(--gold-mid);">Read &#8594;</span>
+        </div>
+      </a>
+
+      <a href="#" class="article-card reveal">
+        <div><span class="badge badge-muted">Wealth</span></div>
+        <div class="article-card-title">Capital Allocation When You're Not Rich Enough to Be Careless</div>
+        <p class="article-card-excerpt">Most capital allocation frameworks assume either extreme wealth or extreme simplicity. This one addresses the difficult middle: serious money, real stakes, no room for careless decisions.</p>
+        <div class="article-card-meta">
+          <span class="article-card-date">Feb 2025</span>
+          <span style="font-size:0.75rem; color:var(--gold-mid);">Read &#8594;</span>
+        </div>
+      </a>
+
+      <a href="#" class="article-card reveal">
+        <div><span class="badge badge-teal">Industry</span></div>
+        <div class="article-card-title">Best Execution Explained Without the Nonsense</div>
+        <p class="article-card-excerpt">Best execution is a regulatory obligation most firms treat as a compliance box. Understanding what it actually means — and when brokers fail to deliver it — is essential for anyone in or around markets.</p>
+        <div class="article-card-meta">
+          <span class="article-card-date">Feb 2025</span>
+          <span style="font-size:0.75rem; color:var(--gold-mid);">Read &#8594;</span>
+        </div>
+      </a>
+
+      <a href="#" class="article-card reveal">
+        <div><span class="badge badge-muted">Markets</span></div>
+        <div class="article-card-title">The Difference Between Information and Judgment in Markets</div>
+        <p class="article-card-excerpt">Having access to data is not the same as knowing what to do with it. In markets, most people drown in information while starving for judgment. The edge lives in the filter, not the feed.</p>
+        <div class="article-card-meta">
+          <span class="article-card-date">Mar 2025</span>
+          <span style="font-size:0.75rem; color:var(--gold-mid);">Read &#8594;</span>
+        </div>
+      </a>
+
+      <a href="#" class="article-card reveal">
+        <div><span class="badge badge-gold">Risk</span></div>
+        <div class="article-card-title">How Serious Investors Avoid Self-Destruction</div>
+        <p class="article-card-excerpt">The most common way serious investors lose money is not through a bad trade. It is through a systematic failure of process under emotional pressure. The antidote is structural, not psychological.</p>
+        <div class="article-card-meta">
+          <span class="article-card-date">Mar 2025</span>
+          <span style="font-size:0.75rem; color:var(--gold-mid);">Read &#8594;</span>
+        </div>
+      </a>
+
+      <a href="#" class="article-card reveal">
+        <div><span class="badge badge-teal">Industry</span></div>
+        <div class="article-card-title">What Retail Traders Don't Understand About Brokers</div>
+        <p class="article-card-excerpt">The broker relationship is rarely what it appears. Understanding business models, execution routing, spread construction, and conflicts of interest is essential for anyone serious about markets.</p>
+        <div class="article-card-meta">
+          <span class="article-card-date">Apr 2025</span>
+          <span style="font-size:0.75rem; color:var(--gold-mid);">Read &#8594;</span>
+        </div>
+      </a>
+
+      <a href="#" class="article-card reveal">
+        <div><span class="badge badge-muted">Frameworks</span></div>
+        <div class="article-card-title">A Practical Framework for Deploying Excess Cash</div>
+        <p class="article-card-excerpt">Sitting on idle cash is a decision with a real cost. So is deploying it badly. This framework gives structure to one of the most common questions serious investors face: when, where, and how much.</p>
+        <div class="article-card-meta">
+          <span class="article-card-date">Apr 2025</span>
+          <span style="font-size:0.75rem; color:var(--gold-mid);">Read &#8594;</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER STRIP -->
+<section class="newsletter-strip section--sm">
+  <div class="container">
+    <div class="grid-2-col">
+      <div class="reveal">
+        <span class="label">The Prudentsigma Note</span>
+        <h2 class="title">Get insights delivered weekly.</h2>
+        <p class="body-text" style="margin-top:16px; max-width:420px;">New essays, frameworks, and market thinking sent directly to your inbox. One issue per week, no filler.</p>
+      </div>
+      <div class="reveal" style="display:flex; flex-direction:column; justify-content:center;">
+        <form class="newsletter-inline-form" id="newsletter-form">
+          <input type="email" class="form-input" placeholder="your@email.com" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p class="newsletter-note">No spam. No clickbait. Unsubscribe anytime.</p>
+        <div class="form-success" id="newsletter-success">You're in. First note arrives this week.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <svg width="24" height="24" viewBox="0 0 120 120" fill="none">
+            <path d="M28 32 L92 32 L57 59 L92 86 L28 86" stroke="url(#ins-ffg)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+            <defs>
+              <linearGradient id="ins-ffg" x1="28" y1="32" x2="92" y2="86" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#C5923A"/>
+                <stop offset="50%" stop-color="#DFB06A"/>
+                <stop offset="100%" stop-color="#C5923A"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          PrudentSigma
+        </div>
+        <p class="footer-tagline">A finance and decision-intelligence platform for serious people.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="newsletter.html">Newsletter</a></li>
+          <li><a href="insights.html">Insights</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="consulting.html">Consulting</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Philosophy</h4>
+        <div class="footer-beliefs">
+          <div class="footer-belief"><span class="footer-belief-num">01</span><span class="footer-belief-text">Risk comes before return</span></div>
+          <div class="footer-belief"><span class="footer-belief-num">02</span><span class="footer-belief-text">Clarity beats complexity</span></div>
+          <div class="footer-belief"><span class="footer-belief-num">03</span><span class="footer-belief-text">Discipline compounds</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom-copy">&copy; 2025 PrudentSigma. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const ro = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }});
+  }, { threshold: 0.1 });
+  reveals.forEach(r => ro.observe(r));
+
+  const burger = document.getElementById('nav-burger');
+  const nav = document.getElementById('main-nav');
+  if (burger) burger.addEventListener('click', () => nav.classList.toggle('nav-open'));
+
+  // Filter buttons (UI only — no actual filtering in static version)
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  const form = document.getElementById('newsletter-form');
+  const success = document.getElementById('newsletter-success');
+  if (form) form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    form.style.display = 'none';
+    if (success) success.classList.add('visible');
+  });
+</script>
+
+</body>
+</html>

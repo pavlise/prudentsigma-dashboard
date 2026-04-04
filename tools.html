@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tools — PrudentSigma</title>
+  <meta name="description" content="Practical calculators and frameworks for disciplined financial decisions. Position sizing, risk/reward, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .tool-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      color: var(--text-1);
+      margin-bottom: 8px;
+    }
+    .tool-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 0.9375rem;
+      color: var(--text-2);
+      line-height: 1.65;
+      margin-bottom: 32px;
+    }
+    .input-prefix {
+      position: relative;
+    }
+    .input-prefix .prefix-symbol {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.875rem;
+      color: var(--text-3);
+      pointer-events: none;
+    }
+    .input-prefix .form-input {
+      padding-left: 30px;
+    }
+    .calc-divider {
+      border: none;
+      border-top: 1px solid var(--navy-600);
+      margin: 40px 0;
+    }
+    .result-note {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6875rem;
+      color: var(--text-3);
+      margin-top: 16px;
+      letter-spacing: 0.04em;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="60" r="56" stroke="url(#tls-nfg)" stroke-width="1" opacity="0.35"/>
+        <path d="M28 32 L92 32 L57 59 L92 86 L28 86" stroke="url(#tls-nsg)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+        <defs>
+          <linearGradient id="tls-nsg" x1="28" y1="32" x2="92" y2="86" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#C5923A"/>
+            <stop offset="50%" stop-color="#DFB06A"/>
+            <stop offset="100%" stop-color="#C5923A"/>
+          </linearGradient>
+          <linearGradient id="tls-nfg" x1="4" y1="4" x2="116" y2="116" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#C5923A" stop-opacity="0.6"/>
+            <stop offset="1" stop-color="#C5923A" stop-opacity="0.1"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      PrudentSigma
+    </a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="consulting.html">Consulting</a>
+      <a href="insights.html">Insights</a>
+      <a href="tools.html" class="active">Tools</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary">Book a Call</a>
+      <button class="nav-burger" id="nav-burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="label anim-1">Tools</span>
+    <h1 class="display anim-2" style="max-width:680px;">Practical calculators for disciplined financial decisions.</h1>
+    <p class="subtitle anim-3" style="max-width:540px; margin-top:24px;">Simple, useful tools built on the principle that good decisions come from clear frameworks — not complex software.</p>
+  </div>
+</section>
+
+<!-- TOOL 1: POSITION SIZING CALCULATOR -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:40px;">
+      <span class="label">Tool 01</span>
+      <h2 class="title">Position Sizing Calculator</h2>
+    </div>
+    <div class="calc-card reveal">
+      <div class="grid-2-col" style="gap:48px; align-items:flex-start;">
+        <div>
+          <h3 class="tool-title">Calculate your correct position size</h3>
+          <p class="tool-desc">Enter your account size, the percentage you are willing to risk, your entry price, and your stop loss. The calculator tells you exactly how many units to buy or sell — keeping your risk consistent regardless of volatility.</p>
+
+          <div class="calc-inputs">
+            <div class="form-group">
+              <label class="form-label" for="ps-account">Account Size</label>
+              <div class="input-prefix">
+                <span class="prefix-symbol">$</span>
+                <input type="number" id="ps-account" class="form-input" placeholder="100,000" min="0" step="1">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="ps-risk">Risk Per Trade (%)</label>
+              <div class="input-prefix">
+                <span class="prefix-symbol" style="left:auto; right:14px;">%</span>
+                <input type="number" id="ps-risk" class="form-input" placeholder="1.0" min="0.01" max="100" step="0.1" style="padding-right:36px;">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="ps-entry">Entry Price</label>
+              <div class="input-prefix">
+                <span class="prefix-symbol">$</span>
+                <input type="number" id="ps-entry" class="form-input" placeholder="150.00" min="0" step="0.01">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="ps-stop">Stop Loss Price</label>
+              <div class="input-prefix">
+                <span class="prefix-symbol">$</span>
+                <input type="number" id="ps-stop" class="form-input" placeholder="143.00" min="0" step="0.01">
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" onclick="calcPositionSize()">Calculate Position</button>
+
+          <div class="calc-error" id="ps-error"></div>
+        </div>
+
+        <div>
+          <div style="background:var(--navy-700); border-radius:var(--radius-md); padding:28px; margin-bottom:20px;">
+            <div style="font-family:'DM Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-mid); margin-bottom:16px;">How it works</div>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <span style="font-family:'DM Mono',monospace; font-size:0.625rem; color:var(--text-3); flex-shrink:0; margin-top:3px;">01</span>
+                <p style="font-size:0.875rem; color:var(--text-2); line-height:1.6;">Risk Amount = Account Size x Risk %</p>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <span style="font-family:'DM Mono',monospace; font-size:0.625rem; color:var(--text-3); flex-shrink:0; margin-top:3px;">02</span>
+                <p style="font-size:0.875rem; color:var(--text-2); line-height:1.6;">Risk Per Unit = Entry Price - Stop Loss</p>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <span style="font-family:'DM Mono',monospace; font-size:0.625rem; color:var(--text-3); flex-shrink:0; margin-top:3px;">03</span>
+                <p style="font-size:0.875rem; color:var(--text-2); line-height:1.6;">Position Size = Risk Amount / Risk Per Unit</p>
+              </div>
+            </div>
+          </div>
+          <div style="padding:20px; background:rgba(197,146,58,0.05); border:1px solid rgba(197,146,58,0.15); border-radius:var(--radius-sm);">
+            <p style="font-size:0.8125rem; color:var(--text-3); line-height:1.65;">Consistent position sizing is one of the most powerful risk management tools available. Most investors know their entry — few know their maximum acceptable loss before entering.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-result" id="ps-result">
+        <div style="font-family:'DM Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-mid); margin-bottom:20px;">Results</div>
+        <div class="calc-result-grid">
+          <div class="calc-result-item">
+            <span class="calc-result-label">Position Size</span>
+            <span class="calc-result-value" id="ps-out-units">—</span>
+            <span style="font-family:'DM Mono',monospace; font-size:0.6875rem; color:var(--text-3); margin-top:4px;">units</span>
+          </div>
+          <div class="calc-result-item">
+            <span class="calc-result-label">Position Value</span>
+            <span class="calc-result-value" id="ps-out-value">—</span>
+          </div>
+          <div class="calc-result-item">
+            <span class="calc-result-label">Risk Amount</span>
+            <span class="calc-result-value" id="ps-out-risk">—</span>
+          </div>
+        </div>
+        <p class="result-note">For long positions. Assumes entry price is above stop loss.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- TOOL 2: RISK/REWARD CALCULATOR -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:40px;">
+      <span class="label">Tool 02</span>
+      <h2 class="title">Risk / Reward Calculator</h2>
+    </div>
+    <div class="calc-card reveal">
+      <div class="grid-2-col" style="gap:48px; align-items:flex-start;">
+        <div>
+          <h3 class="tool-title">Evaluate the quality of a trade</h3>
+          <p class="tool-desc">Enter your entry, stop loss, and profit target. The calculator shows you the exact risk/reward ratio — the single most important number to check before entering any position.</p>
+
+          <div class="calc-inputs">
+            <div class="form-group">
+              <label class="form-label" for="rr-entry">Entry Price</label>
+              <div class="input-prefix">
+                <span class="prefix-symbol">$</span>
+                <input type="number" id="rr-entry" class="form-input" placeholder="100.00" min="0" step="0.01">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="rr-stop">Stop Loss Price</label>
+              <div class="input-prefix">
+                <span class="prefix-symbol">$</span>
+                <input type="number" id="rr-stop" class="form-input" placeholder="94.00" min="0" step="0.01">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="rr-target">Target Price</label>
+              <div class="input-prefix">
+                <span class="prefix-symbol">$</span>
+                <input type="number" id="rr-target" class="form-input" placeholder="115.00" min="0" step="0.01">
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" onclick="calcRiskReward()">Calculate R/R Ratio</button>
+          <div class="calc-error" id="rr-error"></div>
+        </div>
+
+        <div>
+          <div style="background:var(--navy-700); border-radius:var(--radius-md); padding:28px; margin-bottom:20px;">
+            <div style="font-family:'DM Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-mid); margin-bottom:16px;">What to look for</div>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <div style="display:flex; justify-content:space-between; padding-bottom:12px; border-bottom:1px solid var(--navy-600);">
+                <span style="font-size:0.875rem; color:var(--text-3);">Minimum acceptable</span>
+                <span class="mono">1.5 : 1</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; padding-bottom:12px; border-bottom:1px solid var(--navy-600);">
+                <span style="font-size:0.875rem; color:var(--text-3);">Good ratio</span>
+                <span class="mono">2 : 1</span>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span style="font-size:0.875rem; color:var(--text-3);">Excellent ratio</span>
+                <span class="mono">3 : 1 +</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:20px; background:rgba(197,146,58,0.05); border:1px solid rgba(197,146,58,0.15); border-radius:var(--radius-sm);">
+            <p style="font-size:0.8125rem; color:var(--text-3); line-height:1.65;">A trader who takes only 3:1 or better setups can be wrong more than half the time and still be profitable. Risk/reward ratio is the foundation of any sustainable approach to markets.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-result" id="rr-result">
+        <div style="font-family:'DM Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-mid); margin-bottom:20px;">Results</div>
+        <div class="calc-result-grid">
+          <div class="calc-result-item">
+            <span class="calc-result-label">Risk</span>
+            <span class="calc-result-value" id="rr-out-risk">—</span>
+          </div>
+          <div class="calc-result-item">
+            <span class="calc-result-label">Reward</span>
+            <span class="calc-result-value" id="rr-out-reward">—</span>
+          </div>
+          <div class="calc-result-item">
+            <span class="calc-result-label">R/R Ratio</span>
+            <span class="calc-result-value" id="rr-out-ratio">—</span>
+          </div>
+        </div>
+        <p class="result-note" id="rr-out-verdict"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- COMING SOON TOOLS -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:48px;">
+      <span class="label">In development</span>
+      <h2 class="title">More tools coming.</h2>
+    </div>
+    <div class="grid-3">
+
+      <div class="coming-soon reveal">
+        <span class="coming-soon-badge">Coming Soon</span>
+        <div class="card">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;stroke:var(--gold-mid);">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <line x1="3" y1="9" x2="21" y2="9"/>
+              <line x1="9" y1="21" x2="9" y2="9"/>
+            </svg>
+          </div>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:1.25rem; color:var(--text-1); margin-bottom:12px;">Wealth Bucket Planner</h3>
+          <p class="body-text" style="font-size:0.875rem;">A structured framework for allocating capital across liquidity buckets — short-term, medium-term, and long-term — based on your specific circumstances and objectives.</p>
+        </div>
+      </div>
+
+      <div class="coming-soon reveal">
+        <span class="coming-soon-badge">Coming Soon</span>
+        <div class="card">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;stroke:var(--gold-mid);">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:1.25rem; color:var(--text-1); margin-bottom:12px;">Portfolio Stress Test</h3>
+          <p class="body-text" style="font-size:0.875rem;">Walk your portfolio through historical stress scenarios — 2008, 2020, rising rate environments — to understand your actual exposure before markets reveal it for you.</p>
+        </div>
+      </div>
+
+      <div class="coming-soon reveal">
+        <span class="coming-soon-badge">Coming Soon</span>
+        <div class="card">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;stroke:var(--gold-mid);">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="9" y1="13" x2="15" y2="13"/>
+              <line x1="9" y1="17" x2="15" y2="17"/>
+            </svg>
+          </div>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:1.25rem; color:var(--text-1); margin-bottom:12px;">Broker Due Diligence Checklist</h3>
+          <p class="body-text" style="font-size:0.875rem;">A structured checklist for evaluating broker quality, execution standards, fee transparency, and regulatory standing — built on institutional criteria for assessing execution counterparties.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <svg width="24" height="24" viewBox="0 0 120 120" fill="none">
+            <path d="M28 32 L92 32 L57 59 L92 86 L28 86" stroke="url(#tls-ffg)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+            <defs>
+              <linearGradient id="tls-ffg" x1="28" y1="32" x2="92" y2="86" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#C5923A"/>
+                <stop offset="50%" stop-color="#DFB06A"/>
+                <stop offset="100%" stop-color="#C5923A"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          PrudentSigma
+        </div>
+        <p class="footer-tagline">A finance and decision-intelligence platform for serious people.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="newsletter.html">Newsletter</a></li>
+          <li><a href="insights.html">Insights</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="consulting.html">Consulting</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Philosophy</h4>
+        <div class="footer-beliefs">
+          <div class="footer-belief"><span class="footer-belief-num">01</span><span class="footer-belief-text">Risk comes before return</span></div>
+          <div class="footer-belief"><span class="footer-belief-num">02</span><span class="footer-belief-text">Clarity beats complexity</span></div>
+          <div class="footer-belief"><span class="footer-belief-num">03</span><span class="footer-belief-text">Discipline compounds</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom-copy">&copy; 2025 PrudentSigma. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const ro = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }});
+  }, { threshold: 0.1 });
+  reveals.forEach(r => ro.observe(r));
+
+  // Mobile nav
+  const burger = document.getElementById('nav-burger');
+  const nav = document.getElementById('main-nav');
+  if (burger) burger.addEventListener('click', () => nav.classList.toggle('nav-open'));
+
+  // Format numbers with commas
+  function fmt(n, decimals = 0) {
+    return n.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+  }
+  function fmtCurrency(n) {
+    return '$' + fmt(n, 2);
+  }
+
+  // Position Sizing Calculator
+  function calcPositionSize() {
+    const account  = parseFloat(document.getElementById('ps-account').value);
+    const riskPct  = parseFloat(document.getElementById('ps-risk').value);
+    const entry    = parseFloat(document.getElementById('ps-entry').value);
+    const stop     = parseFloat(document.getElementById('ps-stop').value);
+    const errEl    = document.getElementById('ps-error');
+    const resultEl = document.getElementById('ps-result');
+
+    errEl.classList.remove('visible');
+    resultEl.classList.remove('visible');
+
+    if (isNaN(account) || isNaN(riskPct) || isNaN(entry) || isNaN(stop)) {
+      errEl.textContent = 'Please fill in all four fields.';
+      errEl.classList.add('visible');
+      return;
+    }
+    if (stop >= entry) {
+      errEl.textContent = 'Stop loss must be below entry price for a long position.';
+      errEl.classList.add('visible');
+      return;
+    }
+    if (riskPct <= 0 || riskPct > 100) {
+      errEl.textContent = 'Risk percentage must be between 0 and 100.';
+      errEl.classList.add('visible');
+      return;
+    }
+    if (account <= 0 || entry <= 0) {
+      errEl.textContent = 'Account size and entry price must be greater than zero.';
+      errEl.classList.add('visible');
+      return;
+    }
+
+    const riskAmount   = account * (riskPct / 100);
+    const riskPerUnit  = entry - stop;
+    const positionSize = riskAmount / riskPerUnit;
+    const positionValue = positionSize * entry;
+
+    document.getElementById('ps-out-units').textContent = fmt(positionSize, 2);
+    document.getElementById('ps-out-value').textContent = fmtCurrency(positionValue);
+    document.getElementById('ps-out-risk').textContent  = fmtCurrency(riskAmount);
+
+    resultEl.classList.add('visible');
+  }
+
+  // Risk / Reward Calculator
+  function calcRiskReward() {
+    const entry  = parseFloat(document.getElementById('rr-entry').value);
+    const stop   = parseFloat(document.getElementById('rr-stop').value);
+    const target = parseFloat(document.getElementById('rr-target').value);
+    const errEl    = document.getElementById('rr-error');
+    const resultEl = document.getElementById('rr-result');
+
+    errEl.classList.remove('visible');
+    resultEl.classList.remove('visible');
+
+    if (isNaN(entry) || isNaN(stop) || isNaN(target)) {
+      errEl.textContent = 'Please fill in all three fields.';
+      errEl.classList.add('visible');
+      return;
+    }
+    if (stop >= entry) {
+      errEl.textContent = 'Stop loss must be below entry price.';
+      errEl.classList.add('visible');
+      return;
+    }
+    if (target <= entry) {
+      errEl.textContent = 'Target price must be above entry price.';
+      errEl.classList.add('visible');
+      return;
+    }
+
+    const riskPct   = ((entry - stop) / entry) * 100;
+    const rewardPct = ((target - entry) / entry) * 100;
+    const rrRatio   = rewardPct / riskPct;
+
+    document.getElementById('rr-out-risk').textContent   = fmt(riskPct, 2) + '%';
+    document.getElementById('rr-out-reward').textContent = fmt(rewardPct, 2) + '%';
+    document.getElementById('rr-out-ratio').textContent  = fmt(rrRatio, 2) + ' : 1';
+
+    let verdict = '';
+    if (rrRatio >= 3)       verdict = 'Excellent ratio. This setup meets a high-quality threshold.';
+    else if (rrRatio >= 2)  verdict = 'Good ratio. Acceptable for most disciplined strategies.';
+    else if (rrRatio >= 1.5) verdict = 'Marginal. Review whether the target or stop can be improved.';
+    else                    verdict = 'Below minimum threshold. This setup does not offer sufficient compensation for the risk taken.';
+
+    document.getElementById('rr-out-verdict').textContent = verdict;
+    resultEl.classList.add('visible');
+  }
+
+  // Allow Enter key to trigger calculators
+  document.querySelectorAll('#ps-account, #ps-risk, #ps-entry, #ps-stop').forEach(el => {
+    el.addEventListener('keydown', (e) => { if (e.key === 'Enter') calcPositionSize(); });
+  });
+  document.querySelectorAll('#rr-entry, #rr-stop, #rr-target').forEach(el => {
+    el.addEventListener('keydown', (e) => { if (e.key === 'Enter') calcRiskReward(); });
+  });
+</script>
+
+</body>
+</html>

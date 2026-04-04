@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter — PrudentSigma</title>
+  <meta name="description" content="The Prudentsigma Note: a weekly letter on markets, risk, capital allocation, and financial judgment.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .signup-section {
+      background: var(--navy-800);
+      border-top: 1px solid var(--navy-600);
+      border-bottom: 1px solid var(--navy-600);
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .signup-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-mid), transparent);
+      opacity: 0.4;
+    }
+    .signup-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 70% at 50% 50%, rgba(197,146,58,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .signup-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .signup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 36px;
+    }
+    .signup-form .form-input {
+      text-align: center;
+      font-size: 1rem;
+      padding: 16px 20px;
+    }
+    .signup-form .btn {
+      padding: 16px 32px;
+      font-size: 0.875rem;
+    }
+    .benefit-icon {
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(197,146,58,0.25);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(197,146,58,0.05);
+      margin-bottom: 20px;
+    }
+    .benefit-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--gold-mid);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .expect-row {
+      display: flex;
+      gap: 12px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--navy-600);
+      align-items: flex-start;
+    }
+    .expect-row:last-child { border-bottom: none; }
+    .expect-icon {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold-mid);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+    .expect-text {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 0.9375rem;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="60" r="56" stroke="url(#nsl-nfg)" stroke-width="1" opacity="0.35"/>
+        <path d="M28 32 L92 32 L57 59 L92 86 L28 86" stroke="url(#nsl-nsg)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+        <defs>
+          <linearGradient id="nsl-nsg" x1="28" y1="32" x2="92" y2="86" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#C5923A"/>
+            <stop offset="50%" stop-color="#DFB06A"/>
+            <stop offset="100%" stop-color="#C5923A"/>
+          </linearGradient>
+          <linearGradient id="nsl-nfg" x1="4" y1="4" x2="116" y2="116" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#C5923A" stop-opacity="0.6"/>
+            <stop offset="1" stop-color="#C5923A" stop-opacity="0.1"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      PrudentSigma
+    </a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="newsletter.html" class="active">Newsletter</a>
+      <a href="consulting.html">Consulting</a>
+      <a href="insights.html">Insights</a>
+      <a href="tools.html">Tools</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary">Book a Call</a>
+      <button class="nav-burger" id="nav-burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="label anim-1">The Prudentsigma Note</span>
+    <h1 class="display anim-2" style="max-width:700px;">A weekly letter on financial judgment.</h1>
+    <p class="subtitle anim-3" style="max-width:560px; margin-top:24px;">Markets. Risk. Capital allocation. Practical thinking for serious people. No noise, no hype, no fake certainty.</p>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:48px;">
+      <span class="label">What you get</span>
+      <h2 class="title">Four things every issue delivers.</h2>
+    </div>
+    <div class="grid-2">
+
+      <div class="card reveal">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:1.3125rem; color:var(--text-1); margin-bottom:12px;">Market Clarity</h3>
+        <p class="body-text">High-signal interpretation of what matters in markets each week. Not every headline — only the developments that warrant genuine attention and why they matter structurally.</p>
+      </div>
+
+      <div class="card reveal">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:1.3125rem; color:var(--text-1); margin-bottom:12px;">Risk Frameworks</h3>
+        <p class="body-text">Practical mental models and tools for downside thinking. Position sizing principles, uncertainty frameworks, and the discipline that separates long-term survivors from short-term speculators.</p>
+      </div>
+
+      <div class="card reveal">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:1.3125rem; color:var(--text-1); margin-bottom:12px;">Capital Thinking</h3>
+        <p class="body-text">How to allocate, structure, and protect wealth across market environments. Not generic budgeting advice — structured thinking for people making real capital decisions.</p>
+      </div>
+
+      <div class="card reveal">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:1.3125rem; color:var(--text-1); margin-bottom:12px;">Industry Intelligence</h3>
+        <p class="body-text">What finance professionals know that retail investors rarely hear. Brokerage mechanics, execution quality, market structure — the operational reality behind the markets people participate in.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- WHAT TO EXPECT -->
+<section class="section">
+  <div class="container">
+    <div class="grid-2-col">
+      <div class="reveal">
+        <span class="label">The format</span>
+        <h2 class="title" style="margin-bottom:32px;">What to expect.</h2>
+        <div>
+          <div class="expect-row">
+            <div class="expect-icon"></div>
+            <span class="expect-text"><strong style="color:var(--text-1); font-weight:400;">Weekly frequency.</strong> Published every week without fail. Consistent signal, consistent timing.</span>
+          </div>
+          <div class="expect-row">
+            <div class="expect-icon"></div>
+            <span class="expect-text"><strong style="color:var(--text-1); font-weight:400;">Short and direct.</strong> No padding, no filler. The goal is one clear insight worth having per issue.</span>
+          </div>
+          <div class="expect-row">
+            <div class="expect-icon"></div>
+            <span class="expect-text"><strong style="color:var(--text-1); font-weight:400;">No predictions.</strong> We do not forecast. We interpret, frame, and help you think — not tell you what to do.</span>
+          </div>
+          <div class="expect-row">
+            <div class="expect-icon"></div>
+            <span class="expect-text"><strong style="color:var(--text-1); font-weight:400;">For serious readers.</strong> Not beginners looking for basics. Not speculators looking for tips. For people who want to think better about financial decisions.</span>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <span class="label">Who it is for</span>
+        <h2 class="title" style="margin-bottom:32px;">What it is not.</h2>
+        <div>
+          <div class="expect-row">
+            <div class="expect-icon" style="background:var(--text-3); opacity:0.5;"></div>
+            <span class="expect-text" style="color:var(--text-3);">Not a daily newsletter competing for your inbox attention with marketing content</span>
+          </div>
+          <div class="expect-row">
+            <div class="expect-icon" style="background:var(--text-3); opacity:0.5;"></div>
+            <span class="expect-text" style="color:var(--text-3);">Not hot stock picks, market calls, or clickbait about the next crash or rally</span>
+          </div>
+          <div class="expect-row">
+            <div class="expect-icon" style="background:var(--text-3); opacity:0.5;"></div>
+            <span class="expect-text" style="color:var(--text-3);">Not a product catalogue wrapped in editorial content</span>
+          </div>
+          <div class="expect-row">
+            <div class="expect-icon" style="background:var(--text-3); opacity:0.5;"></div>
+            <span class="expect-text" style="color:var(--text-3);">Not shallow motivation repackaged as financial insight</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNUP SECTION -->
+<section class="signup-section">
+  <div class="container">
+    <div class="signup-inner reveal">
+      <span class="label" style="display:block; text-align:center;">Join the note</span>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-weight:300; font-size:clamp(2rem,5vw,3.5rem); line-height:1.1; color:var(--text-1); margin-bottom:16px;">Start thinking more clearly about financial decisions.</h2>
+      <p class="body-text" style="text-align:center; max-width:440px; margin:0 auto;">Free to read. One issue per week. Unsubscribe at any time.</p>
+      <form class="signup-form" id="main-signup-form">
+        <input type="text" class="form-input" placeholder="First name" required>
+        <input type="email" class="form-input" placeholder="Email address" required>
+        <button type="submit" class="btn btn-primary btn-lg">Join the Prudentsigma Note</button>
+      </form>
+      <p class="newsletter-note" style="text-align:center; margin-top:16px;">No spam. No clickbait. Unsubscribe anytime.</p>
+      <div class="form-success" id="signup-success" style="text-align:center; margin-top:16px;">You're in. First note arrives this week.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TOPIC PILLS -->
+<section class="section--sm">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom:28px;">
+      <span class="label" style="display:inline-block;">Topics covered</span>
+    </div>
+    <div class="topic-pills reveal" style="justify-content:center;">
+      <span class="topic-pill">Position sizing fundamentals</span>
+      <span class="topic-pill">How brokers make money</span>
+      <span class="topic-pill">When to deploy idle cash</span>
+      <span class="topic-pill">Reading market regimes</span>
+      <span class="topic-pill">Best execution explained</span>
+      <span class="topic-pill">Capital allocation frameworks</span>
+      <span class="topic-pill">Avoiding self-destructive decisions</span>
+      <span class="topic-pill">Portfolio stress testing</span>
+      <span class="topic-pill">Risk before return</span>
+      <span class="topic-pill">Downside protection strategies</span>
+      <span class="topic-pill">Market structure for investors</span>
+      <span class="topic-pill">Wealth structuring</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <svg width="24" height="24" viewBox="0 0 120 120" fill="none">
+            <path d="M28 32 L92 32 L57 59 L92 86 L28 86" stroke="url(#nsl-ffg)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+            <defs>
+              <linearGradient id="nsl-ffg" x1="28" y1="32" x2="92" y2="86" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#C5923A"/>
+                <stop offset="50%" stop-color="#DFB06A"/>
+                <stop offset="100%" stop-color="#C5923A"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          PrudentSigma
+        </div>
+        <p class="footer-tagline">A finance and decision-intelligence platform for serious people.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="newsletter.html">Newsletter</a></li>
+          <li><a href="insights.html">Insights</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="consulting.html">Consulting</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Philosophy</h4>
+        <div class="footer-beliefs">
+          <div class="footer-belief"><span class="footer-belief-num">01</span><span class="footer-belief-text">Risk comes before return</span></div>
+          <div class="footer-belief"><span class="footer-belief-num">02</span><span class="footer-belief-text">Clarity beats complexity</span></div>
+          <div class="footer-belief"><span class="footer-belief-num">03</span><span class="footer-belief-text">Discipline compounds</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom-copy">&copy; 2025 PrudentSigma. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const ro = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }});
+  }, { threshold: 0.1 });
+  reveals.forEach(r => ro.observe(r));
+
+  const burger = document.getElementById('nav-burger');
+  const nav = document.getElementById('main-nav');
+  if (burger) burger.addEventListener('click', () => nav.classList.toggle('nav-open'));
+
+  const form = document.getElementById('main-signup-form');
+  const success = document.getElementById('signup-success');
+  if (form) form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    form.style.display = 'none';
+    if (success) success.classList.add('visible');
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — PrudentSigma</title>
+  <meta name="description" content="Get in touch with PrudentSigma. Consulting inquiries, speaking opportunities, and media requests.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-type-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      background: rgba(197,146,58,0.07);
+      border: 1px solid rgba(197,146,58,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .contact-type-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--gold-mid);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .contact-type-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.25rem;
+      color: var(--text-1);
+      margin-bottom: 12px;
+    }
+    .contact-form-wrap {
+      max-width: 680px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="60" r="56" stroke="url(#cnt-nfg)" stroke-width="1" opacity="0.35"/>
+        <path d="M28 32 L92 32 L57 59 L92 86 L28 86" stroke="url(#cnt-nsg)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+        <defs>
+          <linearGradient id="cnt-nsg" x1="28" y1="32" x2="92" y2="86" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#C5923A"/>
+            <stop offset="50%" stop-color="#DFB06A"/>
+            <stop offset="100%" stop-color="#C5923A"/>
+          </linearGradient>
+          <linearGradient id="cnt-nfg" x1="4" y1="4" x2="116" y2="116" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#C5923A" stop-opacity="0.6"/>
+            <stop offset="1" stop-color="#C5923A" stop-opacity="0.1"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      PrudentSigma
+    </a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="consulting.html">Consulting</a>
+      <a href="insights.html">Insights</a>
+      <a href="tools.html">Tools</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary">Book a Call</a>
+      <button class="nav-burger" id="nav-burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="label anim-1">Contact</span>
+    <h1 class="display anim-2" style="max-width:680px;">Get in touch.</h1>
+    <p class="subtitle anim-3" style="max-width:520px; margin-top:24px;">For consulting inquiries, speaking and collaboration opportunities, or questions about the newsletter and published work.</p>
+  </div>
+</section>
+
+<!-- WHO SHOULD REACH OUT -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:48px;">
+      <span class="label">Enquiries</span>
+      <h2 class="title">Who should reach out.</h2>
+    </div>
+    <div class="grid-3">
+
+      <div class="card reveal">
+        <div class="contact-type-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3 class="contact-type-title">Consulting Inquiry</h3>
+        <p class="body-text" style="font-size:0.875rem; margin-bottom:16px;">Regulated finance businesses, fintech operators, or professionals seeking structured advisory on execution governance, risk frameworks, product strategy, or capital allocation decisions.</p>
+        <span class="badge badge-gold">Priority</span>
+      </div>
+
+      <div class="card reveal">
+        <div class="contact-type-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="contact-type-title">Speaking &amp; Collaboration</h3>
+        <p class="body-text" style="font-size:0.875rem; margin-bottom:16px;">Invitations to speak at industry events, podcast appearances, panel discussions, or collaboration opportunities with aligned brands, publications, and organisations.</p>
+        <span class="badge badge-muted">Open</span>
+      </div>
+
+      <div class="card reveal">
+        <div class="contact-type-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h3 class="contact-type-title">Newsletter &amp; Media</h3>
+        <p class="body-text" style="font-size:0.875rem; margin-bottom:16px;">Questions about the newsletter, requests for media contributions, editorial partnerships, or feedback on published content. Thoughtful reader questions are also welcome.</p>
+        <span class="badge badge-muted">Open</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- CONTACT FORM -->
+<section class="section">
+  <div class="container">
+    <div class="grid-2-col" style="gap:80px;">
+      <div class="reveal">
+        <span class="label">Send a message</span>
+        <h2 class="title" style="margin-bottom:16px;">Direct is better.</h2>
+        <p class="body-text" style="margin-bottom:32px;">Use this form for all enquiries. Be specific about your situation — the more context you provide, the more useful the response can be.</p>
+        <div style="padding:20px; background:rgba(197,146,58,0.05); border:1px solid rgba(197,146,58,0.15); border-radius:var(--radius-sm);">
+          <p style="font-size:0.8125rem; color:var(--text-3); line-height:1.65;">All enquiries are reviewed personally. If your situation fits within the areas we work in, you will receive a direct, substantive response. Vague or speculative requests are not prioritised.</p>
+        </div>
+      </div>
+      <div class="reveal contact-form-wrap">
+        <form id="contact-form">
+          <div class="form-row" style="margin-bottom:20px;">
+            <div class="form-group">
+              <label class="form-label" for="cf-name">Full Name</label>
+              <input type="text" id="cf-name" class="form-input" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cf-email">Email Address</label>
+              <input type="email" id="cf-email" class="form-input" placeholder="your@email.com" required>
+            </div>
+          </div>
+          <div class="form-group" style="margin-bottom:20px;">
+            <label class="form-label" for="cf-org">Organisation <span style="color:var(--text-3); font-size:0.75em;">(optional)</span></label>
+            <input type="text" id="cf-org" class="form-input" placeholder="Company or firm name">
+          </div>
+          <div class="form-group" style="margin-bottom:20px;">
+            <label class="form-label" for="cf-type">Enquiry Type</label>
+            <select id="cf-type" class="form-select" required>
+              <option value="" disabled selected>Select enquiry type</option>
+              <option value="consulting">Consulting Inquiry</option>
+              <option value="speaking">Speaking &amp; Collaboration</option>
+              <option value="media">Newsletter &amp; Media</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom:28px;">
+            <label class="form-label" for="cf-message">Message</label>
+            <textarea id="cf-message" class="form-textarea" placeholder="Describe your situation or question. The more specific you are, the better." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">Send Message</button>
+        </form>
+        <div class="form-success" id="contact-success" style="margin-top:20px;">Your message has been received. Expect a direct response within a few business days.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <svg width="24" height="24" viewBox="0 0 120 120" fill="none">
+            <path d="M28 32 L92 32 L57 59 L92 86 L28 86" stroke="url(#cnt-ffg)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+            <defs>
+              <linearGradient id="cnt-ffg" x1="28" y1="32" x2="92" y2="86" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#C5923A"/>
+                <stop offset="50%" stop-color="#DFB06A"/>
+                <stop offset="100%" stop-color="#C5923A"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          PrudentSigma
+        </div>
+        <p class="footer-tagline">A finance and decision-intelligence platform for serious people.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="newsletter.html">Newsletter</a></li>
+          <li><a href="insights.html">Insights</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="consulting.html">Consulting</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Philosophy</h4>
+        <div class="footer-beliefs">
+          <div class="footer-belief"><span class="footer-belief-num">01</span><span class="footer-belief-text">Risk comes before return</span></div>
+          <div class="footer-belief"><span class="footer-belief-num">02</span><span class="footer-belief-text">Clarity beats complexity</span></div>
+          <div class="footer-belief"><span class="footer-belief-num">03</span><span class="footer-belief-text">Discipline compounds</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom-copy">&copy; 2025 PrudentSigma. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const ro = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }});
+  }, { threshold: 0.1 });
+  reveals.forEach(r => ro.observe(r));
+
+  const burger = document.getElementById('nav-burger');
+  const nav = document.getElementById('main-nav');
+  if (burger) burger.addEventListener('click', () => nav.classList.toggle('nav-open'));
+
+  const form = document.getElementById('contact-form');
+  const success = document.getElementById('contact-success');
+  if (form) form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    form.style.display = 'none';
+    if (success) success.classList.add('visible');
+  });
+</script>
+
+</body>
+</html>
