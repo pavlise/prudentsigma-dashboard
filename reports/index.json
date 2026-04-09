@@ -1,6 +1,12 @@
 {
   "reports": [
     {
+      "date": "2026-04-09",
+      "display_date": "April 9, 2026",
+      "filename": "report_2026-04-09.html",
+      "title": "Daily Market Report — April 9, 2026"
+    },
+    {
       "date": "2026-04-07",
       "display_date": "April 7, 2026",
       "filename": "report_2026-04-07.html",
