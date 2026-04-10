@@ -1,0 +1,1035 @@
+{
+  "a86cf52f85a1b459a3e3e5ae51bb597f": [
+    "Brightpool\\01 - Policies & Compliance\\AML & Financial Crime\\amlipol.docx",
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\amlipol.docx",
+    "Important Data - Brightpool\\Policies and Executions\\amlipol.docx"
+  ],
+  "de0698db51e18ead6461ee9c4e568ca9": [
+    "Brightpool\\01 - Policies & Compliance\\AML & Financial Crime\\counter.docx",
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\counter.docx",
+    "Important Data - Brightpool\\Policies and Executions\\counter.docx"
+  ],
+  "52d42928dc01a669f90694433be163e4": [
+    "Brightpool\\01 - Policies & Compliance\\Execution\\besexeb.docx",
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\besexeb.docx",
+    "Important Data - Brightpool\\Policies and Executions\\besexeb.docx"
+  ],
+  "e0e836cdd2005ad94ccafb179176fb6e": [
+    "Brightpool\\01 - Policies & Compliance\\Execution\\Brightpool Best Execution Policy 2025.docx",
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\KHCV BE 2.docx",
+    "Important Data - Brightpool\\Brightpool Best Execution Policy 2025.docx",
+    "Important Data - Brightpool\\KH BPL\\KHCV BE 2.docx",
+    "Important Data - Brightpool\\Policies and Executions\\KHCV BE 2.docx"
+  ],
+  "5c6351e5bbd366305a6fe771cd6b690d": [
+    "Brightpool\\01 - Policies & Compliance\\Execution\\Brightpool Order Execution Policy April 2025.odt",
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\Brightpool Order Execution Policy April 2025.odt",
+    "Important Data - Brightpool\\Policies and Executions\\Brightpool Order Execution Policy April 2025.odt"
+  ],
+  "85c7ff9b867fb937df356b70c3a1cb0c": [
+    "Brightpool\\01 - Policies & Compliance\\Execution\\Group Order Execution Policy 2025.docx",
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\KHCV BE.docx",
+    "Important Data - Brightpool\\Group Order Execution Policy 2025.docx",
+    "Important Data - Brightpool\\KH BPL\\KHCV BE.docx",
+    "Important Data - Brightpool\\Policies and Executions\\KHCV BE.docx"
+  ],
+  "b834b54656977f18fe6dae84511d8511": [
+    "Brightpool\\01 - Policies & Compliance\\General\\complo.docx",
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\complo.docx",
+    "Important Data - Brightpool\\Policies and Executions\\complo.docx"
+  ],
+  "da66244c985801253381a0be768fa96e": [
+    "Brightpool\\01 - Policies & Compliance\\General\\Finance.docx",
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\Finance.docx",
+    "Important Data - Brightpool\\Policies and Executions\\Finance.docx"
+  ],
+  "67caec1be9a74e2a71c05387fa53a8e4": [
+    "Brightpool\\01 - Policies & Compliance\\General\\ramop.docx",
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\ramop.docx",
+    "Important Data - Brightpool\\Policies and Executions\\ramop.docx"
+  ],
+  "a092b37ccbc2543f0b1caab96416a3c5": [
+    "Brightpool\\01 - Policies & Compliance\\General\\recap.docx",
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\recap.docx",
+    "Important Data - Brightpool\\Policies and Executions\\recap.docx"
+  ],
+  "5b191d470582ef730cbe17442b409db1": [
+    "Brightpool\\01 - Policies & Compliance\\Risk\\anrispol.docx",
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\anrispol.docx",
+    "Important Data - Brightpool\\Policies and Executions\\anrispol.docx"
+  ],
+  "59a8aa2602a0e48961cddff535396078": [
+    "Brightpool\\01 - Policies & Compliance\\Risk\\marrispol.docx",
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\marrispol.docx",
+    "Important Data - Brightpool\\Policies and Executions\\marrispol.docx"
+  ],
+  "06f01141d735b2f18ce3f44e6cd46556": [
+    "Brightpool\\01 - Policies & Compliance\\Risk\\risapet.docx",
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\risapet.docx",
+    "Important Data - Brightpool\\Policies and Executions\\risapet.docx"
+  ],
+  "4a69d87e017511a28b0583ce7a6d90d3": [
+    "Brightpool\\02 - Pricing Algorithm\\BSutils.py",
+    "Brightpool (1)\\Brightpool\\Python new algo\\BSutils.py",
+    "Kyriakos - IG DATA\\Brightpool\\Python new algo\\BSutils.py",
+    "Kyriakos - IG DATA\\New Algo BAT\\VTP Python Script\\BSutils.py"
+  ],
+  "82359e8d29c526829ea9ef73515cfc85": [
+    "Brightpool\\02 - Pricing Algorithm\\Config.py",
+    "Brightpool (1)\\Brightpool\\Python new algo\\Config.py",
+    "Kyriakos - IG DATA\\Brightpool\\Python new algo\\Config.py",
+    "Kyriakos - IG DATA\\New Algo BAT\\VTP Python Script\\Config.py"
+  ],
+  "7a2a5ebbcbc4d1ffdc46ba2852be235c": [
+    "Brightpool\\02 - Pricing Algorithm\\Generatepricecall.py",
+    "Brightpool (1)\\Brightpool\\Python new algo\\Generatepricecall.py",
+    "Kyriakos - IG DATA\\Brightpool\\Python new algo\\Generatepricecall.py",
+    "Kyriakos - IG DATA\\New Algo BAT\\VTP Python Script\\Generatepricecall.py"
+  ],
+  "60d82ba81ff4d74de3b5130aa2809500": [
+    "Brightpool\\02 - Pricing Algorithm\\Generatepriceput.py",
+    "Brightpool (1)\\Brightpool\\Python new algo\\Generatepriceput.py",
+    "Kyriakos - IG DATA\\Brightpool\\Python new algo\\Generatepriceput.py",
+    "Kyriakos - IG DATA\\New Algo BAT\\VTP Python Script\\Generatepriceput.py"
+  ],
+  "ae92795efad2ea269d1bde93da3b7d6d": [
+    "Brightpool\\02 - Pricing Algorithm\\Runner_PUT.py",
+    "Brightpool (1)\\Brightpool\\Python new algo\\Runner_PUT.py",
+    "Kyriakos - IG DATA\\Brightpool\\Python new algo\\Runner_PUT.py",
+    "Kyriakos - IG DATA\\New Algo BAT\\VTP Python Script\\Runner_PUT.py"
+  ],
+  "1d7349ca81bc5d92960de48a2b44f232": [
+    "Brightpool\\02 - Pricing Algorithm\\Spreadutils.py",
+    "Brightpool (1)\\Brightpool\\Python new algo\\Spreadutils.py",
+    "Kyriakos - IG DATA\\Brightpool\\Python new algo\\Spreadutils.py",
+    "Kyriakos - IG DATA\\New Algo BAT\\VTP Python Script\\Spreadutils.py"
+  ],
+  "1778c81c7420337a07503342c8708950": [
+    "Brightpool\\02 - Pricing Algorithm\\Visualisations_CALL.py",
+    "Brightpool (1)\\Brightpool\\Python new algo\\Visualisations_CALL.py",
+    "Kyriakos - IG DATA\\Brightpool\\Python new algo\\Visualisations_CALL.py",
+    "Kyriakos - IG DATA\\New Algo BAT\\VTP Python Script\\Visualisations_CALL.py"
+  ],
+  "fccd3041bc9cb52744e61040b8133d4b": [
+    "Brightpool\\02 - Pricing Algorithm\\Visualisations_PUT.py",
+    "Brightpool (1)\\Brightpool\\Python new algo\\Visualisations_PUT.py",
+    "Kyriakos - IG DATA\\Brightpool\\Python new algo\\Visualisations_PUT.py",
+    "Kyriakos - IG DATA\\New Algo BAT\\VTP Python Script\\Visualisations_PUT.py"
+  ],
+  "331a3fd1631ccffe167c20173a3d8d6c": [
+    "Brightpool\\02 - Pricing Algorithm\\__init__.py",
+    "Brightpool (1)\\Brightpool\\Python new algo\\__init__.py",
+    "Kyriakos - IG DATA\\Brightpool\\Python new algo\\__init__.py",
+    "Kyriakos - IG DATA\\New Algo BAT\\VTP Python Script\\__init__.py"
+  ],
+  "be72e9fbb05be3fd0caabe7ec47ee4b5": [
+    "Brightpool\\03 - Analysis Scripts\\NEW_PREMIUM_REPORT_TOP_10_ASSETS_(NEW LOGIC).py",
+    "Brightpool (1)\\Brightpool\\Python Scripts\\NEW_PREMIUM_REPORT_TOP_10_ASSETS_(NEW LOGIC).py",
+    "Kyriakos - IG DATA\\Brightpool\\Python Scripts\\NEW_PREMIUM_REPORT_TOP_10_ASSETS_(NEW LOGIC).py"
+  ],
+  "706de05f54bf770921c745263b37a6c9": [
+    "Brightpool\\03 - Analysis Scripts\\PREMIUM_COMPARISON_ALL_ASSETS modified.py",
+    "Brightpool (1)\\Brightpool\\Python Scripts\\PREMIUM_COMPARISON_ALL_ASSETS modified.py",
+    "Kyriakos - IG DATA\\Brightpool\\Python Scripts\\PREMIUM_COMPARISON_ALL_ASSETS modified.py"
+  ],
+  "1eadfc6ee84c44ed7093816a0fb767b6": [
+    "Brightpool\\03 - Analysis Scripts\\PREMIUM_COMPARISON_ALL_ASSETS_EQUITIES_LOGIC.py",
+    "Brightpool (1)\\Brightpool\\Python Scripts\\PREMIUM_COMPARISON_ALL_ASSETS_EQUITIES_LOGIC.py",
+    "Kyriakos - IG DATA\\Brightpool\\Python Scripts\\PREMIUM_COMPARISON_ALL_ASSETS_EQUITIES_LOGIC.py"
+  ],
+  "e7b0373ec83f8968a9fe93f3d5e1b307": [
+    "Brightpool\\03 - Analysis Scripts\\SPREAD_COMPARISON_ALL_ASSETS_EQUITIES_LOGIC.py",
+    "Brightpool (1)\\Brightpool\\Python Scripts\\SPREAD_COMPARISON_ALL_ASSETS_EQUITIES_LOGIC.py",
+    "Kyriakos - IG DATA\\Brightpool\\Python Scripts\\SPREAD_COMPARISON_ALL_ASSETS_EQUITIES_LOGIC.py"
+  ],
+  "9c5478b907f76410ee53708ac1d48633": [
+    "Brightpool\\03 - Analysis Scripts\\SPREAD_COMPARISON_ALL_ASSETS_modified.py",
+    "Brightpool (1)\\Brightpool\\Python Scripts\\SPREAD_COMPARISON_ALL_ASSETS_modified.py",
+    "Kyriakos - IG DATA\\Brightpool\\Python Scripts\\SPREAD_COMPARISON_ALL_ASSETS_modified.py"
+  ],
+  "b0a58f38ace5249596545285cfb99ff7": [
+    "Brightpool\\03 - Analysis Scripts\\strike adjustment reconciliation.py",
+    "Brightpool (1)\\Brightpool\\Python Scripts\\strike adjustment reconciliation.py",
+    "Kyriakos - IG DATA\\Brightpool\\Python Scripts\\strike adjustment reconciliation.py"
+  ],
+  "615f9e08cd91d72434c83113da67f0a6": [
+    "Brightpool\\04 - Data & Reports\\ABNB.O.xlsx",
+    "Brightpool (1)\\Brightpool\\ABNB.O.xlsx",
+    "Kyriakos - IG DATA\\Brightpool\\ABNB.O.xlsx"
+  ],
+  "f911555d97a4009d257e982e5dd634d3": [
+    "Brightpool\\04 - Data & Reports\\Algo assesmnet.xlsx",
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\KH A.xlsx",
+    "Important Data - Brightpool\\Algo assesmnet.xlsx",
+    "Important Data - Brightpool\\KH BPL\\KH A.xlsx",
+    "Important Data - Brightpool\\Policies and Executions\\KH A.xlsx"
+  ],
+  "da52f9888404a92e071f9c7827f4e45a": [
+    "Brightpool\\04 - Data & Reports\\dvd.xlsx",
+    "Brightpool (1)\\Brightpool\\dvd.xlsx",
+    "Kyriakos - IG DATA\\Brightpool\\dvd.xlsx"
+  ],
+  "0dd87aa317494affe2c37704c14b17cf": [
+    "Brightpool\\04 - Data & Reports\\issua.xlsx",
+    "Brightpool (1)\\Brightpool\\issua.xlsx",
+    "Kyriakos - IG DATA\\Brightpool\\issua.xlsx"
+  ],
+  "bc86d25f93348407f2b7c6bb01de1987": [
+    "Brightpool\\04 - Data & Reports\\New Equity Pricing Check.xlsx",
+    "Brightpool (1)\\Brightpool\\New Equity Pricing Check.xlsx",
+    "Kyriakos - IG DATA\\New Equity Pricing Check.xlsx",
+    "Kyriakos - IG DATA\\Brightpool\\New Equity Pricing Check.xlsx"
+  ],
+  "1b0872f033dd3d0bebb71ddf543c9fb6": [
+    "Brightpool\\04 - Data & Reports\\RCSA.xlsx",
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\KH RC.xlsx",
+    "Important Data - Brightpool\\RCSA.xlsx",
+    "Important Data - Brightpool\\KH BPL\\KH RC.xlsx",
+    "Important Data - Brightpool\\Policies and Executions\\KH RC.xlsx"
+  ],
+  "bd5a11ab73d8d85c035374ff2d963c2b": [
+    "Brightpool\\04 - Data & Reports\\repor.xlsx",
+    "Brightpool (1)\\Brightpool\\repor.xlsx",
+    "Kyriakos - IG DATA\\Brightpool\\repor.xlsx"
+  ],
+  "b8f2aa929f98f917c35ace40926a2a4c": [
+    "Brightpool\\04 - Data & Reports\\roll.xlsx",
+    "Brightpool (1)\\Brightpool\\roll.xlsx",
+    "Kyriakos - IG DATA\\Brightpool\\roll.xlsx"
+  ],
+  "089c2aa506e046065d9e2d851cdba4ef": [
+    "Brightpool\\05 - Presentations\\CySEC_BPL_Algo_Trading_Final_WC.pptx",
+    "Brightpool (1)\\Brightpool\\CySEC_BPL_Algo_Trading_Final_WC.pptx",
+    "IG info - shared in my drive\\NEED\\IG & Turbo General Information\\CySEC_BPL_Algo_Trading_Final_WC.pptx",
+    "Kyriakos - IG DATA\\Brightpool\\CySEC_BPL_Algo_Trading_Final_WC.pptx"
+  ],
+  "0a82d5ec3641ea586ef68b1ed94e01ed": [
+    "Brightpool\\05 - Presentations\\turbo.pptx",
+    "Brightpool (1)\\Brightpool\\turbo.pptx",
+    "Kyriakos - IG DATA\\Brightpool\\turbo.pptx"
+  ],
+  "9a315834ec21293055bb43056b98eeb5": [
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\BPL Annual Risk Management Report 2024.pdf",
+    "IG info - shared in my drive\\7_Risk Management Reports\\Annual Risk Management Report\\FY 2024\\BPL Annual Risk Management Report 2024.pdf",
+    "Important Data - Brightpool\\KH BPL\\BPL Annual Risk Management Report 2024.pdf",
+    "Important Data - Brightpool\\Policies and Executions\\BPL Annual Risk Management Report 2024.pdf"
+  ],
+  "64bd0fcfc10129801ed06e9ddbc7f5ef": [
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\BPL Risk Management Framework 2025 (1).docx",
+    "Important Data - Brightpool\\KH BPL\\BPL Risk Management Framework 2025 (1).docx",
+    "Important Data - Brightpool\\Policies and Executions\\BPL Risk Management Framework 2025 (1).docx"
+  ],
+  "78056854c2ec7dded270463812b3e0e6": [
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\BPL Risk Management Framework 2025.docx",
+    "Important Data - Brightpool\\KH BPL\\BPL Risk Management Framework 2025.docx",
+    "Important Data - Brightpool\\Policies and Executions\\BPL Risk Management Framework 2025.docx"
+  ],
+  "0a13af4879e93935b97e74e62d00b397": [
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\BPL Scenario Analysis FY24.pptx",
+    "Important Data - Brightpool\\KH BPL\\BPL Scenario Analysis FY24.pptx",
+    "Important Data - Brightpool\\Policies and Executions\\BPL Scenario Analysis FY24.pptx"
+  ],
+  "c8b6a682a9a2a4d2a8caf243b7cb4af3": [
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\BPL_Algorithm Trading Policy September 2024.pdf",
+    "IG info - shared in my drive\\policies manual\\Algos\\2024\\BPL_Algorithm Trading Policy September 2024.pdf",
+    "Important Data - Brightpool\\KH BPL\\BPL_Algorithm Trading Policy September 2024.pdf",
+    "Important Data - Brightpool\\Policies and Executions\\BPL_Algorithm Trading Policy September 2024.pdf"
+  ],
+  "5c98830ac1aff367a96b574a1fde55a7": [
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\Brightpool LTD - Financial Counterparty Credit Risk Policy - 2025.pdf",
+    "IG info - shared in my drive\\11_Counterparty Credit Risk\\Financial CCR Policy\\2025\\Brightpool LTD - Financial Counterparty Credit Risk Policy - 2025.pdf",
+    "Important Data - Brightpool\\KH BPL\\Brightpool LTD - Financial Counterparty Credit Risk Policy - 2025.pdf",
+    "Important Data - Brightpool\\Policies and Executions\\Brightpool LTD - Financial Counterparty Credit Risk Policy - 2025.pdf"
+  ],
+  "e90337a73486642ebad20dbabf31e352": [
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\Brightpool LTD - Regulatory Capital Policy 2025 (1).pdf",
+    "IG info - shared in my drive\\7_Risk Management Reports\\Regulatory Capital Policy\\2025\\Brightpool LTD - Regulatory Capital Policy 2025.pdf",
+    "Important Data - Brightpool\\KH BPL\\Brightpool LTD - Regulatory Capital Policy 2025 (1).pdf",
+    "Important Data - Brightpool\\KH BPL\\Brightpool LTD - Regulatory Capital Policy 2025.pdf",
+    "Important Data - Brightpool\\Policies and Executions\\Brightpool LTD - Regulatory Capital Policy 2025 (1).pdf"
+  ],
+  "2a8e6d43e0a36b9897765ec33178d1b1": [
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\Brightpool LTD Market Risk Policy 2025.docx",
+    "Important Data - Brightpool\\KH BPL\\Brightpool LTD Market Risk Policy 2025.docx",
+    "Important Data - Brightpool\\Policies and Executions\\Brightpool LTD Market Risk Policy 2025.docx"
+  ],
+  "3ee0a4991ff923e1efb9057a2c56badd": [
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\Brightpool RAS 2024 09 - Risk Appetite Statement.pdf",
+    "IG info - shared in my drive\\22_ICT\\Evidence for Audit\\3.3.1 RAS, RMF, KRI\\Brightpool RAS 2024 09 - Risk Appetite Statement.pdf",
+    "IG info - shared in my drive\\7_Risk Management Reports\\Risk Appetite Statement\\2024\\Brightpool RAS 2024 09 - Risk Appetite Statement.pdf",
+    "Important Data - Brightpool\\KH BPL\\Brightpool RAS 2024 09 - Risk Appetite Statement.pdf",
+    "Important Data - Brightpool\\Policies and Executions\\Brightpool RAS 2024 09 - Risk Appetite Statement.pdf"
+  ],
+  "58ff60aa3ff46f4e8186c4289701f542": [
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\CIF378_20250331_FORM165-01pi (1).xlsx",
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\CIF378_20250331_FORM165-01pi.xlsx",
+    "Important Data - Brightpool\\KH BPL\\CIF378_20250331_FORM165-01pi.xlsx",
+    "Important Data - Brightpool\\Policies and Executions\\CIF378_20250331_FORM165-01pi (1).xlsx",
+    "Important Data - Brightpool\\Policies and Executions\\CIF378_20250331_FORM165-01pi.xlsx"
+  ],
+  "5c1f4dc9477884d0a88e0208f3b78b56": [
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\FY2024 ICAAP Brightpool Limited - Final 2.pdf",
+    "Important Data - Brightpool\\KH BPL\\FY2024 ICAAP Brightpool Limited - Final 2.pdf",
+    "Important Data - Brightpool\\Policies and Executions\\FY2024 ICAAP Brightpool Limited - Final 2.pdf"
+  ],
+  "a6c8823be0b9438ebd917f35f27d1810": [
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\FY24 ICARA_Final_BRC.docx",
+    "Important Data - Brightpool\\Policies and Executions\\FY24 ICARA_Final_BRC.docx"
+  ],
+  "f98ef8dda8bb563d81e070d44300386c": [
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\RCSA Assessment 2025.xlsx",
+    "Important Data - Brightpool\\KH BPL\\RCSA Assessment 2025.xlsx",
+    "Important Data - Brightpool\\Policies and Executions\\RCSA Assessment 2025.xlsx"
+  ],
+  "76ab5452c77b25fa6a15d8ed66b244d6": [
+    "Brightpool (1)\\Brightpool\\Policies and Executions\\Risk Appetite Statement_Mar 2025.docx",
+    "Important Data - Brightpool\\KH BPL\\Risk Appetite Statement_Mar 2025.docx",
+    "Important Data - Brightpool\\Policies and Executions\\Risk Appetite Statement_Mar 2025.docx"
+  ],
+  "276ae7a8afc1bed27ea68495d3f8e5f2": [
+    "Brightpool (1)\\Brightpool\\Python new algo\\testcalls.py",
+    "Kyriakos - IG DATA\\Brightpool\\Python new algo\\testcalls.py",
+    "Kyriakos - IG DATA\\New Algo BAT\\VTP Python Script\\testcalls.py"
+  ],
+  "0232f1de6ef1162b1e4cd0a7fc5734ca": [
+    "Brightpool (1)\\Brightpool\\Python new algo\\testputs.py",
+    "Kyriakos - IG DATA\\Brightpool\\Python new algo\\testputs.py",
+    "Kyriakos - IG DATA\\New Algo BAT\\VTP Python Script\\testputs.py"
+  ],
+  "880e80ee68bec9cadcd41dfd2562d348": [
+    "IG info - shared in my drive\\03_AMLCO Report\\2022\\1. CIF378_MLCO_Report_2022_Final.docx",
+    "IG info - shared in my drive\\03_AMLCO Report\\2023\\2022 reports\\1. CIF378_MLCO_Report_2022_Final.docx"
+  ],
+  "139e1a05a4dd0fd60a9fadf95cfb722a": [
+    "IG info - shared in my drive\\06_IG Group items\\Our blueprint for the future - discussions\\IG_purpose_FoldOut_Blueprint_Editable (1).pdf",
+    "IG info - shared in my drive\\06_IG Group items\\Our blueprint for the future - discussions\\ND IG_purpose_FoldOut_Blueprint_Editable (1) - Copy.pdf"
+  ],
+  "2b078707ce43b7ae35192dcec779fc02": [
+    "IG info - shared in my drive\\11_Counterparty Credit Risk\\2020\\CMC Markets UK Plc_July20.pdf",
+    "IG info - shared in my drive\\Policies\\AML\\FY20-21\\Counterparty Assessment\\CMC UK\\CMC Markets UK Plc_July20.pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\FY20-21\\Counterparty Assessment\\CMC UK\\CMC Markets UK Plc_July20.pdf"
+  ],
+  "8fffa6b9a06ac7c14197df4e828e72d4": [
+    "IG info - shared in my drive\\11_Counterparty Credit Risk\\Financial CCR Policy\\2020\\Brightpool LTD - Financial Counterparty Credit Risk Policy.pdf",
+    "IG info - shared in my drive\\Policies\\IOM\\2021\\Risk\\Brightpool LTD - Financial Counterparty Credit Risk Policy.pdf",
+    "IG info - shared in my drive\\Policies\\Risk Management\\Brightpool LTD - Financial Counterparty Credit Risk Policy.pdf",
+    "IG info - shared in my drive\\policies manual\\IOM\\2021\\Risk\\Brightpool LTD - Financial Counterparty Credit Risk Policy.pdf",
+    "IG info - shared in my drive\\policies manual\\Risk Management\\2020\\Brightpool LTD - Financial Counterparty Credit Risk Policy.pdf"
+  ],
+  "a56b26c2f90a8be2ace8e08369318cc8": [
+    "IG info - shared in my drive\\12_Audited Financial Statements\\2021\\FY21 Brightpool Limited AFS fully signed.pdf",
+    "IG info - shared in my drive\\1_Capital Adequacy\\2021\\Audited\\FY21 Brightpool Limited AFS fully signed.pdf"
+  ],
+  "bc7f99104d5962be0af640c5db957a4e": [
+    "IG info - shared in my drive\\12_Audited Financial Statements\\2022\\CIF378_BPL AFS for the year ended 31.05.2022.pdf",
+    "IG info - shared in my drive\\1_Capital Adequacy\\2022\\Audited\\9. Brightpool Limited Audited Financial Statements for the year ended 31.05.2022 - signed dd27.07.2022.pdf"
+  ],
+  "4edd4152fb4a35d3ae25d52d39e13f3c": [
+    "IG info - shared in my drive\\12_Audited Financial Statements\\2023\\FY23 Brightpool Limited AFS fully signed dd27.07.23.pdf",
+    "IG info - shared in my drive\\1_Capital Adequacy\\2023\\Audited\\FY23 Brightpool Limited AFS fully signed dd27.07.23.pdf"
+  ],
+  "6631064ddf4ab55c5c7eec0304044b79": [
+    "IG info - shared in my drive\\12_Audited Financial Statements\\2024\\Brightpool Ltd - Fully executed FS_YE 31.05.2024_Final.pdf",
+    "IG info - shared in my drive\\1_Capital Adequacy\\2024\\Audited\\Fully executed FS_YE 31.05.2024_Final.pdf"
+  ],
+  "c3f2b7765049c969546866af2ae5b973": [
+    "IG info - shared in my drive\\12_Audited Financial Statements\\Financial Year 2020\\BPL_CIF378_FS FY2020_Signed.pdf",
+    "IG info - shared in my drive\\1_Capital Adequacy\\2020\\Audited\\Submitted to CySEC\\BPL FS FY2020_Signed.pdf"
+  ],
+  "c2fb1bdd79877b7735a700c84f144363": [
+    "IG info - shared in my drive\\12_ERC Papers\\Inter-Company Dividend and Capital Distribution Policy_v1.2_Final.pdf",
+    "IG info - shared in my drive\\12_ERC Papers\\Group Policies for inter-company div and capital distribution\\Inter-Company Dividend and Capital Distribution Policy_v1.2_Final.pdf"
+  ],
+  "96049d770d171f29055d2406f2b10709": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2021\\12. KRI Dashboard December(1).xlsx",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2021\\12. KRI Dashboard December.xlsx"
+  ],
+  "73a0c43c36ab57f8e974e7bcf9f5058e": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\1. January 2022\\1. KRI Dashboard January 2022(1).xlsx",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\1. January 2022\\1. KRI Dashboard January 2022.xlsx"
+  ],
+  "8be790f0e695afbd4b6602da727ffd98": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\10. October 2022\\10. KRI Dashboard October2022 (1).xlsx",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\10. October 2022\\10. KRI Dashboard October2022 .xlsx"
+  ],
+  "6d300a91e4bcbfab7ffa5f38d6f279ba": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\11. November 2022\\11. KRI Dashboard November 2022 (1).xlsx",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\11. November 2022\\11. KRI Dashboard November 2022 .xlsx"
+  ],
+  "1099dd8ab8b42943190d8d1b1027b62b": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\12. December 2022\\12. KRI Dashboard December 2022 (1).xlsx",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\12. December 2022\\12. KRI Dashboard December 2022 .xlsx"
+  ],
+  "378c9f39c18255f82df06e0e1db334e6": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\2. February 2022\\2. KRI Dashboard February 2022(1).xlsx",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\2. February 2022\\2. KRI Dashboard February 2022.xlsx"
+  ],
+  "d7b621f3a1521a9271e4c992b3ffa91f": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\3. March 2022\\3. KRI Dashboard March 2022(1).xlsx",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\3. March 2022\\3. KRI Dashboard March 2022.xlsx"
+  ],
+  "071ab92e3c8189087bdfc53c4584797d": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\4. April 2022\\4. KRI Dashboard April 2022(1).xlsx",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\4. April 2022\\4. KRI Dashboard April 2022.xlsx"
+  ],
+  "dcc1f0fb02e674631f82a8a876b13bd5": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\5. May 2022\\5. KRI Dashboard May 2022(1).xlsx",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\5. May 2022\\5. KRI Dashboard May 2022.xlsx"
+  ],
+  "c73e37905168a6a44cdb6ee966fdcf9b": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\6. June 2022\\6. KRI Dashboard June 2022(1).xlsx",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\6. June 2022\\6. KRI Dashboard June 2022.xlsx"
+  ],
+  "1cc3ddb02eca641653b34f486e3d0b0a": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\7. July 2022\\7. KRI Dashboard July 2022(1).xlsx",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\7. July 2022\\7. KRI Dashboard July 2022.xlsx"
+  ],
+  "40b2d4048a747d64dc73018f2b45823a": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\8. August 2022\\8. KRI Dashboard August 2022(1).xlsx",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\8. August 2022\\8. KRI Dashboard August 2022.xlsx"
+  ],
+  "8804d7e2f4ebe63f0f2bc272af915ed4": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\8. August 2022\\BrightPool Service Availability Report - 08.2022.pdf",
+    "IG info - shared in my drive\\16_Technology Risk Dashboard\\BrightPool Service Availability Report - 08.2022.pdf"
+  ],
+  "a68e74becf3b1b9a7c0e50afcb2875d4": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\9. September 2022\\9. KRI Dashboard September 2022 (1).xlsx",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\9. September 2022\\9. KRI Dashboard September 2022 .xlsx"
+  ],
+  "b510a64ffb9291ccba48e2d90d25d28d": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2022\\9. September 2022\\BrightPool Service Availability Report - 09.2022.pdf",
+    "IG info - shared in my drive\\16_Technology Risk Dashboard\\BrightPool Service Availability Report - 09.2022.pdf"
+  ],
+  "880ab76087c59b1e3e8edcd10019b0aa": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\1. January 2023\\1. KRI Dashboard January 2023 (1).xlsx",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\1. January 2023\\1. KRI Dashboard January 2023 .xlsx"
+  ],
+  "09225a0ed86561e1919a578f4e679f28": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\10. October 2023\\BPL - KRI Dashboard October 2023(1).msg",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\10. October 2023\\BPL - KRI Dashboard October 2023.msg"
+  ],
+  "eea41fe20cf617e8b04033cea1164992": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\10. October 2023\\OCTOBER 2023 PERFORMANCE COMMENTS(1).msg",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\10. October 2023\\OCTOBER 2023 PERFORMANCE COMMENTS.msg"
+  ],
+  "70da06ad9b4aaab233bed627e943247c": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\10. October 2023\\Red Breaches_ Brightpool - KRI Dashboard October 2023(1).msg",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\10. October 2023\\Red Breaches_ Brightpool - KRI Dashboard October 2023.msg"
+  ],
+  "42ac9e0f211865f8c58c70b37257a816": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\2. February 2023\\2. KRI Dashboard February 2023 (1).xlsx",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\2. February 2023\\2. KRI Dashboard February 2023 .xlsx"
+  ],
+  "b106e9894bca329bc667be3d0164ee65": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\3. March 2023\\3. KRI Dashboard March 2023 (1).xlsx",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\3. March 2023\\3. KRI Dashboard March 2023 .xlsx"
+  ],
+  "73184911373849ac41f46e246b292962": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\4. April 2023\\4. KRI Dashboard April 2023 (1).xlsx",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\4. April 2023\\4. KRI Dashboard April 2023 .xlsx"
+  ],
+  "51118fa7a9511189705d0c783e08a883": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\5. May 2023\\5. KRI Dashboard May 2023 (1).xlsx",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\5. May 2023\\5. KRI Dashboard May 2023 .xlsx"
+  ],
+  "18d480533e0f260e52dd6076c1aa02f3": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\6. June 2023\\6. KRI Dashboard June 2023 (1).xlsx",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\6. June 2023\\6. KRI Dashboard June 2023 .xlsx"
+  ],
+  "cdb9bfadd9d4e90affce0100194d3f80": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\7. July 2023\\7. KRI Dashboard July 2023 (1).xlsx",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\7. July 2023\\7. KRI Dashboard July 2023 .xlsx"
+  ],
+  "ebb411c15e417e8320c88b420c54c314": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\8. August 2023\\8. KRI Dashboard August 2023 (1).xlsx",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\8. August 2023\\8. KRI Dashboard August 2023 .xlsx"
+  ],
+  "e1373a3c7d6ecf196b4e6cf306a8a25e": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\9. September 2023\\9. KRI Dashboard September 2023 (1).xlsx",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2023\\9. September 2023\\9. KRI Dashboard September 2023 .xlsx"
+  ],
+  "7fb04c15b0644b0735302de21131ce54": [
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2024\\10. October 2024\\BrightPool Service Availability Report - 10.2024 (1).pptx",
+    "IG info - shared in my drive\\15_ KRI Dashboard\\2024\\10. October 2024\\BrightPool Service Availability Report - 10.2024 .pptx"
+  ],
+  "467ad6c1abd573ca4a967d8f00c3cd83": [
+    "IG info - shared in my drive\\17_Risk Acceptance Process\\2021\\Risk Acceptance Policy v1.0.pdf",
+    "IG info - shared in my drive\\17_Risk Acceptance Process\\2022\\Risk Acceptance Process\\Risk Acceptance Policy v1.0.pdf"
+  ],
+  "46b2c49f3cd12a77c4ad3f24fd560082": [
+    "IG info - shared in my drive\\17_Risk Acceptance Process\\2021\\Risk Acceptance Procedure v1.0.pdf",
+    "IG info - shared in my drive\\17_Risk Acceptance Process\\2022\\Risk Acceptance Process\\Risk Acceptance Procedure v1.0.pdf",
+    "IG info - shared in my drive\\17_Risk Acceptance Process\\2023\\Risk Acceptance Procedure v1.0.pdf"
+  ],
+  "07ef76a4e136d3f6db6fe2ad3fd13f19": [
+    "IG info - shared in my drive\\17_Risk Acceptance Process\\2022\\Risk Acceptance Policy Final.pdf",
+    "IG info - shared in my drive\\17_Risk Acceptance Process\\2023\\Risk Acceptance Policy.pdf"
+  ],
+  "1627a7c67679aa36b96f37a15e1bfc85": [
+    "IG info - shared in my drive\\17_Risk Acceptance Process\\2024\\Operational Risk Management Framework v2.3 ERC Approved.pdf",
+    "Important Data - Brightpool\\KH BPL\\Operational-Risk-Management-Framework-v2.3-ERC-Approved.pdf"
+  ],
+  "8274425de767b30b2fff1124ab54abb5": [
+    "IG info - shared in my drive\\18. New product quest Mini futures - Knockins or other\\19. Daily options\\Email.rtf",
+    "IG info - shared in my drive\\2. European town hall\\FY23\\05_EU Townhall July.rtf"
+  ],
+  "c6f7301e6dc5c05313c92429ec0b4d7e": [
+    "IG info - shared in my drive\\1_Capital Adequacy\\2024\\Audited\\bpl_dtf_June.csv",
+    "IG info - shared in my drive\\1_Capital Adequacy\\2024\\Q2\\bpl_dtf_June.csv"
+  ],
+  "185db6e7f9ec2d5b2c040076f5569077": [
+    "IG info - shared in my drive\\21_Algo Assessment\\Sept 24_Algo Training Attestation.pdf",
+    "IG info - shared in my drive\\policies manual\\Algos\\2024\\Training\\Sept 24_Algo Training Attestation.pdf"
+  ],
+  "39d750e4e168571b528132af896fdaa3": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Algorithm Trading Policy\\BPL_Algorithm Trading Policy_Final (May_2022).pdf",
+    "IG info - shared in my drive\\policies manual\\Algos\\2022\\BPL_Algorithm Trading Policy_Final (May_2022).pdf"
+  ],
+  "8a50f1cdd76639cf123075ef168bf84b": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Exposure Limits\\Brightpool LTD Market Risk Policy 2022.pdf",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Risk Policy\\Brightpool LTD Market Risk Policy 2022.pdf",
+    "IG info - shared in my drive\\8_Market Risk\\Market Risk Policy\\2022\\Brightpool LTD Market Risk Policy 2022.pdf"
+  ],
+  "cb7964dc5a620cb7aba600d7d1728985": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Investigating potential market abuse escalations\\Market Abuse Alert Check 02112022.msg",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Abuse Procedures and Alert Parameters\\Market Abuse Alert Check 02112022.msg"
+  ],
+  "679600f47eeff7a006fc516708ffe2d9": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Investigating potential market abuse escalations\\Market Abuse Alert Check 02122022.msg",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Abuse Procedures and Alert Parameters\\Market Abuse Alert Check 02122022.msg"
+  ],
+  "66643b88c9cc3c55970ca10af62ccd24": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Investigating potential market abuse escalations\\Market Abuse Alert Check 09122022.msg",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Abuse Procedures and Alert Parameters\\Market Abuse Alert Check 09122022.msg"
+  ],
+  "0673b7d9d2bd14d23632bf5626b62f1b": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Investigating potential market abuse escalations\\Market Abuse Alert Check 10112022.msg",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Abuse Procedures and Alert Parameters\\Market Abuse Alert Check 10112022.msg"
+  ],
+  "a1cc5c430b3467b4d5434d5bacf9964e": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Investigating potential market abuse escalations\\Market Abuse Alert Check 12102022.msg",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Abuse Procedures and Alert Parameters\\Market Abuse Alert Check 12102022.msg"
+  ],
+  "6d220d6eafffbbaa1289fe971bcd7cb3": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Investigating potential market abuse escalations\\Market Abuse Alert Check 13102022.msg",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Abuse Procedures and Alert Parameters\\Market Abuse Alert Check 13102022.msg"
+  ],
+  "284eefc919c03048134a7ae706b80a55": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Investigating potential market abuse escalations\\Market Abuse Alert Check 13122022.msg",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Abuse Procedures and Alert Parameters\\Market Abuse Alert Check 13122022.msg"
+  ],
+  "19a3d4e83d7a66e104758b6d0050897b": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Investigating potential market abuse escalations\\Market Abuse Alert Check 14102022.msg",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Abuse Procedures and Alert Parameters\\Market Abuse Alert Check 14102022.msg"
+  ],
+  "76809ea8d7d74c610093dd850159dac2": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Investigating potential market abuse escalations\\Market Abuse Alert Check 14122022.msg",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Abuse Procedures and Alert Parameters\\Market Abuse Alert Check 14122022.msg"
+  ],
+  "8b710d7875cf3afa8d9bc391df4cc8bc": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Investigating potential market abuse escalations\\Market Abuse Alert Check 28112022.msg",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Abuse Procedures and Alert Parameters\\Market Abuse Alert Check 28112022.msg"
+  ],
+  "dc061a37b0a872baf277be75aee12eea": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Investigating potential market abuse escalations\\Market Abuse Monitor - Triggered Trade 02032022.msg",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Abuse Procedures and Alert Parameters\\Market Abuse Monitor - Triggered Trade 02032022.msg"
+  ],
+  "2d9b1951b4cfee21f0ed7474b00d086b": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Investigating potential market abuse escalations\\Market Abuse Monitor - Triggered Trade 05052022.msg",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Abuse Procedures and Alert Parameters\\Market Abuse Monitor - Triggered Trade 05052022.msg"
+  ],
+  "e771da9203c7be7b42516449300a0f4b": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Investigating potential market abuse escalations\\Market Abuse Monitor - Triggered Trade 11032022.msg",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Abuse Procedures and Alert Parameters\\Market Abuse Monitor - Triggered Trade 11032022.msg"
+  ],
+  "ada759954786d17e5bddb7471d6353ff": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Investigating potential market abuse escalations\\Market Abuse Monitor - Triggered Trade 11052022.msg",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Abuse Procedures and Alert Parameters\\Market Abuse Monitor - Triggered Trade 11052022.msg"
+  ],
+  "ae0de00552331e7b5ba2acdd7639bd33": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Investigating potential market abuse escalations\\Market Abuse Monitor - Triggered Trade 14022022.msg",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Abuse Procedures and Alert Parameters\\Market Abuse Monitor - Triggered Trade 14022022.msg"
+  ],
+  "591cbd893609ff4d9ade6902db3e8b7c": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Investigating potential market abuse escalations\\Market Abuse Monitor - Triggered Trade 16032022.msg",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Abuse Procedures and Alert Parameters\\Market Abuse Monitor - Triggered Trade 16032022.msg"
+  ],
+  "3ebe9c6e3aba2b839df4760514e51bf7": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Investigating potential market abuse escalations\\Market Abuse Monitor - Triggered Trade 17032021.msg",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Abuse Procedures and Alert Parameters\\Market Abuse Monitor - Triggered Trade 17032021.msg"
+  ],
+  "15ff7ce4b525de011bdd387c95b4ad65": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Investigating potential market abuse escalations\\Market Abuse Monitor - Triggered Trade 24022022.msg",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Abuse Procedures and Alert Parameters\\Market Abuse Monitor - Triggered Trade 24022022.msg"
+  ],
+  "37a1ee78540ebd916c284d9ad2b26cda": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Investigating potential market abuse escalations\\Market Abuse Monitor - Triggered Trade 25042022.msg",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Abuse Procedures and Alert Parameters\\Market Abuse Monitor - Triggered Trade 25042022.msg"
+  ],
+  "b879cea31e0d7fe7c33619b1d671f94f": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Investigating potential market abuse escalations\\Market Abuse Monitor - Triggered Trade 28012022.msg",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Abuse Procedures and Alert Parameters\\Market Abuse Monitor - Triggered Trade 28012022.msg"
+  ],
+  "27a018c5757b99e1c70dfb6ec6a59f57": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Investigating potential market abuse escalations\\Market Abuse Monitor - Triggered Trades 02052022.msg",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Abuse Procedures and Alert Parameters\\Market Abuse Monitor - Triggered Trades 02052022.msg"
+  ],
+  "67a37ab1e78118aa3fb4f4abca31202b": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Investigating potential market abuse escalations\\Market Abuse Monitor - Triggered Trades 04052022.msg",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Abuse Procedures and Alert Parameters\\Market Abuse Monitor - Triggered Trades 04052022.msg"
+  ],
+  "db7e841bfbe4d4340092d1cddfb37f9a": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Investigating potential market abuse escalations\\RE Market Abuse Alert Check 13092022.msg",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Market Abuse Procedures and Alert Parameters\\RE Market Abuse Alert Check 13092022.msg"
+  ],
+  "d41d8cd98f00b204e9800998ecf8427e": [
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Leaver Access is Revoked\\Andrew Black.png",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Leaver Access is Revoked\\Cezary Gorka.png",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Leaver Access is Revoked\\Leaver Algo Evidence",
+    "IG info - shared in my drive\\21_Algo Assessment\\2022\\Validation\\Evidence\\Leaver Access is Revoked\\Mounika Chowdary.png",
+    "IG info - shared in my drive\\NEED\\Recruitment\\Charis Shanios docs\\CHS Deutsch B2 Zeugnis.pdf"
+  ],
+  "15f528b212241a920267ff7b8ca51910": [
+    "IG info - shared in my drive\\22_ICT\\Technology Risk Management Framework September 2023.pdf",
+    "IG info - shared in my drive\\7_Risk Management Reports\\Risk Management Framework\\2024\\Technology Risk Management Framework September 2023.pdf"
+  ],
+  "442a89c061b5963b41654a520c90964c": [
+    "IG info - shared in my drive\\22_ICT\\Evidence for Audit\\3.2.2 IT Strategy\\BPL_BoD_Minutes_10.07.2024_Signed FINAL.pdf",
+    "IG info - shared in my drive\\22_ICT\\Evidence for Audit\\3.7.2 BC Plan\\BPL_BoD_Minutes_10.07.2024_Signed FINAL.pdf"
+  ],
+  "2f2239901414dee9d51d05d45bd64b66": [
+    "IG info - shared in my drive\\22_ICT\\Evidence for Audit\\3.2.2 IT Strategy\\BPL_BOD_Presentation_Q2_Jul_2024.pptx",
+    "IG info - shared in my drive\\22_ICT\\Evidence for Audit\\3.7.2 BC Plan\\BPL_BOD_Presentation_Q2_Jul_2024.pptx"
+  ],
+  "cefafe62d6d9fad90bab99e9e9f88346": [
+    "IG info - shared in my drive\\22_ICT\\Evidence for Audit\\3.2.2 IT Strategy\\Brightpool IT Strategy.pdf",
+    "IG info - shared in my drive\\22_ICT\\IT Strategy\\July 2024\\Brightpool IT Strategy.pdf"
+  ],
+  "99d4ad76574a89d63e4379d5879a16fd": [
+    "IG info - shared in my drive\\22_ICT\\Evidence for Audit\\3.3.1 RAS, RMF, KRI\\BPL Risk Management Framework 2024.pdf",
+    "IG info - shared in my drive\\7_Risk Management Reports\\Risk Management Framework\\2024\\BPL Risk Management Framework 2024.pdf"
+  ],
+  "328051e994ba2ef1414947a508f58d6a": [
+    "IG info - shared in my drive\\24_Algo Trading\\Additional Information\\IG Algorithm Trading Policy_Final.pdf",
+    "IG info - shared in my drive\\NEED\\IG Algorithm Trading Policy_Final.pdf",
+    "Important Data - Brightpool\\KH BPL\\IG Algorithm Trading Policy_Final.pdf"
+  ],
+  "d5c78d4ec4de3760ae89e9f1b1cdd393": [
+    "IG info - shared in my drive\\24_Algo Trading\\Already provided to CySEC\\3. BPL_Algorithm Trading Policy_Sept 2019.pdf",
+    "IG info - shared in my drive\\Policies\\Algos\\Algo Policy 2019\\BPL_Algorithm Trading Policy_Sept 2019.pdf",
+    "IG info - shared in my drive\\policies manual\\Algos\\Algo Policy 2019\\BPL_Algorithm Trading Policy_Sept 2019.pdf"
+  ],
+  "d5c22b220383a2f6a199c746c5e787e1": [
+    "IG info - shared in my drive\\7_Risk Management Reports\\Regulatory Capital Policy\\2020\\Brightpool LTD - Regulatory Capital Policy.pdf",
+    "IG info - shared in my drive\\Policies\\IOM\\2021\\Risk\\Brightpool LTD - Regulatory Capital Policy.pdf",
+    "IG info - shared in my drive\\Policies\\Risk Management\\Brightpool LTD - Regulatory Capital Policy.pdf",
+    "IG info - shared in my drive\\policies manual\\IOM\\2021\\Risk\\Brightpool LTD - Regulatory Capital Policy.pdf",
+    "IG info - shared in my drive\\policies manual\\Risk Management\\2020\\Brightpool LTD - Regulatory Capital Policy.pdf"
+  ],
+  "17044eca5deb46c88bd8f5c7ac04ee42": [
+    "IG info - shared in my drive\\7_Risk Management Reports\\Risk Appetite Statement\\2020\\11. November 2020\\BPL RAS 2020 11 - Risk Appetite Statement.pdf",
+    "IG info - shared in my drive\\Policies\\IOM\\2021\\Risk\\BPL RAS 2020 11 - Risk Appetite Statement.pdf",
+    "IG info - shared in my drive\\Policies\\Risk Management\\BPL RAS 2020 11 - Risk Appetite Statement.pdf",
+    "IG info - shared in my drive\\policies manual\\IOM\\2021\\Risk\\BPL RAS 2020 11 - Risk Appetite Statement.pdf",
+    "IG info - shared in my drive\\policies manual\\Risk Management\\2020\\BPL RAS 2020 11 - Risk Appetite Statement.pdf"
+  ],
+  "8b8c0fd88a997852dc0742d61269c2f8": [
+    "IG info - shared in my drive\\7_Risk Management Reports\\Risk Appetite Statement\\2022\\Group\\Approved BRC\\Risk Management Framework BRC 2022 05.pdf",
+    "IG info - shared in my drive\\7_Risk Management Reports\\Risk Management Framework\\2022\\Risk Management Framework BRC 2022 05.pdf"
+  ],
+  "518c831da17edda0398e369acd5cc872": [
+    "IG info - shared in my drive\\7_Risk Management Reports\\Risk Management Framework\\Governance Dec24.docx",
+    "IG info - shared in my drive\\7_Risk Management Reports\\Risk Management Framework\\2024\\Governance.docx"
+  ],
+  "1d11a1c17302ba856264ff70150b079a": [
+    "IG info - shared in my drive\\7_Risk Management Reports\\Risk Management Framework\\2020\\BPL Risk Management Framework 2020.pdf",
+    "IG info - shared in my drive\\Policies\\IOM\\2021\\Risk\\BPL Risk Management Framework 2020.pdf",
+    "IG info - shared in my drive\\Policies\\Risk Management\\BPL Risk Management Framework 2020.pdf",
+    "IG info - shared in my drive\\policies manual\\IOM\\2021\\Risk\\BPL Risk Management Framework 2020.pdf",
+    "IG info - shared in my drive\\policies manual\\Risk Management\\2020\\BPL Risk Management Framework 2020.pdf"
+  ],
+  "563a5cf668a73ba091d1d768c14d2082": [
+    "IG info - shared in my drive\\7_Risk Management Reports\\Risk Management Framework\\2022\\MTF Trade lifecycle Updated June 2022.vsdx",
+    "IG info - shared in my drive\\7_Risk Management Reports\\Risk Management Framework\\2023\\MTF Trade lifecycle Updated June 2022.vsdx"
+  ],
+  "7acde2ff37828b1e9c535876786d7c47": [
+    "IG info - shared in my drive\\8_Market Risk\\Market Risk calculations and info\\Capital Adequacy and Pillar 1 calculation overview Jan2020.pptx",
+    "Important Data - Brightpool\\KH BPL\\Capital Adequacy and Pillar 1 calculation overview Jan2020.pptx"
+  ],
+  "402b0ef6d962b0708a0ba9d59e8a0fdd": [
+    "IG info - shared in my drive\\8_Market Risk\\Market Risk Policy\\2020\\Brightpool LTD Market Risk Policy.pdf",
+    "IG info - shared in my drive\\Policies\\IOM\\2021\\Risk\\Brightpool LTD Market Risk Policy.pdf",
+    "IG info - shared in my drive\\Policies\\Risk Management\\Brightpool LTD Market Risk Policy.pdf",
+    "IG info - shared in my drive\\policies manual\\IOM\\2021\\Risk\\Brightpool LTD Market Risk Policy.pdf",
+    "IG info - shared in my drive\\policies manual\\Risk Management\\2020\\Brightpool LTD Market Risk Policy.pdf"
+  ],
+  "70c709f7608f0d6b0df3adc6d7d0ddfc": [
+    "IG info - shared in my drive\\8_Market Risk\\Market Risk Policy\\2021\\Brightpool LTD Market Risk Policy 2021.pdf",
+    "IG info - shared in my drive\\Risk Training\\2021\\Brightpool LTD Market Risk Policy 2021.pdf"
+  ],
+  "f7ba5685c49d9eaff54cfeecb3bb70ee": [
+    "IG info - shared in my drive\\8_Market Risk\\Market Risk Policy\\2022\\6.4 Group Market Risk Policy 2022.pdf",
+    "IG info - shared in my drive\\8_Market Risk\\Market Risk Policy\\Group MRK Risk Policy\\6.4 Group Market Risk Policy 2022.pdf"
+  ],
+  "6ccbea475dada8b2af5ae66a28bbb482": [
+    "IG info - shared in my drive\\8_Market Risk\\Market Risk Policy\\2023\\Group Market Risk Policy 2022.pdf",
+    "IG info - shared in my drive\\8_Market Risk\\Market Risk Policy\\Group MRK Risk Policy\\Group Market Risk Policy 2023.pdf"
+  ],
+  "62fbf33922ebd628239eec14df047315": [
+    "IG info - shared in my drive\\Commercial\\BPL Strategy Day 2025\\ETD trends 2024.pdf",
+    "Kyriakos - IG DATA\\info\\ETD trends 2024.pdf"
+  ],
+  "7db16df531fe3bd2c79e08da08e2ba0f": [
+    "IG info - shared in my drive\\Commercial\\BrightPool - Alica Docs\\BrightPool Marketing\\Turbo setup V2 Dec24.docx",
+    "IG info - shared in my drive\\Commercial\\BrightPool Marketing\\Turbo setup V2 Dec24.docx"
+  ],
+  "ba799d30b0079e811cc6e1774eedbb86": [
+    "IG info - shared in my drive\\Commercial\\Commercial Contracts Germany\\20240521_Anbindungsvereinbarung.docx (4) (3).pdf",
+    "IG info - shared in my drive\\Commercial\\Commercial Contracts Germany\\20240521_Anbindungsvereinbarung.docx (4) (4).pdf"
+  ],
+  "61132fd060db114f4d651d7f26d43022": [
+    "IG info - shared in my drive\\Dealing Policies 2024-2025\\Final Reviewed January 2025\\~$ BPL_Hedging Procedure_September 2023.docx",
+    "Important Data - Brightpool\\Final-Approved Procedures\\Final Reviewed January 2025\\~$ BPL_Hedging Procedure_September 2023.docx"
+  ],
+  "20da82c2c51fb37b514d5c60ac09d90f": [
+    "IG info - shared in my drive\\Dealing Policies 2024-2025\\Final Reviewed January 2025\\~$. BPL_Pricing Model Indices Manual_September 2023.docx",
+    "Important Data - Brightpool\\Final-Approved Procedures\\Final Reviewed January 2025\\~$. BPL_Pricing Model Indices Manual_September 2023.docx"
+  ],
+  "3c38cc28b5d03193fa6a2cdd0502fe32": [
+    "IG info - shared in my drive\\NEED\\Hedging Procedure\\Hedging Procedure Amendments .msg",
+    "Kyriakos - IG DATA\\Hedging Procedure\\Hedging Procedure Amendments .msg"
+  ],
+  "ec85606c21c6e9ecad4a899d7ee54c8c": [
+    "IG info - shared in my drive\\NEED\\Hedging Procedure\\Hedging STKIND & USSTKIND procedure.msg",
+    "Kyriakos - IG DATA\\Hedging Procedure\\Hedging STKIND & USSTKIND procedure.msg"
+  ],
+  "2702d0fcb53cacd034783f23f4a3fc4d": [
+    "IG info - shared in my drive\\NEED\\Hedging Procedure\\RE_ MTD Performance Report 13 November 2020 - Daily P&L 166_121 EUR & RTV 273_.msg",
+    "Kyriakos - IG DATA\\Hedging Procedure\\RE_ MTD Performance Report 13 November 2020 - Daily P&L 166_121 EUR & RTV 273%.msg"
+  ],
+  "f9e4a0620464cd45622d0e61c9c4ce0c": [
+    "IG info - shared in my drive\\NEED\\IG & Turbo General Information\\Training-Induction\\Turbo24s guide ENGLISH.pdf",
+    "Kyriakos - IG DATA\\Attachments\\Turbo24s guide ENGLISH 1.pdf"
+  ],
+  "3483f4dafdd1c0b006f4541c06547ccf": [
+    "IG info - shared in my drive\\Newsletter\\BPL Newsletter - February 2025.docx",
+    "IG info - shared in my drive\\Onedrive -work\\Newsletter\\BPL Newsletter - February 2025.docx"
+  ],
+  "832a633a57754daff85b8aca92421487": [
+    "IG info - shared in my drive\\Newsletter\\BPL Newsletter - February 2025.pdf",
+    "IG info - shared in my drive\\Onedrive -work\\Newsletter\\BPL Newsletter - February 2025.pdf",
+    "Kyriakos - IG DATA\\info\\BPL Newsletter - February 2025.pdf"
+  ],
+  "6f489c28528b28dee3d02edee3cec090": [
+    "IG info - shared in my drive\\Newsletter\\BPL Newsletter - March 2025.docx",
+    "IG info - shared in my drive\\Onedrive -work\\Newsletter\\BPL Newsletter - March 2025.docx"
+  ],
+  "8012101019273f7b77efd9cc82a2f566": [
+    "IG info - shared in my drive\\Onedrive -work\\Presentations\\BPL Business Overview.pptx",
+    "IG info - shared in my drive\\Presentations\\BPL Business Overview.pptx"
+  ],
+  "d31510e271340c80324bfbbd1479bc9c": [
+    "IG info - shared in my drive\\Onedrive -work\\Presentations\\BPL Roadmap 1 pager.pptx",
+    "IG info - shared in my drive\\Presentations\\BPL Roadmap 1 pager.pptx"
+  ],
+  "24387ba2f3b90d044beb827ce7506c8f": [
+    "IG info - shared in my drive\\Onedrive -work\\Presentations\\MMD Weekly Presentation Q1 FY25.pptx",
+    "IG info - shared in my drive\\Presentations\\MMD Weekly Presentation Q1 FY25.pptx"
+  ],
+  "f530b76aafba3cf44eccc42ea3c0f5eb": [
+    "IG info - shared in my drive\\Onedrive -work\\Presentations\\MMD Weekly Presentation Q1.pptx",
+    "IG info - shared in my drive\\Presentations\\MMD Weekly Presentation Q1.pptx"
+  ],
+  "72a2fadda81ddd2c8594e26aba68fce0": [
+    "IG info - shared in my drive\\Onedrive -work\\Presentations\\MMD Weekly Presentation_20082024_Short.pptx",
+    "IG info - shared in my drive\\Presentations\\MMD Weekly Presentation_20082024_Short.pptx"
+  ],
+  "5c9d4f0c125cb659a9d9ed31b28a61d9": [
+    "IG info - shared in my drive\\Onedrive -work\\Presentations\\PC Agenda - November24.pptx",
+    "IG info - shared in my drive\\Presentations\\PC Agenda - November24.pptx"
+  ],
+  "2cacd903310990de0c5ffb1ec9f3890d": [
+    "IG info - shared in my drive\\Policies\\5. Conduct Risk Framework 2018.pdf",
+    "IG info - shared in my drive\\policies manual\\5. Conduct Risk Framework 2018.pdf"
+  ],
+  "23c40b298163b6f48dc827f98588091d": [
+    "IG info - shared in my drive\\Policies\\5.3.1 - Regulatory Capital Policy 2018 10.pdf",
+    "IG info - shared in my drive\\policies manual\\5.3.1 - Regulatory Capital Policy 2018 10.pdf"
+  ],
+  "7dcc04b00316cfa7b121db7df3541257": [
+    "IG info - shared in my drive\\Policies\\Acceptable Use Policy v3.0.pdf",
+    "IG info - shared in my drive\\policies manual\\Acceptable Use Policy v3.0.pdf"
+  ],
+  "1cc3f14626ab262fb2395379e6933a5a": [
+    "IG info - shared in my drive\\Policies\\Access Control Policy v5.1.pdf",
+    "IG info - shared in my drive\\policies manual\\Access Control Policy v5.1.pdf"
+  ],
+  "ecf28551a0de91a5d7ce74c5f2abb326": [
+    "IG info - shared in my drive\\Policies\\BCP UK 2017.pdf",
+    "IG info - shared in my drive\\policies manual\\BCP UK 2017.pdf"
+  ],
+  "35ccfb7a516460ed73e4593b369fb3a1": [
+    "IG info - shared in my drive\\Policies\\compliance guide v3 0 July 2016.pdf",
+    "IG info - shared in my drive\\policies manual\\compliance guide v3 0 July 2016.pdf"
+  ],
+  "3cdd877937016547074a0c9858908180": [
+    "IG info - shared in my drive\\Policies\\Conduct_Risk_Ignite Policy Training 2021.pdf",
+    "IG info - shared in my drive\\policies manual\\Conduct_Risk_Ignite Policy Training 2021.pdf"
+  ],
+  "0b07508dfd826e5f6ec58ac0c46a0c98": [
+    "IG info - shared in my drive\\Policies\\Gifts Hospitality Policy 2020.pdf",
+    "IG info - shared in my drive\\policies manual\\Gifts Hospitality Policy 2020.pdf"
+  ],
+  "94cfa64b6b7ce56e84e2d3b57c9866a7": [
+    "IG info - shared in my drive\\Policies\\Gifts Hospitality Policy Jan 2020.pdf",
+    "IG info - shared in my drive\\policies manual\\Gifts Hospitality Policy Jan 2020.pdf"
+  ],
+  "e584bcf38021a07cca898959a60731af": [
+    "IG info - shared in my drive\\Policies\\IG - Whistleblowing Policy 2020.pdf",
+    "IG info - shared in my drive\\policies manual\\IG - Whistleblowing Policy 2020.pdf"
+  ],
+  "c5ff938a26d714e68c12c9a735f07594": [
+    "IG info - shared in my drive\\Policies\\Policy Governance Framework -  April 2017 FINAL.pdf",
+    "IG info - shared in my drive\\policies manual\\Policy Governance Framework -  April 2017 FINAL.pdf"
+  ],
+  "8227b14c43b62749710b6a9d562fdcb5": [
+    "IG info - shared in my drive\\Policies\\Whistleblowing policy Jan 2019 final clean version.pdf",
+    "IG info - shared in my drive\\policies manual\\Whistleblowing policy Jan 2019 final clean version.pdf"
+  ],
+  "812ef67f691231bf00c2ace41a84f054": [
+    "IG info - shared in my drive\\Policies\\Algos\\2021\\BPL_Algorithm Trading Policy_Final (2021).pdf",
+    "IG info - shared in my drive\\policies manual\\Algos\\2021\\BPL_Algorithm Trading Policy_Final (2021).pdf"
+  ],
+  "acb88e022c10dc07c4f17683e5d7e51d": [
+    "IG info - shared in my drive\\Policies\\AML\\BPL_AML and CTF Policy_2020_Oct Final.pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\2020 Policy\\BPL_AML and CTF Policy_2020_Oct Final.pdf"
+  ],
+  "ee79e8287b24ae6510c64d7f8012e9c2": [
+    "IG info - shared in my drive\\Policies\\AML\\BPL_AML and CTF Procedures_2020_Oct Final.pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\2020 Policy\\BPL_AML and CTF Procedures_2020_Oct Final.pdf"
+  ],
+  "d83e142c4b1df4951b21c498c919f8e9": [
+    "IG info - shared in my drive\\Policies\\AML\\FY20-21\\AML-CTF_questionnaire_YA_Sept.pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\FY20-21\\AML-CTF_questionnaire_YA_Sept.pdf"
+  ],
+  "f9bf5f7e8ddaabf2f73cd743dcdf7944": [
+    "IG info - shared in my drive\\Policies\\AML\\FY20-21\\Counterparty Assessment\\Citi Bank\\6. Citibank Europe Plc.pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\FY20-21\\Counterparty Assessment\\Citi Bank\\6. Citibank Europe Plc.pdf"
+  ],
+  "4d604c5f654b12cf579a7fdb4c34d01e": [
+    "IG info - shared in my drive\\Policies\\AML\\FY20-21\\Counterparty Assessment\\Citi Bank\\Citibank Europe Plc_DJ Search.pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\FY20-21\\Counterparty Assessment\\Citi Bank\\Citibank Europe Plc_DJ Search.pdf"
+  ],
+  "6c7f6560ce5054e47f12c472c3714ef8": [
+    "IG info - shared in my drive\\Policies\\AML\\FY20-21\\Counterparty Assessment\\CMC Germany\\Credit Risk Assessment_CMC Germany Jan21 v2.pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\FY20-21\\Counterparty Assessment\\CMC Germany\\Credit Risk Assessment_CMC Germany Jan21 v2.pdf"
+  ],
+  "7e0dbc0a4dd4b002c96351d5f38e4a24": [
+    "IG info - shared in my drive\\Policies\\AML\\FY20-21\\Counterparty Assessment\\CMC Germany\\Dow_Jones_Risk_And_Compliance_Search_Details (7).pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\FY20-21\\Counterparty Assessment\\CMC Germany\\Dow_Jones_Risk_And_Compliance_Search_Details (7).pdf"
+  ],
+  "07c9d1fcc7802b5d077a82655c178b6d": [
+    "IG info - shared in my drive\\Policies\\AML\\FY20-21\\Counterparty Assessment\\CMC UK\\Dow_Jones_Risk_And_Compliance_Search_Details (6).pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\FY20-21\\Counterparty Assessment\\CMC UK\\Dow_Jones_Risk_And_Compliance_Search_Details (6).pdf"
+  ],
+  "67834968de58169485cacc3d99e5368f": [
+    "IG info - shared in my drive\\Policies\\AML\\FY20-21\\Counterparty Assessment\\CMC UK\\Response to FCA findings_files\\logo.png",
+    "IG info - shared in my drive\\policies manual\\AML\\FY20-21\\Counterparty Assessment\\CMC UK\\Response to FCA findings_files\\logo.png"
+  ],
+  "1114f70836907151d0df7c0fddd334f1": [
+    "IG info - shared in my drive\\Policies\\AML\\FY20-21\\Counterparty Assessment\\Lloyds Bank\\19. Lloyds Bank Plc.pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\FY20-21\\Counterparty Assessment\\Lloyds Bank\\19. Lloyds Bank Plc.pdf"
+  ],
+  "6a1c6c11ba27d0ad898346edb7e530d5": [
+    "IG info - shared in my drive\\Policies\\AML\\FY20-21\\Counterparty Assessment\\Lloyds Bank\\Lloyds Bank DowJones Search.pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\FY20-21\\Counterparty Assessment\\Lloyds Bank\\Lloyds Bank DowJones Search.pdf"
+  ],
+  "746e0276b4cf674d31ed8a574cdd5c7c": [
+    "IG info - shared in my drive\\Policies\\AML\\FY20-21\\Counterparty Assessment\\LMAX\\Dow_Jones_Risk_And_Compliance_Search_Details (10).pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\FY20-21\\Counterparty Assessment\\LMAX\\Dow_Jones_Risk_And_Compliance_Search_Details (10).pdf"
+  ],
+  "57047ba09de503371827c398f2d3b3f4": [
+    "IG info - shared in my drive\\Policies\\AML\\FY20-21\\Counterparty Assessment\\LMAX\\Dow_Jones_Risk_And_Compliance_Search_Details (11).pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\FY20-21\\Counterparty Assessment\\LMAX\\Dow_Jones_Risk_And_Compliance_Search_Details (11).pdf"
+  ],
+  "cd3fec5b4c9e2df15a46623bcb58d661": [
+    "IG info - shared in my drive\\Policies\\AML\\FY20-21\\Counterparty Assessment\\LMAX\\Dow_Jones_Risk_And_Compliance_Search_Details (8).pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\FY20-21\\Counterparty Assessment\\LMAX\\Dow_Jones_Risk_And_Compliance_Search_Details (8).pdf"
+  ],
+  "40fb02e22230c53b18d9d9bdfe4cc314": [
+    "IG info - shared in my drive\\Policies\\AML\\FY20-21\\Counterparty Assessment\\LMAX\\Dow_Jones_Risk_And_Compliance_Search_Details (9).pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\FY20-21\\Counterparty Assessment\\LMAX\\Dow_Jones_Risk_And_Compliance_Search_Details (9).pdf"
+  ],
+  "554614a881a195f5e43c7d5ed612997b": [
+    "IG info - shared in my drive\\Policies\\AML\\FY20-21\\Counterparty Assessment\\Maybank\\MayBank_DowJones Search 25.08.2021.pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\FY20-21\\Counterparty Assessment\\Maybank\\MayBank_DowJones Search 25.08.2021.pdf"
+  ],
+  "f77c3f930d2a76c182dfdc565e654a1a": [
+    "IG info - shared in my drive\\Policies\\AML\\FY20-21\\Counterparty Assessment\\UniCredit\\28. UniCredit Bank AG.pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\FY20-21\\Counterparty Assessment\\UniCredit\\28. UniCredit Bank AG.pdf"
+  ],
+  "27aa36844ea8d54325dd5f3c1c73cafc": [
+    "IG info - shared in my drive\\Policies\\AML\\FY20-21\\Counterparty Assessment\\UniCredit\\UniCredit Bank AG DJ_Search.pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\FY20-21\\Counterparty Assessment\\UniCredit\\UniCredit Bank AG DJ_Search.pdf"
+  ],
+  "d3797b56fd376ad586e252f808cc1f9b": [
+    "IG info - shared in my drive\\Policies\\AML\\FY20-21\\Group\\AML and CTF Global Policy June 2020_Final_Rebranded.pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\FY20-21\\Group\\AML and CTF Global Policy June 2020_Final_Rebranded.pdf"
+  ],
+  "c64e26f39133db6888c3a338d75deab8": [
+    "IG info - shared in my drive\\Policies\\AML\\FY20-21\\Group\\Spectrum Due-Diligence-Questionnaire for members.pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\FY20-21\\Group\\Spectrum Due-Diligence-Questionnaire for members.pdf"
+  ],
+  "9436a1b9b62bb65b71c52a1fecef7be8": [
+    "IG info - shared in my drive\\Policies\\AML\\FY20-21\\Group\\UK_KYC Account Opening Procedures v2.7.pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\FY20-21\\Group\\UK_KYC Account Opening Procedures v2.7.pdf"
+  ],
+  "7970a96d883758e328a6c44431cb77a2": [
+    "IG info - shared in my drive\\Policies\\AML\\FY21-22\\BPL_AML and CTF Policy_2021_May Final.pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\FY21-22\\BPL_AML and CTF Policy_2021_May Final.pdf"
+  ],
+  "e6e8397aab3fd253136a6b97af3200e7": [
+    "IG info - shared in my drive\\Policies\\AML\\FY21-22\\BPL_AML and CTF Procedures_2021_May Final.pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\FY21-22\\BPL_AML and CTF Procedures_2021_May Final.pdf"
+  ],
+  "e1e976f20c5a671e3d68a5c80d9725a0": [
+    "IG info - shared in my drive\\Policies\\AML\\Old\\BPL_AML and CTF Policy Not 2019 - Final DRAFT .pdf",
+    "IG info - shared in my drive\\policies manual\\AML\\Old\\BPL_AML and CTF Policy Not 2019 - Final DRAFT .pdf"
+  ],
+  "c010ddab82e121c5e3708ab4feafd412": [
+    "IG info - shared in my drive\\Policies\\AML\\Old\\GROUP AML and CTF Global Policy October 201821.doc.rtf",
+    "IG info - shared in my drive\\policies manual\\AML\\Old\\GROUP AML and CTF Global Policy October 201821.doc.rtf"
+  ],
+  "98b6414c06208d696f76ae3b66a1e3d3": [
+    "IG info - shared in my drive\\Policies\\BCP Policy\\BPL\\2020\\BPL_BCP-DR_JAN 2020 Final.pdf",
+    "IG info - shared in my drive\\policies manual\\BCP Policy\\BPL\\2020\\BPL_BCP-DR_JAN 2020 Final.pdf"
+  ],
+  "6398bcc0f9187da19f5b2370dd7b5255": [
+    "IG info - shared in my drive\\Policies\\BCP Policy\\BPL\\2021\\BPL BC Plan Final 2021.pdf",
+    "IG info - shared in my drive\\policies manual\\BCP Policy\\BPL\\2021\\BPL BC Plan Final 2021.pdf"
+  ],
+  "69c4564913c5bba62a461c5f0c066a4f": [
+    "IG info - shared in my drive\\Policies\\BCP Policy\\BPL\\2021\\BPL_BC Policy v1.2_Final_May21.pdf",
+    "IG info - shared in my drive\\policies manual\\BCP Policy\\BPL\\2021\\BPL_BC Policy v1.2_Final_May21.pdf"
+  ],
+  "f82d31b70ecc681371402b1720803ef2": [
+    "IG info - shared in my drive\\Policies\\BCP Policy\\BPL\\2021\\limassol-cyprus-best-places.jpg",
+    "IG info - shared in my drive\\policies manual\\BCP Policy\\BPL\\2021\\limassol-cyprus-best-places.jpg"
+  ],
+  "849c0853d0a5cafa43c8316fa28bb858": [
+    "IG info - shared in my drive\\Policies\\BCP Policy\\BPL\\2021\\other\\BCP SA May2020.pdf",
+    "IG info - shared in my drive\\policies manual\\BCP Policy\\BPL\\2021\\other\\BCP SA May2020.pdf"
+  ],
+  "f26f6e602896b489621a9346ddd93bfb": [
+    "IG info - shared in my drive\\Policies\\COI\\Group Conflicts Policy Nov 2018 FINAL1.doc.rtf",
+    "IG info - shared in my drive\\policies manual\\COI\\Group Conflicts Policy Nov 2018 FINAL1.doc.rtf"
+  ],
+  "a87e9465ee0df5464663160cc11c8a57": [
+    "IG info - shared in my drive\\Policies\\IOM\\2019\\BPL_IOM_2019_updated July 19 - Copy.pdf",
+    "IG info - shared in my drive\\Policies\\IOM\\2019\\BPL_IOM_2019_updated July 19.pdf",
+    "IG info - shared in my drive\\policies manual\\IOM\\2019\\BPL_IOM_2019_updated July 19 - Copy.pdf",
+    "IG info - shared in my drive\\policies manual\\IOM\\2019\\BPL_IOM_2019_updated July 19.pdf"
+  ],
+  "28b7a9e5583902c709256e0eb71690e5": [
+    "IG info - shared in my drive\\Policies\\IOM\\2020\\BPL_IOM_2020_Final V.1 - Part_1.pdf",
+    "IG info - shared in my drive\\policies manual\\IOM\\2020\\BPL_IOM_2020_Final V.1 - Part_1.pdf"
+  ],
+  "1ae5cfe8bb1b055bafebb9dd5a391168": [
+    "IG info - shared in my drive\\Policies\\IOM\\2020\\BPL_IOM_2020_Final V.1 - Part_2.pdf",
+    "IG info - shared in my drive\\policies manual\\IOM\\2020\\BPL_IOM_2020_Final V.1 - Part_2.pdf"
+  ],
+  "f4ac9cb26afc554af15f2c8d5acdde68": [
+    "IG info - shared in my drive\\Policies\\IOM\\2020\\BPL_IOM_2020_Final V.1 - Part_3.pdf",
+    "IG info - shared in my drive\\policies manual\\IOM\\2020\\BPL_IOM_2020_Final V.1 - Part_3.pdf"
+  ],
+  "f36c6acd96dc16d1f1dfac78e553845a": [
+    "IG info - shared in my drive\\Policies\\IOM\\2020\\BPL_IOM_2020_Final V.1 - Part_4.pdf",
+    "IG info - shared in my drive\\policies manual\\IOM\\2020\\BPL_IOM_2020_Final V.1 - Part_4.pdf"
+  ],
+  "f18acc03ffffc99a24a5cb5cdb9b62cb": [
+    "IG info - shared in my drive\\Policies\\IOM\\2020\\BPL_IOM_2020_Final V.1 - Part_5.pdf",
+    "IG info - shared in my drive\\policies manual\\IOM\\2020\\BPL_IOM_2020_Final V.1 - Part_5.pdf"
+  ],
+  "5e9164089d7678665262d420d938ba7a": [
+    "IG info - shared in my drive\\Policies\\IOM\\2020\\BPL_IOM_2020_Final V.1.pdf",
+    "IG info - shared in my drive\\policies manual\\IOM\\2020\\BPL_IOM_2020_Final V.1.pdf"
+  ],
+  "82a8120ce1c1871e3a3949fe0a9f2d37": [
+    "IG info - shared in my drive\\Policies\\IOM\\2021\\Risk\\Risk Management Policy  - November 2020.pdf",
+    "IG info - shared in my drive\\Policies\\Risk Management\\Risk Management Policy  - November 2020.pdf",
+    "IG info - shared in my drive\\policies manual\\IOM\\2021\\Risk\\Risk Management Policy  - November 2020.pdf",
+    "IG info - shared in my drive\\policies manual\\Risk Management\\2020\\Risk Management Policy  - November 2020.pdf"
+  ],
+  "1f461aefb8a9e1ef6f37ba6c8862f6a9": [
+    "IG info - shared in my drive\\Policies\\Market Abuse\\BPL_Market Abuse Policy_Final 2020.pdf",
+    "IG info - shared in my drive\\policies manual\\Market Abuse\\2020\\BPL_Market Abuse Policy_Final 2020.pdf"
+  ],
+  "89425b5661ef5d92a0d37f0b62eb5d3a": [
+    "IG info - shared in my drive\\Policies\\Market Abuse\\Supporting Documents\\Group Market Abuse Policy 2018 v1.7.pdf",
+    "IG info - shared in my drive\\policies manual\\Market Abuse\\2020\\Supporting Documents\\Group Market Abuse Policy 2018 v1.7.pdf"
+  ],
+  "0d9b8b44824c16889756354183cc4697": [
+    "IG info - shared in my drive\\Policies\\Risk Management\\Brightpool Risk Training.pdf",
+    "IG info - shared in my drive\\policies manual\\Risk Management\\2020\\Brightpool Risk Training.pdf"
+  ],
+  "718ee8d27aeb41dcaa44ca83a38b462f": [
+    "IG info - shared in my drive\\Policies\\Risk Management\\Risk Management Policy  - November 2021.pdf",
+    "IG info - shared in my drive\\policies manual\\Risk Management\\2021\\Risk Management Policy  - November 2021.pdf"
+  ],
+  "83582cf394c5188dcdc63f50586bb5c6": [
+    "IG info - shared in my drive\\policies manual\\Algos\\2023\\Trainings\\NEW ALGO GUI - TRAINING 1-20240110_155909-Meeting Recording.mp4",
+    "IG info - shared in my drive\\policies manual\\Algos\\2024\\Training\\NEW ALGO GUI - TRAINING 1-20240110_155909-Meeting Recording.mp4"
+  ],
+  "f16528182f15622d796b92e49d1e37df": [
+    "IG info - shared in my drive\\policies manual\\Algos\\2023\\Trainings\\NEW ALGO GUI - TRAINING 1-20240111_160101-Meeting Recording.mp4",
+    "IG info - shared in my drive\\policies manual\\Algos\\2024\\Training\\NEW ALGO GUI - TRAINING 1-20240111_160101-Meeting Recording.mp4"
+  ],
+  "a22c432ceb447c45a9b54e7e9350f0b2": [
+    "IG info - shared in my drive\\policies manual\\Algos\\2023\\Trainings\\NEW ALGO GUI - TRAINING 2-20240118_160252-Meeting Recording.mp4",
+    "IG info - shared in my drive\\policies manual\\Algos\\2024\\Training\\NEW ALGO GUI - TRAINING 2-20240118_160252-Meeting Recording.mp4"
+  ],
+  "de3daa268ac011976f777be288842887": [
+    "IG info - shared in my drive\\policies manual\\Algos\\2023\\Trainings\\NEW ALGO GUI - TRAINING FINAL.mp4",
+    "IG info - shared in my drive\\policies manual\\Algos\\2024\\Training\\NEW ALGO GUI - TRAINING FINAL.mp4"
+  ],
+  "988b345a09d9facfb5ca3971ae8bc705": [
+    "Important Data - Brightpool\\Final-Approved Procedures\\Disorderly Trading Procedure.docx",
+    "Kyriakos - IG DATA\\Disorderly Trading (Grafana)\\Disorderly Trading Procedure.docx"
+  ],
+  "30e9b223afdb832145ec4156f07ff6e1": [
+    "Important Data - Brightpool\\KH BPL\\2025 Germany Leverage Trading Report - Executive Briefing CFD Roundtable.pdf",
+    "Kyriakos - IG DATA\\info\\2025-Germany-Leverage-Trading-Report---Executive-Briefing-CFD-Roundtable.pdf"
+  ],
+  "831131ff62bf8e945c2cc9d5c92c260e": [
+    "Important Data - Brightpool\\KH BPL\\Group Client Credit Risk Policy - 2023 (1).pdf",
+    "Important Data - Brightpool\\KH BPL\\Group Client Credit Risk Policy - 2023.pdf"
+  ],
+  "f403e7f8e63a276fdd46e0a18716645b": [
+    "Important Data - Brightpool\\KH BPL\\IG-Europe-CSAT-and-NPS_Q4-25.pdf",
+    "Kyriakos - IG DATA\\info\\IG-Europe-CSAT-and-NPS_Q4-25.pdf"
+  ],
+  "8cad4ff83c37cd95acd274bdf2a731aa": [
+    "Important Data - Brightpool\\KH BPL\\IG-UK-Competitor-Intelligence-Newsletter---May-2025.pdf",
+    "Kyriakos - IG DATA\\info\\IG-UK-Competitor-Intelligence-Newsletter---May-2025.pdf"
+  ],
+  "0ac5ed5c4843c27dacf10d9508e90a5f": [
+    "Important Data - Brightpool\\KH BPL\\Risk Policy for Digital Asset Counterparties_ March 2025 - Final (1).pdf",
+    "Important Data - Brightpool\\KH BPL\\Risk Policy for Digital Asset Counterparties_ March 2025 - Final.pdf"
+  ],
+  "455a5759a2b91b06c8376ba19f9431ea": [
+    "Kyriakos - IG DATA\\Attachments\\BPL Active Assets L1 less than 10000.xlsx",
+    "Kyriakos - IG DATA\\info\\BPL Active Assets L1 less than 10000.xlsx"
+  ],
+  "20571a269c9eb9d5643d3cf5aff57ab9": [
+    "Kyriakos - IG DATA\\Attachments\\Intro Turbo24.pptx",
+    "Kyriakos - IG DATA\\KH 2\\IT TOWN\\Intro Turbo24.pptx"
+  ],
+  "17f78dc213e10c266582908ba8d8f94f": [
+    "Kyriakos - IG DATA\\Attachments\\IT Town Hall Presentation_FINAL.pptx",
+    "Kyriakos - IG DATA\\KH 2\\IT TOWN\\IT Town Hall Presentation_FINAL.pptx"
+  ],
+  "9b8c0c3cf7de843d0fb44233c55be7ca": [
+    "Kyriakos - IG DATA\\New Underlyng's Batch 4\\L2_EM 03.11.xlsx",
+    "Kyriakos - IG DATA\\New Underlyng's Batch 4\\OMS-Hedging.xlsx"
+  ]
+}

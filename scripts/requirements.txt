@@ -1,0 +1,9 @@
+anthropic
+numpy
+scipy
+pandas
+matplotlib
+python-dateutil
+cycler
+openpyxl
+xlrd

@@ -1,0 +1,19 @@
+[project]
+name = "ai-project"
+version = "0.1.0"
+description = "AI Project for market reports"
+dependencies = [
+    "google-api-python-client>=2.193.0",
+    "google-auth>=2.49.1",
+    "google-auth-oauthlib>=1.3.0",
+    "markdown>=3.10.2",
+    "streamlit",
+    "yfinance>=1.2.0",
+]
+
+[tool.setuptools]
+packages = []
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"

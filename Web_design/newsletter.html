@@ -149,14 +149,14 @@
     <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
     {
       "symbols": [
-        {"proName": "FOREXCOM:SPXUSD", "title": "S&P 500"},
-        {"proName": "FOREXCOM:NSXUSD", "title": "Nasdaq 100"},
+        {"proName": "TVC:SPX", "title": "S&P 500"},
+        {"proName": "TVC:NDX", "title": "Nasdaq 100"},
         {"description": "DXY", "proName": "TVC:DXY"},
         {"description": "Gold", "proName": "TVC:GOLD"},
         {"description": "Silver", "proName": "TVC:SILVER"},
-        {"description": "WTI Crude", "proName": "NYMEX:CL1!"},
+        {"description": "WTI Crude", "proName": "TVC:USOIL"},
         {"description": "US 10Y", "proName": "TVC:US10Y"},
-        {"description": "VIX", "proName": "CBOE:VIX"},
+        {"description": "VIX", "proName": "TVC:VIX"},
         {"description": "BTC/USD", "proName": "BITSTAMP:BTCUSD"},
         {"description": "EUR/USD", "proName": "FX:EURUSD"},
         {"description": "GBP/USD", "proName": "FX:GBPUSD"},
@@ -283,35 +283,103 @@
 <!-- ECONOMIC CALENDAR -->
 <section class="section--sm">
   <div class="container">
-    <div class="reveal" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:32px; flex-wrap:wrap; gap:16px;">
-      <div>
-        <span class="label">Economic Calendar</span>
-        <h2 style="font-family:'Cormorant Garamond',serif; font-weight:300; font-size:clamp(1.5rem,2.5vw,2.25rem); line-height:1.15; letter-spacing:-0.01em; color:var(--text-1); margin-bottom:8px;">Upcoming market-moving events.</h2>
-        <p class="body-text" style="max-width:500px;">Central bank decisions, CPI, NFP, and earnings — the data releases that drive macro regimes.</p>
-      </div>
-      <div style="display:flex; align-items:center; gap:8px; flex-shrink:0;">
-        <span style="width:6px; height:6px; border-radius:50%; background:#4ecb71; display:inline-block; animation:livePulse 2s ease-in-out infinite;"></span>
-        <span style="font-family:'DM Mono',monospace; font-size:0.625rem; color:var(--text-3); letter-spacing:0.14em; text-transform:uppercase;">Live</span>
+    <!-- Header row -->
+    <div class="reveal" style="margin-bottom:24px;">
+      <span class="label">Economic Calendar</span>
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-top:8px;">
+        <div>
+          <h2 style="font-family:'Cormorant Garamond',serif; font-weight:300; font-size:clamp(1.5rem,2.5vw,2.25rem); line-height:1.15; letter-spacing:-0.01em; color:var(--text-1); margin-bottom:8px;">Upcoming market-moving events.</h2>
+          <p class="body-text" style="max-width:500px;">Central bank decisions, CPI, NFP, and earnings — the data releases that drive macro regimes.</p>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; flex-shrink:0;">
+          <span style="width:6px; height:6px; border-radius:50%; background:#4ecb71; display:inline-block; animation:livePulse 2s ease-in-out infinite;"></span>
+          <span style="font-family:'DM Mono',monospace; font-size:0.625rem; color:var(--text-3); letter-spacing:0.14em; text-transform:uppercase;">Live</span>
+        </div>
       </div>
     </div>
+
+    <!-- Date range selector -->
+    <div class="reveal" style="display:flex; align-items:center; gap:8px; margin-bottom:20px; flex-wrap:wrap;">
+      <span style="font-family:'DM Mono',monospace; font-size:0.625rem; color:var(--text-3); letter-spacing:0.12em; text-transform:uppercase; margin-right:4px;">View:</span>
+      <button onclick="loadCalendar('today')"      id="cal-btn-today"     class="cal-range-btn cal-active">Today</button>
+      <button onclick="loadCalendar('thisWeek')"   id="cal-btn-thisWeek"  class="cal-range-btn">This Week</button>
+      <button onclick="loadCalendar('nextWeek')"   id="cal-btn-nextWeek"  class="cal-range-btn">Next Week</button>
+      <button onclick="loadCalendar('thisMonth')"  id="cal-btn-thisMonth" class="cal-range-btn">This Month</button>
+    </div>
+
+    <!-- Calendar widget container -->
     <div class="reveal" style="border:1px solid var(--navy-600); border-radius:var(--radius-md); overflow:hidden; height:480px;">
-      <div class="tradingview-widget-container" style="height:100%;width:100%;">
-        <div class="tradingview-widget-container__widget" style="height:100%;"></div>
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
-        {
-          "colorTheme": "dark",
-          "isTransparent": true,
-          "width": "100%",
-          "height": "480",
-          "locale": "en",
-          "importanceFilter": "0,1",
-          "countryFilter": "us,eu,gb,jp,cn,ch,ca,au"
-        }
-        </script>
-      </div>
+      <div id="cal-widget-wrap" style="height:100%;width:100%;"></div>
     </div>
   </div>
 </section>
+
+<style>
+.cal-range-btn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-2);
+  background: transparent;
+  border: 1px solid var(--navy-600);
+  border-radius: 4px;
+  padding: 6px 14px;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.cal-range-btn:hover {
+  color: var(--text-1);
+  border-color: rgba(197,146,58,0.5);
+  background: rgba(197,146,58,0.06);
+}
+.cal-range-btn.cal-active {
+  color: var(--gold-mid);
+  border-color: var(--gold-mid);
+  background: rgba(197,146,58,0.08);
+}
+</style>
+
+<script>
+function loadCalendar(dateRange) {
+  // Update active button state
+  document.querySelectorAll('.cal-range-btn').forEach(function(btn) {
+    btn.classList.remove('cal-active');
+  });
+  var activeBtn = document.getElementById('cal-btn-' + dateRange);
+  if (activeBtn) activeBtn.classList.add('cal-active');
+
+  // Rebuild widget container (TradingView requires full DOM replacement)
+  var wrap = document.getElementById('cal-widget-wrap');
+  wrap.innerHTML = '';
+  var container = document.createElement('div');
+  container.className = 'tradingview-widget-container';
+  container.style.height = '100%';
+  container.style.width = '100%';
+  var inner = document.createElement('div');
+  inner.className = 'tradingview-widget-container__widget';
+  inner.style.height = '100%';
+  container.appendChild(inner);
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-events.js';
+  script.async = true;
+  script.text = JSON.stringify({
+    colorTheme: 'dark',
+    isTransparent: true,
+    width: '100%',
+    height: '480',
+    locale: 'en',
+    importanceFilter: '0,1',
+    countryFilter: 'us,eu,gb,jp,cn,ch,ca,au',
+    dateRange: dateRange
+  });
+  container.appendChild(script);
+  wrap.appendChild(container);
+}
+// Load default on page ready
+document.addEventListener('DOMContentLoaded', function() { loadCalendar('today'); });
+</script>
 
 <hr class="rule">
 
