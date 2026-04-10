@@ -248,7 +248,7 @@ def build_report_html(md_text, date, display_date):
     </a>
     <div class="nav-links">
       <a href="../about.html">About</a>
-      <a href="../newsletter.html" class="active">Newsletter</a>
+      <a href="../newsletter.html" class="active">Financial News</a>
       <a href="../consulting.html">Consulting</a>
       <a href="../insights.html">Insights</a>
       <a href="../tools.html">Tools</a>
@@ -275,8 +275,6 @@ def build_report_html(md_text, date, display_date):
         {{"description": "Gold", "proName": "TVC:GOLD"}},
         {{"description": "Silver", "proName": "TVC:SILVER"}},
         {{"description": "WTI Crude", "proName": "TVC:USOIL"}},
-        {{"description": "US 10Y", "proName": "TVC:US10Y"}},
-        {{"description": "VIX", "proName": "TVC:VIX"}},
         {{"description": "BTC/USD", "proName": "BITSTAMP:BTCUSD"}},
         {{"description": "EUR/USD", "proName": "FX:EURUSD"}},
         {{"description": "GBP/USD", "proName": "FX:GBPUSD"}},
@@ -340,7 +338,7 @@ def build_report_html(md_text, date, display_date):
         <ul>
           <li><a href="../index.html">Home</a></li>
           <li><a href="../about.html">About</a></li>
-          <li><a href="../newsletter.html">Newsletter</a></li>
+          <li><a href="../newsletter.html">Financial News</a></li>
           <li><a href="../insights.html">Insights</a></li>
         </ul>
       </div>
