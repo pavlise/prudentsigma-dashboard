@@ -142,6 +142,36 @@
   </div>
 </nav>
 
+<!-- TICKER BAR -->
+<div class="ticker-bar">
+  <div class="tradingview-widget-container" style="height:100%;width:100%;">
+    <div class="tradingview-widget-container__widget" style="height:100%;"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+      "symbols": [
+        {"proName": "FOREXCOM:SPXUSD", "title": "S&P 500"},
+        {"proName": "FOREXCOM:NSXUSD", "title": "Nasdaq 100"},
+        {"description": "DXY", "proName": "TVC:DXY"},
+        {"description": "Gold", "proName": "TVC:GOLD"},
+        {"description": "Silver", "proName": "TVC:SILVER"},
+        {"description": "WTI Crude", "proName": "NYMEX:CL1!"},
+        {"description": "US 10Y", "proName": "TVC:US10Y"},
+        {"description": "VIX", "proName": "CBOE:VIX"},
+        {"description": "BTC/USD", "proName": "BITSTAMP:BTCUSD"},
+        {"description": "EUR/USD", "proName": "FX:EURUSD"},
+        {"description": "GBP/USD", "proName": "FX:GBPUSD"},
+        {"description": "USD/JPY", "proName": "FX:USDJPY"}
+      ],
+      "showSymbolLogo": false,
+      "isTransparent": true,
+      "displayMode": "adaptive",
+      "colorTheme": "dark",
+      "locale": "en"
+    }
+    </script>
+  </div>
+</div>
+
 <!-- PAGE HERO -->
 <section class="page-hero">
   <div class="container">
@@ -249,6 +279,41 @@
     </div>
   </div>
 </section>
+
+<!-- ECONOMIC CALENDAR -->
+<section class="section--sm">
+  <div class="container">
+    <div class="reveal" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:32px; flex-wrap:wrap; gap:16px;">
+      <div>
+        <span class="label">Economic Calendar</span>
+        <h2 style="font-family:'Cormorant Garamond',serif; font-weight:300; font-size:clamp(1.5rem,2.5vw,2.25rem); line-height:1.15; letter-spacing:-0.01em; color:var(--text-1); margin-bottom:8px;">Upcoming market-moving events.</h2>
+        <p class="body-text" style="max-width:500px;">Central bank decisions, CPI, NFP, and earnings — the data releases that drive macro regimes.</p>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px; flex-shrink:0;">
+        <span style="width:6px; height:6px; border-radius:50%; background:#4ecb71; display:inline-block; animation:livePulse 2s ease-in-out infinite;"></span>
+        <span style="font-family:'DM Mono',monospace; font-size:0.625rem; color:var(--text-3); letter-spacing:0.14em; text-transform:uppercase;">Live</span>
+      </div>
+    </div>
+    <div class="reveal" style="border:1px solid var(--navy-600); border-radius:var(--radius-md); overflow:hidden; height:480px;">
+      <div class="tradingview-widget-container" style="height:100%;width:100%;">
+        <div class="tradingview-widget-container__widget" style="height:100%;"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
+        {
+          "colorTheme": "dark",
+          "isTransparent": true,
+          "width": "100%",
+          "height": "480",
+          "locale": "en",
+          "importanceFilter": "0,1",
+          "countryFilter": "us,eu,gb,jp,cn,ch,ca,au"
+        }
+        </script>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
 
 <!-- DAILY MARKET REPORTS ARCHIVE -->
 <section class="section" id="daily-reports">

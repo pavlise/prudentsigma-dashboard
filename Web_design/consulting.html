@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulting — PrudentSigma</title>
+  <meta name="description" content="Strategic advisory for regulated finance businesses, fintech operators, and serious investors. Institutional experience applied to your decisions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .service-card-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.625rem;
+      letter-spacing: 0.14em;
+      color: var(--gold-mid);
+      opacity: 0.7;
+      margin-bottom: 20px;
+    }
+    .service-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.375rem;
+      color: var(--text-1);
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
+    .for-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--navy-600);
+    }
+    .for-item:last-child { border-bottom: none; }
+    .for-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: rgba(197,146,58,0.07);
+      border: 1px solid rgba(197,146,58,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .for-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--gold-mid);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .for-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.1875rem;
+      color: var(--text-1);
+      margin-bottom: 8px;
+    }
+    .cta-section {
+      background: var(--navy-800);
+      border-top: 1px solid var(--navy-600);
+      border-bottom: 1px solid var(--navy-600);
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(197,146,58,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .process-item {
+      padding: 36px;
+      background: var(--navy-800);
+      position: relative;
+    }
+    .process-item:first-child { border-radius: var(--radius-md) 0 0 var(--radius-md); }
+    .process-item:last-child  { border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+    .process-connector {
+      position: absolute;
+      right: 0;
+      top: 52px;
+      width: 2px;
+      height: 2px;
+      border-right: 1px dashed rgba(197,146,58,0.3);
+      height: 36px;
+      top: 36px;
+      right: -1px;
+    }
+    @media (max-width: 900px) {
+      .process-grid { grid-template-columns: 1fr; }
+      .process-item { border-radius: 0 !important; }
+      .process-item:first-child { border-radius: var(--radius-md) var(--radius-md) 0 0 !important; }
+      .process-item:last-child  { border-radius: 0 0 var(--radius-md) var(--radius-md) !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="60" r="56" stroke="url(#cns-nfg)" stroke-width="1" opacity="0.35"/>
+        <path d="M28 32 L92 32 L57 59 L92 86 L28 86" stroke="url(#cns-nsg)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+        <defs>
+          <linearGradient id="cns-nsg" x1="28" y1="32" x2="92" y2="86" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#C5923A"/>
+            <stop offset="50%" stop-color="#DFB06A"/>
+            <stop offset="100%" stop-color="#C5923A"/>
+          </linearGradient>
+          <linearGradient id="cns-nfg" x1="4" y1="4" x2="116" y2="116" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#C5923A" stop-opacity="0.6"/>
+            <stop offset="1" stop-color="#C5923A" stop-opacity="0.1"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      PrudentSigma
+    </a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="consulting.html" class="active">Consulting</a>
+      <a href="insights.html">Insights</a>
+      <a href="tools.html">Tools</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary">Book a Call</a>
+      <button class="nav-burger" id="nav-burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- TICKER BAR -->
+<div class="ticker-bar">
+  <div class="tradingview-widget-container" style="height:100%;width:100%;">
+    <div class="tradingview-widget-container__widget" style="height:100%;"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+      "symbols": [
+        {"proName": "FOREXCOM:SPXUSD", "title": "S&P 500"},
+        {"proName": "FOREXCOM:NSXUSD", "title": "Nasdaq 100"},
+        {"description": "DXY", "proName": "TVC:DXY"},
+        {"description": "Gold", "proName": "TVC:GOLD"},
+        {"description": "Silver", "proName": "TVC:SILVER"},
+        {"description": "WTI Crude", "proName": "NYMEX:CL1!"},
+        {"description": "US 10Y", "proName": "TVC:US10Y"},
+        {"description": "VIX", "proName": "CBOE:VIX"},
+        {"description": "BTC/USD", "proName": "BITSTAMP:BTCUSD"},
+        {"description": "EUR/USD", "proName": "FX:EURUSD"},
+        {"description": "GBP/USD", "proName": "FX:GBPUSD"},
+        {"description": "USD/JPY", "proName": "FX:USDJPY"}
+      ],
+      "showSymbolLogo": false,
+      "isTransparent": true,
+      "displayMode": "adaptive",
+      "colorTheme": "dark",
+      "locale": "en"
+    }
+    </script>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="label anim-1">Advisory</span>
+    <h1 class="display anim-2" style="max-width:760px;">Strategic clarity for regulated finance businesses and serious investors.</h1>
+    <p class="subtitle anim-3" style="max-width:600px; margin-top:24px;">Institutional experience applied to specific, consequential decisions. Not generic advice — structured thinking for problems that actually matter.</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:48px;">
+      <span class="label">Service areas</span>
+      <h2 class="title">Four areas of focused expertise.</h2>
+    </div>
+    <div class="grid-2">
+
+      <div class="card card--accent reveal">
+        <div class="service-card-num">01</div>
+        <div class="service-card-title">Brokerage &amp; Execution Advisory</div>
+        <p class="body-text">Review and design of best execution frameworks, dealing desk operations, execution governance, and trading oversight for regulated entities. Understanding where your execution process is exposed — and how to fix it.</p>
+        <div style="margin-top:24px; display:flex; flex-wrap:wrap; gap:8px;">
+          <span class="badge badge-gold">Best Execution</span>
+          <span class="badge badge-muted">Dealing Desk</span>
+          <span class="badge badge-muted">Governance</span>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="service-card-num">02</div>
+        <div class="service-card-title">Risk Framework Design</div>
+        <p class="body-text">Building practical risk management frameworks for regulated entities. Market risk, operational risk, and product risk — structured to satisfy both regulatory requirements and genuine operational utility.</p>
+        <div style="margin-top:24px; display:flex; flex-wrap:wrap; gap:8px;">
+          <span class="badge badge-gold">Market Risk</span>
+          <span class="badge badge-muted">Operational Risk</span>
+          <span class="badge badge-muted">Regulation</span>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="service-card-num">03</div>
+        <div class="service-card-title">Fintech &amp; Product Strategy</div>
+        <p class="body-text">Strategic advisory for fintech operators navigating product governance, regulatory requirements, and operational structure. How to build product with clarity on compliance obligations, risk controls, and sustainable operating models.</p>
+        <div style="margin-top:24px; display:flex; flex-wrap:wrap; gap:8px;">
+          <span class="badge badge-gold">Product Governance</span>
+          <span class="badge badge-muted">Fintech</span>
+          <span class="badge badge-muted">Strategy</span>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="service-card-num">04</div>
+        <div class="service-card-title">Capital Allocation Coaching</div>
+        <p class="body-text">Structured guidance for professionals making significant personal or business financial decisions. Process-driven, not product-driven. Helping serious individuals apply the same discipline to their own capital that institutional frameworks apply to portfolios.</p>
+        <div style="margin-top:24px; display:flex; flex-wrap:wrap; gap:8px;">
+          <span class="badge badge-gold">Capital Decisions</span>
+          <span class="badge badge-muted">Wealth Structuring</span>
+          <span class="badge badge-muted">Advisory</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- WHO THIS IS FOR -->
+<section class="section">
+  <div class="container">
+    <div class="grid-2-col">
+      <div class="reveal">
+        <span class="label">Clients</span>
+        <h2 class="title" style="margin-bottom:8px;">Who this is for.</h2>
+        <p class="body-text" style="margin-top:16px; margin-bottom:40px;">Three types of clients benefit most from this work. All share one thing: they are making decisions where the quality of thinking materially affects outcomes.</p>
+      </div>
+      <div class="reveal">
+        <div class="for-item">
+          <div class="for-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <div>
+            <div class="for-title">Regulated finance businesses</div>
+            <p class="body-text" style="font-size:0.875rem;">Brokers, dealing firms, and regulated entities that need practical help with execution governance, risk frameworks, product oversight, and operational structure.</p>
+          </div>
+        </div>
+        <div class="for-item">
+          <div class="for-icon">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div>
+            <div class="for-title">Fintech operators and founders</div>
+            <p class="body-text" style="font-size:0.875rem;">Building in regulated environments requires a different kind of strategic thinking. We help fintech teams make better product and governance decisions earlier.</p>
+          </div>
+        </div>
+        <div class="for-item">
+          <div class="for-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div>
+            <div class="for-title">High-income professionals</div>
+            <p class="body-text" style="font-size:0.875rem;">Professionals who have capital to deploy and want a structured, conflict-free framework for making better financial decisions — not product recommendations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- PROCESS -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:48px;">
+      <span class="label">How it works</span>
+      <h2 class="title">A simple, clear process.</h2>
+    </div>
+    <div class="process-grid reveal">
+      <div class="process-item">
+        <div style="font-family:'DM Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; color:var(--gold-mid); margin-bottom:20px;">01</div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:1.25rem; color:var(--text-1); margin-bottom:12px;">Initial Call</h3>
+        <p class="body-text" style="font-size:0.875rem;">A 30-minute conversation to understand the problem, the context, and whether there is a genuine fit. No commitment, no sales process — just a direct conversation.</p>
+      </div>
+      <div class="process-item">
+        <div style="font-family:'DM Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; color:var(--gold-mid); margin-bottom:20px;">02</div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:1.25rem; color:var(--text-1); margin-bottom:12px;">Scope &amp; Proposal</h3>
+        <p class="body-text" style="font-size:0.875rem;">A clear written proposal covering the scope of work, deliverables, timeframe, and engagement format. No vague retainers, no ambiguous outcomes.</p>
+      </div>
+      <div class="process-item">
+        <div style="font-family:'DM Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; color:var(--gold-mid); margin-bottom:20px;">03</div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:1.25rem; color:var(--text-1); margin-bottom:12px;">Engagement</h3>
+        <p class="body-text" style="font-size:0.875rem;">Focused, direct work with clear milestones. Engagements are kept deliberately small to maintain quality and responsiveness. Output is practical, actionable, and documented.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+  <div class="container" style="position:relative; z-index:1;">
+    <div class="reveal" style="max-width:560px; margin:0 auto;">
+      <span class="label" style="display:block; text-align:center;">Get started</span>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-weight:300; font-size:clamp(2rem,5vw,3.2rem); line-height:1.15; color:var(--text-1); text-align:center; margin-bottom:20px;">Ready to have a direct conversation?</h2>
+      <p class="body-text" style="text-align:center; margin-bottom:36px;">If you have a specific problem that fits within these areas, book a call. The conversation is free, direct, and without obligation.</p>
+      <div style="display:flex; justify-content:center;">
+        <a href="contact.html" class="btn btn-primary btn-lg">Book an Initial Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <svg width="24" height="24" viewBox="0 0 120 120" fill="none">
+            <path d="M28 32 L92 32 L57 59 L92 86 L28 86" stroke="url(#cns-ffg)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+            <defs>
+              <linearGradient id="cns-ffg" x1="28" y1="32" x2="92" y2="86" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#C5923A"/>
+                <stop offset="50%" stop-color="#DFB06A"/>
+                <stop offset="100%" stop-color="#C5923A"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          PrudentSigma
+        </div>
+        <p class="footer-tagline">A finance and decision-intelligence platform for serious people.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="newsletter.html">Newsletter</a></li>
+          <li><a href="insights.html">Insights</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="consulting.html">Consulting</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Philosophy</h4>
+        <div class="footer-beliefs">
+          <div class="footer-belief"><span class="footer-belief-num">01</span><span class="footer-belief-text">Risk comes before return</span></div>
+          <div class="footer-belief"><span class="footer-belief-num">02</span><span class="footer-belief-text">Clarity beats complexity</span></div>
+          <div class="footer-belief"><span class="footer-belief-num">03</span><span class="footer-belief-text">Discipline compounds</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom-copy">&copy; 2025 PrudentSigma. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const ro = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }});
+  }, { threshold: 0.1 });
+  reveals.forEach(r => ro.observe(r));
+
+  const burger = document.getElementById('nav-burger');
+  const nav = document.getElementById('main-nav');
+  if (burger) burger.addEventListener('click', () => nav.classList.toggle('nav-open'));
+</script>
+
+</body>
+</html>
