@@ -39,6 +39,7 @@
 
   --container-max: 1160px;
   --nav-height: 72px;
+  --ticker-height: 44px;
 }
 
 /* --- Reset --- */
@@ -314,6 +315,30 @@ button, input, select, textarea {
   transform: translateY(-6.5px) rotate(-45deg);
 }
 
+/* --- Ticker Bar (TradingView live data feed) --- */
+.ticker-bar {
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  z-index: 850;
+  height: var(--ticker-height);
+  background: rgba(6, 11, 23, 0.98);
+  border-bottom: 1px solid rgba(197, 146, 58, 0.10);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  overflow: hidden;
+}
+
+.ticker-bar .tradingview-widget-container {
+  height: 100%;
+  width: 100%;
+}
+
+.ticker-bar .tradingview-widget-container__widget {
+  height: 100%;
+}
+
 /* --- Buttons --- */
 .btn {
   display: inline-flex;
@@ -523,7 +548,7 @@ button, input, select, textarea {
 
 /* --- Page Hero --- */
 .page-hero {
-  padding: calc(var(--nav-height) + 80px) 0 80px;
+  padding: calc(var(--nav-height) + var(--ticker-height) + 80px) 0 80px;
   position: relative;
   overflow: hidden;
 }
@@ -1019,6 +1044,11 @@ button, input, select, textarea {
 }
 
 /* --- Animations --- */
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.85); }
+}
+
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -1262,6 +1292,14 @@ button, input, select, textarea {
 }
 
 @media (max-width: 600px) {
+  :root {
+    --ticker-height: 0px;
+  }
+
+  .ticker-bar {
+    display: none;
+  }
+
   .calc-result-grid {
     grid-template-columns: 1fr;
   }

@@ -17,7 +17,7 @@
       align-items: center;
       position: relative;
       overflow: hidden;
-      padding: calc(var(--nav-height) + 80px) 0 100px;
+      padding: calc(var(--nav-height) + var(--ticker-height) + 80px) 0 100px;
     }
     .hero-bg {
       position: absolute;
@@ -218,6 +218,36 @@
   </div>
 </nav>
 
+<!-- TICKER BAR -->
+<div class="ticker-bar">
+  <div class="tradingview-widget-container" style="height:100%;width:100%;">
+    <div class="tradingview-widget-container__widget" style="height:100%;"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+      "symbols": [
+        {"proName": "FOREXCOM:SPXUSD", "title": "S&P 500"},
+        {"proName": "FOREXCOM:NSXUSD", "title": "Nasdaq 100"},
+        {"description": "DXY", "proName": "TVC:DXY"},
+        {"description": "Gold", "proName": "TVC:GOLD"},
+        {"description": "Silver", "proName": "TVC:SILVER"},
+        {"description": "WTI Crude", "proName": "NYMEX:CL1!"},
+        {"description": "US 10Y", "proName": "TVC:US10Y"},
+        {"description": "VIX", "proName": "CBOE:VIX"},
+        {"description": "BTC/USD", "proName": "BITSTAMP:BTCUSD"},
+        {"description": "EUR/USD", "proName": "FX:EURUSD"},
+        {"description": "GBP/USD", "proName": "FX:GBPUSD"},
+        {"description": "USD/JPY", "proName": "FX:USDJPY"}
+      ],
+      "showSymbolLogo": false,
+      "isTransparent": true,
+      "displayMode": "adaptive",
+      "colorTheme": "dark",
+      "locale": "en"
+    }
+    </script>
+  </div>
+</div>
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
@@ -273,6 +303,96 @@
     </div>
   </div>
 </div>
+
+<!-- LIVE MARKETS -->
+<section style="background:var(--navy-800); border-bottom:1px solid var(--navy-600); padding:60px 0; position:relative; overflow:hidden;">
+  <div style="position:absolute; inset:0; background:radial-gradient(ellipse 70% 90% at 50% 50%, rgba(197,146,58,0.025) 0%, transparent 70%); pointer-events:none;"></div>
+  <div class="container" style="position:relative;">
+    <div class="reveal" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:32px; flex-wrap:wrap; gap:16px;">
+      <div>
+        <span class="label">Live Markets</span>
+        <h2 style="font-family:'Cormorant Garamond',serif; font-weight:300; font-size:clamp(1.5rem,2.5vw,2.25rem); line-height:1.15; letter-spacing:-0.01em; color:var(--text-1); margin-bottom:0;">Real-time overview across all asset classes.</h2>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px; flex-shrink:0;">
+        <span style="width:6px; height:6px; border-radius:50%; background:#4ecb71; display:inline-block; animation:livePulse 2s ease-in-out infinite;"></span>
+        <span style="font-family:'DM Mono',monospace; font-size:0.625rem; color:var(--text-3); letter-spacing:0.14em; text-transform:uppercase;">Live Data</span>
+      </div>
+    </div>
+    <div class="reveal" style="border:1px solid var(--navy-600); border-radius:var(--radius-md); overflow:hidden; height:520px;">
+      <div class="tradingview-widget-container" style="height:100%;width:100%;">
+        <div class="tradingview-widget-container__widget" style="height:100%;"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+        {
+          "colorTheme": "dark",
+          "dateRange": "1D",
+          "showChart": true,
+          "locale": "en",
+          "largeChartUrl": "",
+          "isTransparent": true,
+          "showSymbolLogo": true,
+          "showFloatingTooltip": false,
+          "width": "100%",
+          "height": "520",
+          "plotLineColorGrowing": "rgba(197, 146, 58, 1)",
+          "plotLineColorFalling": "rgba(255, 80, 80, 1)",
+          "gridLineColor": "rgba(23, 37, 64, 0.6)",
+          "scaleFontColor": "rgba(168, 189, 212, 0.8)",
+          "belowLineFillColorGrowing": "rgba(197, 146, 58, 0.08)",
+          "belowLineFillColorFalling": "rgba(255, 80, 80, 0.04)",
+          "belowLineFillColorGrowingBottom": "rgba(197, 146, 58, 0)",
+          "belowLineFillColorFallingBottom": "rgba(255, 80, 80, 0)",
+          "symbolActiveColor": "rgba(197, 146, 58, 0.08)",
+          "tabs": [
+            {
+              "title": "Indices",
+              "symbols": [
+                {"s": "FOREXCOM:SPXUSD", "d": "S&P 500"},
+                {"s": "FOREXCOM:NSXUSD", "d": "Nasdaq 100"},
+                {"s": "FOREXCOM:DJI", "d": "Dow Jones"},
+                {"s": "INDEX:DEU40", "d": "DAX"},
+                {"s": "CBOE:UK100", "d": "FTSE 100"},
+                {"s": "INDEX:NKY", "d": "Nikkei 225"}
+              ],
+              "originalTitle": "Indices"
+            },
+            {
+              "title": "Commodities",
+              "symbols": [
+                {"s": "TVC:GOLD", "d": "Gold"},
+                {"s": "TVC:SILVER", "d": "Silver"},
+                {"s": "NYMEX:CL1!", "d": "WTI Crude Oil"},
+                {"s": "NYMEX:NG1!", "d": "Natural Gas"},
+                {"s": "COMEX:HG1!", "d": "Copper"}
+              ],
+              "originalTitle": "Commodities"
+            },
+            {
+              "title": "FX & Bonds",
+              "symbols": [
+                {"s": "FX:EURUSD", "d": "EUR/USD"},
+                {"s": "FX:GBPUSD", "d": "GBP/USD"},
+                {"s": "FX:USDJPY", "d": "USD/JPY"},
+                {"s": "TVC:US10Y", "d": "US 10Y Yield"},
+                {"s": "TVC:DXY", "d": "Dollar Index"}
+              ],
+              "originalTitle": "FX & Bonds"
+            },
+            {
+              "title": "Crypto",
+              "symbols": [
+                {"s": "BITSTAMP:BTCUSD", "d": "Bitcoin"},
+                {"s": "BITSTAMP:ETHUSD", "d": "Ethereum"},
+                {"s": "BINANCE:SOLUSD", "d": "Solana"}
+              ],
+              "originalTitle": "Crypto"
+            }
+          ]
+        }
+        </script>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- WHAT WE COVER -->
 <section class="section">
