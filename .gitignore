@@ -29,3 +29,18 @@ reports/*.md
 # Temporary
 temp_prompt*.txt
 *.tmp
+
+# Personal documents — never commit or push these
+"Applications - WORK/"
+Applications - WORK/
+Brightpool-IG/
+WealthManagement/
+Yoni_memclawgit/
+Prudentsigma_idea.docx
+
+# Microsoft Office temp files (lock files created when a doc is open)
+~$*
+
+# Credentials
+google_drive_credentials.json
+email_config.py
