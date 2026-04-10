@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Newsletter — PrudentSigma</title>
+  <title>Financial News — PrudentSigma</title>
   <meta name="description" content="The Prudentsigma Note: a weekly letter on markets, risk, capital allocation, and financial judgment.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -128,7 +128,7 @@
     </a>
     <div class="nav-links">
       <a href="about.html">About</a>
-      <a href="newsletter.html" class="active">Newsletter</a>
+      <a href="newsletter.html" class="active">Financial News</a>
       <a href="consulting.html">Consulting</a>
       <a href="insights.html">Insights</a>
       <a href="tools.html">Tools</a>
@@ -155,8 +155,6 @@
         {"description": "Gold", "proName": "TVC:GOLD"},
         {"description": "Silver", "proName": "TVC:SILVER"},
         {"description": "WTI Crude", "proName": "TVC:USOIL"},
-        {"description": "US 10Y", "proName": "TVC:US10Y"},
-        {"description": "VIX", "proName": "TVC:VIX"},
         {"description": "BTC/USD", "proName": "BITSTAMP:BTCUSD"},
         {"description": "EUR/USD", "proName": "FX:EURUSD"},
         {"description": "GBP/USD", "proName": "FX:GBPUSD"},
@@ -180,6 +178,39 @@
     <p class="subtitle anim-3" style="max-width:560px; margin-top:24px;">Markets. Risk. Capital allocation. Practical thinking for serious people. No noise, no hype, no fake certainty.</p>
   </div>
 </section>
+
+<!-- DAILY MARKET INTELLIGENCE -->
+<section class="section" id="daily-intelligence" style="background:var(--navy-800); border-bottom:1px solid var(--navy-600);">
+  <div class="container">
+    <div class="reveal" style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:40px;">
+      <div>
+        <span class="label">Market Intelligence</span>
+        <h2 style="font-family:'Cormorant Garamond',serif; font-weight:300; font-size:clamp(1.5rem,2.5vw,2.25rem); line-height:1.15; letter-spacing:-0.01em; color:var(--text-1); margin-top:8px; margin-bottom:8px;">Daily Market Intelligence</h2>
+        <p class="body-text" style="max-width:520px;">Every trading day, PrudentSigma publishes a full market report — macro analysis, technical snapshot, investment ideas, and sector rotation intelligence.</p>
+      </div>
+      <a href="#daily-reports" style="font-family:'DM Mono',monospace; font-size:0.75rem; color:var(--gold-mid); letter-spacing:0.08em; text-decoration:none; flex-shrink:0;">View All Reports ↓</a>
+    </div>
+
+    <!-- Latest report card -->
+    <div id="latest-report-wrapper" style="display:none;">
+      <a id="latest-report-card" href="#" class="card reveal" style="display:block; text-decoration:none; border:1px solid rgba(197,146,58,0.2); transition:border-color 250ms ease;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px;">
+          <div>
+            <span id="latest-report-date" class="label" style="display:block; margin-bottom:10px;"></span>
+            <h3 id="latest-report-title" style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(1.375rem,2vw,1.875rem); color:var(--text-1); margin-bottom:14px;"></h3>
+            <p class="body-text">Full macro pulse, technical snapshot, investment ideas with entry/stop/target levels, and cross-asset correlation analysis.</p>
+          </div>
+          <span style="font-family:'DM Mono',monospace; font-size:0.8125rem; color:var(--gold-mid); letter-spacing:0.08em; white-space:nowrap; margin-top:4px;">Read Report &#8594;</span>
+        </div>
+      </a>
+    </div>
+
+    <div id="reports-loading" style="color:var(--text-3); font-family:'DM Mono',monospace; font-size:0.875rem;">Loading latest report...</div>
+    <div id="reports-empty" style="display:none; color:var(--text-3); font-family:'DM Mono',monospace; font-size:0.875rem;">No reports published yet.</div>
+  </div>
+</section>
+
+<hr class="rule">
 
 <!-- BENEFITS -->
 <section class="section">
@@ -377,8 +408,8 @@ function loadCalendar(dateRange) {
   container.appendChild(script);
   wrap.appendChild(container);
 }
-// Load default on page ready
-document.addEventListener('DOMContentLoaded', function() { loadCalendar('today'); });
+// Load default immediately (script is inline, DOM elements above are already parsed)
+loadCalendar('today');
 </script>
 
 <hr class="rule">
@@ -387,35 +418,17 @@ document.addEventListener('DOMContentLoaded', function() { loadCalendar('today')
 <section class="section" id="daily-reports">
   <div class="container">
     <div class="reveal" style="margin-bottom:48px;">
-      <span class="label">Market Intelligence</span>
-      <h2 class="title">Daily Market Report Archive</h2>
-      <p class="body-text" style="max-width:560px; margin-top:16px;">Every trading day, PrudentSigma publishes a full market report — macro analysis, technical snapshot, investment ideas, and sector rotation intelligence.</p>
+      <span class="label">Report Archive</span>
+      <h2 class="title">All Market Reports</h2>
+      <p class="body-text" style="max-width:560px; margin-top:16px;">The complete archive of daily market intelligence — every report published by PrudentSigma.</p>
     </div>
 
-    <!-- Latest report (featured) -->
-    <div id="latest-report-wrapper" style="margin-bottom:40px; display:none;">
-      <span class="label" style="display:block; margin-bottom:16px;">Latest Report</span>
-      <a id="latest-report-card" href="#" class="card reveal" style="display:block; text-decoration:none; border:1px solid rgba(197,146,58,0.2); transition:border-color 250ms ease;">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px;">
-          <div>
-            <span id="latest-report-date" class="label" style="display:block; margin-bottom:8px;"></span>
-            <h3 id="latest-report-title" style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:1.5rem; color:var(--text-1); margin-bottom:12px;"></h3>
-            <p class="body-text">Full macro pulse, technical snapshot, investment ideas with entry/stop/target levels, and cross-asset correlation analysis.</p>
-          </div>
-          <span style="font-family:'DM Mono',monospace; font-size:0.8125rem; color:var(--gold-mid); letter-spacing:0.08em; white-space:nowrap; margin-top:4px;">Read Report &#8594;</span>
-        </div>
-      </a>
-    </div>
-
-    <!-- Archive grid -->
+    <!-- Archive grid (all reports) -->
     <div id="reports-archive-wrapper" style="display:none;">
-      <span class="label" style="display:block; margin-bottom:20px;">All Reports</span>
       <div id="reports-archive" style="display:flex; flex-direction:column; gap:0;"></div>
     </div>
 
-    <!-- Loading / empty states -->
-    <div id="reports-loading" style="color:var(--text-3); font-family:'DM Mono',monospace; font-size:0.875rem;">Loading reports...</div>
-    <div id="reports-empty" style="display:none; color:var(--text-3); font-family:'DM Mono',monospace; font-size:0.875rem;">No reports published yet.</div>
+    <div id="reports-archive-empty" style="display:none; color:var(--text-3); font-family:'DM Mono',monospace; font-size:0.875rem;">No archived reports yet.</div>
   </div>
 </section>
 
@@ -470,6 +483,7 @@ document.addEventListener('DOMContentLoaded', function() { loadCalendar('today')
   const latestTitle = document.getElementById('latest-report-title');
   const archiveWrapper = document.getElementById('reports-archive-wrapper');
   const archiveEl = document.getElementById('reports-archive');
+  const archiveEmptyEl = document.getElementById('reports-archive-empty');
 
   try {
     const res = await fetch('reports/index.json');
@@ -481,33 +495,34 @@ document.addEventListener('DOMContentLoaded', function() { loadCalendar('today')
 
     if (reports.length === 0) {
       emptyEl.style.display = 'block';
+      archiveEmptyEl.style.display = 'block';
       return;
     }
 
-    // Featured latest report
+    // Featured latest report (top section)
     const latest = reports[0];
     latestDate.textContent = latest.display_date;
     latestTitle.textContent = latest.title;
     latestCard.href = 'reports/' + latest.filename;
     latestWrapper.style.display = 'block';
 
-    // Archive (all reports, skip the first for the archive list)
-    if (reports.length > 1) {
-      reports.slice(1).forEach(r => {
-        const row = document.createElement('div');
-        row.className = 'archive-row';
-        row.innerHTML = `
-          <span class="archive-row-date">${r.display_date}</span>
-          <span class="archive-row-title">${r.title}</span>
-          <a href="reports/${r.filename}" class="archive-row-link">Read &#8594;</a>
-        `;
-        archiveEl.appendChild(row);
-      });
-      archiveWrapper.style.display = 'block';
-    }
+    // Archive — all reports
+    reports.forEach(r => {
+      const row = document.createElement('div');
+      row.className = 'archive-row';
+      row.innerHTML = `
+        <span class="archive-row-date">${r.display_date}</span>
+        <span class="archive-row-title">${r.title}</span>
+        <a href="reports/${r.filename}" class="archive-row-link">Read &#8594;</a>
+      `;
+      archiveEl.appendChild(row);
+    });
+    archiveWrapper.style.display = 'block';
+
   } catch (e) {
     loadingEl.style.display = 'none';
     emptyEl.style.display = 'block';
+    if (archiveEmptyEl) archiveEmptyEl.style.display = 'block';
   }
 })();
 </script>
@@ -580,7 +595,7 @@ document.addEventListener('DOMContentLoaded', function() { loadCalendar('today')
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="newsletter.html">Newsletter</a></li>
+          <li><a href="newsletter.html">Financial News</a></li>
           <li><a href="insights.html">Insights</a></li>
         </ul>
       </div>
