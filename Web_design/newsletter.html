@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Financial News — PrudentSigma</title>
   <meta name="description" content="The Prudentsigma Note: a weekly letter on markets, risk, capital allocation, and financial judgment.">
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PrudentSigma">
+  <meta property="og:title" content="Financial News — PrudentSigma">
+  <meta property="og:description" content="The Prudentsigma Note: a weekly letter on markets, risk, capital allocation, and financial judgment.">
+  <meta property="og:url" content="https://pavlise.github.io/prudentsigma-dashboard/newsletter.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Financial News — PrudentSigma">
+  <meta name="twitter:description" content="The Prudentsigma Note: a weekly letter on markets, risk, capital allocation, and financial judgment.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -423,9 +432,19 @@ loadCalendar('today');
       <p class="body-text" style="max-width:560px; margin-top:16px;">The complete archive of daily market intelligence — every report published by PrudentSigma.</p>
     </div>
 
+    <!-- Search filter -->
+    <div id="archive-search-bar" style="display:none; margin-bottom:28px;">
+      <div style="position:relative; max-width:400px;">
+        <svg style="position:absolute; left:14px; top:50%; transform:translateY(-50%); width:16px; height:16px; stroke:var(--text-3); fill:none; stroke-width:1.5; stroke-linecap:round; pointer-events:none;" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="archive-search" class="form-input" placeholder="Filter by date or keyword…" style="padding-left:40px; font-size:0.875rem;" oninput="filterArchive()">
+      </div>
+      <div id="archive-count" style="font-family:'DM Mono',monospace; font-size:0.6875rem; color:var(--text-3); letter-spacing:0.08em; margin-top:10px;"></div>
+    </div>
+
     <!-- Archive grid (all reports) -->
     <div id="reports-archive-wrapper" style="display:none;">
       <div id="reports-archive" style="display:flex; flex-direction:column; gap:0;"></div>
+      <div id="no-results" style="display:none; color:var(--text-3); font-family:'DM Mono',monospace; font-size:0.875rem; padding:20px 0;">No reports match your filter.</div>
     </div>
 
     <div id="reports-archive-empty" style="display:none; color:var(--text-3); font-family:'DM Mono',monospace; font-size:0.875rem;">No archived reports yet.</div>
@@ -510,6 +529,7 @@ loadCalendar('today');
     reports.forEach(r => {
       const row = document.createElement('div');
       row.className = 'archive-row';
+      row.dataset.search = (r.display_date + ' ' + r.title).toLowerCase();
       row.innerHTML = `
         <span class="archive-row-date">${r.display_date}</span>
         <span class="archive-row-title">${r.title}</span>
@@ -518,6 +538,9 @@ loadCalendar('today');
       archiveEl.appendChild(row);
     });
     archiveWrapper.style.display = 'block';
+    document.getElementById('archive-search-bar').style.display = 'block';
+    document.getElementById('archive-count').textContent = reports.length + ' reports';
+    window._totalReports = reports.length;
 
   } catch (e) {
     loadingEl.style.display = 'none';
@@ -525,6 +548,21 @@ loadCalendar('today');
     if (archiveEmptyEl) archiveEmptyEl.style.display = 'block';
   }
 })();
+
+function filterArchive() {
+  var q = document.getElementById('archive-search').value.toLowerCase().trim();
+  var rows = document.querySelectorAll('#reports-archive .archive-row');
+  var visible = 0;
+  rows.forEach(function(row) {
+    var match = !q || row.dataset.search.includes(q);
+    row.style.display = match ? '' : 'none';
+    if (match) visible++;
+  });
+  var countEl = document.getElementById('archive-count');
+  var noRes = document.getElementById('no-results');
+  countEl.textContent = q ? (visible + ' of ' + (window._totalReports || rows.length) + ' reports') : ((window._totalReports || rows.length) + ' reports');
+  noRes.style.display = visible === 0 ? 'block' : 'none';
+}
 </script>
 
 <hr class="rule">

@@ -136,10 +136,43 @@ def _convert_report_to_html_body(report_text):
     return "\n".join(html_lines)
 
 
-def build_report_html(md_text, date, display_date):
+def _estimate_read_time(text):
+    """Estimate reading time in minutes (200 wpm)."""
+    words = len(text.split())
+    minutes = max(1, round(words / 200))
+    return f"{minutes} min read"
+
+
+def build_report_html(md_text, date, display_date, prev_report=None, next_report=None):
     """Build a full HTML page for the report."""
     report_text = _strip_report_text(md_text)
     body_html = _convert_report_to_html_body(report_text)
+    read_time = _estimate_read_time(report_text)
+
+    base_url = "https://pavlise.github.io/prudentsigma-dashboard/"
+    report_url = f"{base_url}reports/report_{date}.html"
+    og_desc = f"PrudentSigma Daily Market Report for {display_date}. Macro analysis, technical snapshot, investment ideas."
+
+    # Build prev/next nav HTML
+    prev_html = ""
+    next_html = ""
+    if prev_report:
+        prev_html = f'<a href="{prev_report["filename"]}" class="report-nav-btn" style="margin-right:auto;">&#8592; {prev_report["display_date"]}</a>'
+    if next_report:
+        next_html = f'<a href="{next_report["filename"]}" class="report-nav-btn" style="margin-left:auto;">&#8594; {next_report["display_date"]}</a>'
+
+    prevnext_section = ""
+    if prev_html or next_html:
+        prevnext_section = f"""
+<!-- PREV / NEXT NAVIGATION -->
+<section style="padding:40px 0; border-top:1px solid var(--navy-600);">
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;">
+      {prev_html}
+      {next_html}
+    </div>
+  </div>
+</section>"""
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -147,7 +180,16 @@ def build_report_html(md_text, date, display_date):
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Market Report {display_date} — PrudentSigma</title>
-  <meta name="description" content="PrudentSigma Daily Market Report for {display_date}. Macro analysis, technical snapshot, investment ideas.">
+  <meta name="description" content="{og_desc}">
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="PrudentSigma">
+  <meta property="og:title" content="Market Report {display_date} — PrudentSigma">
+  <meta property="og:description" content="{og_desc}">
+  <meta property="og:url" content="{report_url}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Market Report {display_date} — PrudentSigma">
+  <meta name="twitter:description" content="{og_desc}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -221,9 +263,30 @@ def build_report_html(md_text, date, display_date):
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }}
+    .report-nav-btn {{
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--gold-mid);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: color 150ms ease;
+    }}
+    .report-nav-btn:hover {{ color: var(--gold-warm); }}
+    .read-progress {{
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold-deep), var(--gold-mid));
+      z-index: 9999;
+      transition: width 0.1s linear;
+      width: 0%;
+    }}
   </style>
 </head>
 <body>
+<div class="read-progress" id="read-progress"></div>
 
 <!-- NAV -->
 <nav class="nav" id="main-nav">
@@ -302,16 +365,19 @@ def build_report_html(md_text, date, display_date):
 <!-- REPORT CONTENT -->
 <section class="section">
   <div class="container">
-    <a href="../newsletter.html" class="back-link">&#8592; Back to all reports</a>
+    <a href="../newsletter.html#daily-reports" class="back-link">&#8592; Back to all reports</a>
     <div class="report-meta">
       <span class="report-meta-badge">Date: {date}</span>
       <span class="report-meta-badge">Source: PrudentSigma AI Research</span>
+      <span class="report-meta-badge">{read_time}</span>
     </div>
     <div class="report-wrapper reveal">
       <pre class="report-pre">{body_html}</pre>
     </div>
   </div>
 </section>
+
+{prevnext_section}
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -380,6 +446,16 @@ def build_report_html(md_text, date, display_date):
   const burger = document.getElementById('nav-burger');
   const nav = document.getElementById('main-nav');
   if (burger) burger.addEventListener('click', () => nav.classList.toggle('nav-open'));
+
+  // Reading progress bar
+  const progressBar = document.getElementById('read-progress');
+  if (progressBar) {{
+    window.addEventListener('scroll', function() {{
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+      progressBar.style.width = Math.min(pct, 100) + '%';
+    }});
+  }}
 </script>
 </body>
 </html>"""
@@ -399,6 +475,7 @@ def publish_report(report_md_path, date):
     try:
         with open(report_md_path, "r", encoding="utf-8", errors="replace") as f:
             md_text = f.read()
+        # We'll add prev/next after updating the index (step 6), rebuild then
         html_content = build_report_html(md_text, date, display_date)
     except Exception as e:
         _log(f"Error converting report to HTML: {e}")
@@ -422,12 +499,7 @@ def publish_report(report_md_path, date):
         reports_dir = os.path.join(WORKTREE_PATH, "reports")
         os.makedirs(reports_dir, exist_ok=True)
 
-        # 5. Write HTML report file
-        html_path = os.path.join(reports_dir, report_filename)
-        with open(html_path, "w", encoding="utf-8") as f:
-            f.write(html_content)
-
-        # 6. Update index.json
+        # 5. Update index.json first (so we can derive prev/next)
         index_path = os.path.join(reports_dir, "index.json")
         if os.path.exists(index_path):
             with open(index_path, "r", encoding="utf-8") as f:
@@ -448,6 +520,20 @@ def publish_report(report_md_path, date):
 
         with open(index_path, "w", encoding="utf-8") as f:
             json.dump(index, f, indent=2, ensure_ascii=False)
+
+        # Derive prev/next for navigation (index 0 = newest)
+        all_reports = index["reports"]
+        current_idx = next((i for i, r in enumerate(all_reports) if r["date"] == date), None)
+        prev_report = all_reports[current_idx + 1] if current_idx is not None and current_idx + 1 < len(all_reports) else None
+        next_report = all_reports[current_idx - 1] if current_idx is not None and current_idx > 0 else None
+
+        # Rebuild HTML with prev/next nav
+        html_content = build_report_html(md_text, date, display_date, prev_report=prev_report, next_report=next_report)
+
+        # 6. Write HTML report file
+        html_path = os.path.join(reports_dir, report_filename)
+        with open(html_path, "w", encoding="utf-8") as f:
+            f.write(html_content)
 
         # 7. Also sync newsletter.html from Web_design (keeps it up to date)
         nl_src = os.path.join(WEB_DIR, "newsletter.html")

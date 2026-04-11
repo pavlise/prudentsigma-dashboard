@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — PrudentSigma</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Return to PrudentSigma.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .error-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 24px 80px;
+    }
+    .error-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 30%, rgba(197,146,58,0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(197,146,58,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .error-code {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(7rem, 20vw, 14rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(197,146,58,0.25);
+      display: block;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .error-code::after {
+      content: '404';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(197,146,58,0.15), rgba(197,146,58,0.05));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .error-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 520px;
+    }
+    .error-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    .error-link-secondary {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      color: var(--text-3);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color 150ms ease;
+    }
+    .error-link-secondary:hover { color: var(--text-2); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="60" r="56" stroke="url(#e404-nfg)" stroke-width="1" opacity="0.35"/>
+        <path d="M28 32 L92 32 L57 59 L92 86 L28 86" stroke="url(#e404-nsg)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+        <defs>
+          <linearGradient id="e404-nsg" x1="28" y1="32" x2="92" y2="86" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#C5923A"/>
+            <stop offset="50%" stop-color="#DFB06A"/>
+            <stop offset="100%" stop-color="#C5923A"/>
+          </linearGradient>
+          <linearGradient id="e404-nfg" x1="4" y1="4" x2="116" y2="116" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#C5923A" stop-opacity="0.6"/>
+            <stop offset="1" stop-color="#C5923A" stop-opacity="0.1"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      PrudentSigma
+    </a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="newsletter.html">Financial News</a>
+      <a href="consulting.html">Consulting</a>
+      <a href="insights.html">Insights</a>
+      <a href="tools.html">Tools</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary">Book a Call</a>
+      <button class="nav-burger" id="nav-burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- 404 CONTENT -->
+<section class="error-hero">
+  <div class="error-inner">
+    <span class="error-code">404</span>
+    <span class="label" style="display:inline-block; margin-bottom:20px;">Page not found</span>
+    <h1 style="font-family:'Cormorant Garamond',serif; font-weight:300; font-size:clamp(1.75rem,4vw,2.75rem); line-height:1.15; color:var(--text-1); margin-bottom:20px;">This page doesn't exist.</h1>
+    <p class="body-text" style="max-width:420px; margin:0 auto;">The page you're looking for may have moved, been removed, or the URL may be incorrect.</p>
+    <div class="error-links">
+      <a href="index.html" class="btn btn-primary">Back to Home</a>
+      <a href="newsletter.html" class="error-link-secondary">Daily Reports</a>
+      <a href="tools.html" class="error-link-secondary">Tools</a>
+      <a href="contact.html" class="error-link-secondary">Contact</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <svg width="24" height="24" viewBox="0 0 120 120" fill="none">
+            <path d="M28 32 L92 32 L57 59 L92 86 L28 86" stroke="url(#e404-ffg)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+            <defs>
+              <linearGradient id="e404-ffg" x1="28" y1="32" x2="92" y2="86" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#C5923A"/>
+                <stop offset="50%" stop-color="#DFB06A"/>
+                <stop offset="100%" stop-color="#C5923A"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          PrudentSigma
+        </div>
+        <p class="footer-tagline">A finance and decision-intelligence platform for serious people.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="newsletter.html">Financial News</a></li>
+          <li><a href="insights.html">Insights</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="consulting.html">Consulting</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Philosophy</h4>
+        <div class="footer-beliefs">
+          <div class="footer-belief"><span class="footer-belief-num">01</span><span class="footer-belief-text">Risk comes before return</span></div>
+          <div class="footer-belief"><span class="footer-belief-num">02</span><span class="footer-belief-text">Clarity beats complexity</span></div>
+          <div class="footer-belief"><span class="footer-belief-num">03</span><span class="footer-belief-text">Discipline compounds</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom-copy">&copy; 2025 PrudentSigma. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const burger = document.getElementById('nav-burger');
+  const nav = document.getElementById('main-nav');
+  if (burger) burger.addEventListener('click', () => nav.classList.toggle('nav-open'));
+</script>
+
+</body>
+</html>
