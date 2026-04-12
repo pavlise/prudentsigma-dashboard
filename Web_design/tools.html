@@ -415,6 +415,68 @@
 
 <hr class="rule">
 
+<!-- TOOL 4: MONTE CARLO RISK SIMULATOR -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:40px;">
+      <span class="label">Tool 04</span>
+      <h2 class="title">Monte Carlo Risk Simulator</h2>
+    </div>
+    <div class="calc-card reveal">
+      <div class="grid-2-col" style="gap:48px; align-items:flex-start;">
+        <div>
+          <h3 class="tool-title">Simulate hedging strategy outcomes for your trade book</h3>
+          <p class="tool-desc">Built for market makers and brokerage desks. Paste your client trade book as a CSV, choose your hedging strategies, and run thousands of simulated market scenarios — comparing full internalization, periodic hedging, VaR boundary triggers, and full externalization side by side.</p>
+          <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:32px;">
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <svg viewBox="0 0 16 16" fill="none" style="width:14px;height:14px;stroke:var(--gold-mid);margin-top:2px;flex-shrink:0;"><polyline points="2,8 6,12 14,4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="font-family:'DM Sans',sans-serif;font-size:0.875rem;color:var(--text-2);">Four hedging strategies — internalize, periodic, VaR boundary, A-book</span>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <svg viewBox="0 0 16 16" fill="none" style="width:14px;height:14px;stroke:var(--gold-mid);margin-top:2px;flex-shrink:0;"><polyline points="2,8 6,12 14,4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="font-family:'DM Sans',sans-serif;font-size:0.875rem;color:var(--text-2);">VaR 95%, CVaR, expected P&amp;L, and ruin probability per strategy</span>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <svg viewBox="0 0 16 16" fill="none" style="width:14px;height:14px;stroke:var(--gold-mid);margin-top:2px;flex-shrink:0;"><polyline points="2,8 6,12 14,4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="font-family:'DM Sans',sans-serif;font-size:0.875rem;color:var(--text-2);">P&amp;L distribution chart and risk vs hedge cost comparison</span>
+            </div>
+            <div style="display:flex; gap:12px; align-items:flex-start;">
+              <svg viewBox="0 0 16 16" fill="none" style="width:14px;height:14px;stroke:var(--gold-mid);margin-top:2px;flex-shrink:0;"><polyline points="2,8 6,12 14,4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="font-family:'DM Sans',sans-serif;font-size:0.875rem;color:var(--text-2);">User-editable annualised volatility per instrument — override defaults with your own estimates</span>
+            </div>
+          </div>
+          <a href="monte-carlo.html" class="btn btn-primary">Open Simulator &#8594;</a>
+        </div>
+        <div>
+          <div style="background:var(--navy-700); border-radius:var(--radius-md); padding:28px;">
+            <div style="font-family:'DM Mono',monospace; font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-mid); margin-bottom:18px;">Strategies modelled</div>
+            <div style="display:flex; flex-direction:column; gap:14px;">
+              <div style="display:flex; gap:12px; align-items:flex-start; padding-bottom:14px; border-bottom:1px solid var(--navy-600);">
+                <span style="font-family:'DM Mono',monospace;font-size:0.625rem;color:rgba(220,80,80,0.8);text-transform:uppercase;letter-spacing:0.08em;min-width:14px;">A</span>
+                <div><div style="font-family:'DM Sans',sans-serif;font-size:0.875rem;color:var(--text-1);margin-bottom:2px;">Full Internalization</div><div style="font-family:'DM Sans',sans-serif;font-size:0.75rem;color:var(--text-3);">100% of exposure absorbed — maximum market risk, zero cost</div></div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; padding-bottom:14px; border-bottom:1px solid var(--navy-600);">
+                <span style="font-family:'DM Mono',monospace;font-size:0.625rem;color:rgba(197,146,58,0.9);text-transform:uppercase;letter-spacing:0.08em;min-width:14px;">B</span>
+                <div><div style="font-family:'DM Sans',sans-serif;font-size:0.875rem;color:var(--text-1);margin-bottom:2px;">Periodic Hedging</div><div style="font-family:'DM Sans',sans-serif;font-size:0.75rem;color:var(--text-3);">Hedge at fixed intervals — configurable 5 to 60+ minutes</div></div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; padding-bottom:14px; border-bottom:1px solid var(--navy-600);">
+                <span style="font-family:'DM Mono',monospace;font-size:0.625rem;color:rgba(61,140,130,0.9);text-transform:uppercase;letter-spacing:0.08em;min-width:14px;">C</span>
+                <div><div style="font-family:'DM Sans',sans-serif;font-size:0.875rem;color:var(--text-1);margin-bottom:2px;">VaR Boundary Trigger</div><div style="font-family:'DM Sans',sans-serif;font-size:0.75rem;color:var(--text-3);">Hedge when unrealised P&amp;L breaches a risk threshold</div></div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <span style="font-family:'DM Mono',monospace;font-size:0.625rem;color:rgba(94,122,150,0.9);text-transform:uppercase;letter-spacing:0.08em;min-width:14px;">D</span>
+                <div><div style="font-family:'DM Sans',sans-serif;font-size:0.875rem;color:var(--text-1);margin-bottom:2px;">Full Externalization (A-Book)</div><div style="font-family:'DM Sans',sans-serif;font-size:0.75rem;color:var(--text-3);">All flow passed to LP — zero risk baseline for comparison</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
 <!-- COMING SOON TOOLS -->
 <section class="section">
   <div class="container">

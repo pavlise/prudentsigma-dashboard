@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monte Carlo Risk Simulator — PrudentSigma</title>
+  <meta name="description" content="Simulate and compare hedging strategies for market makers and brokerage firms — full internalization, periodic hedging, VaR boundary, and full externalization.">
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PrudentSigma">
+  <meta property="og:title" content="Monte Carlo Risk Simulator — PrudentSigma">
+  <meta property="og:description" content="Simulate and compare hedging strategies for market makers and brokerage firms — full internalization, periodic hedging, VaR boundary, and full externalization.">
+  <meta property="og:url" content="https://pavlise.github.io/prudentsigma-dashboard/monte-carlo.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Monte Carlo Risk Simulator — PrudentSigma">
+  <meta name="twitter:description" content="Simulate and compare hedging strategies for market makers and brokerage firms.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    /* ── Tool typography ── */
+    .tool-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      color: var(--text-1);
+      margin-bottom: 8px;
+    }
+    .tool-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 0.9375rem;
+      color: var(--text-2);
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+    .result-note {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6875rem;
+      color: var(--text-3);
+      margin-top: 20px;
+      letter-spacing: 0.04em;
+      line-height: 1.65;
+    }
+    .input-prefix { position: relative; }
+    .input-prefix .prefix-symbol {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.875rem;
+      color: var(--text-3);
+      pointer-events: none;
+    }
+    .input-prefix .form-input { padding-left: 30px; }
+
+    /* ── Strategy selection cards ── */
+    .mc-strategy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .mc-strategy-card {
+      border: 1px solid var(--navy-600);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      cursor: pointer;
+      transition: border-color 200ms ease, background 200ms ease;
+      user-select: none;
+      position: relative;
+      overflow: hidden;
+    }
+    .mc-strategy-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--gold-mid);
+      opacity: 0;
+      transition: opacity 200ms ease;
+    }
+    .mc-strategy-card.active {
+      border-color: rgba(197,146,58,0.4);
+      background: rgba(197,146,58,0.03);
+    }
+    .mc-strategy-card.active::before { opacity: 1; }
+    .mc-strategy-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .mc-check {
+      width: 17px;
+      height: 17px;
+      border: 1px solid var(--navy-500);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 3px;
+      transition: background 200ms ease, border-color 200ms ease;
+    }
+    .mc-check svg { opacity: 0; transition: opacity 150ms ease; }
+    .mc-strategy-card.active .mc-check {
+      background: var(--gold-mid);
+      border-color: var(--gold-mid);
+    }
+    .mc-strategy-card.active .mc-check svg { opacity: 1; }
+    .mc-strategy-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.05rem;
+      color: var(--text-1);
+      margin-bottom: 3px;
+    }
+    .mc-strategy-badge {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.5625rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-3);
+    }
+    .mc-strategy-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      color: var(--text-3);
+      line-height: 1.55;
+      margin-top: 8px;
+    }
+    .mc-strategy-params {
+      display: none;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--navy-600);
+    }
+    .mc-strategy-card.active .mc-strategy-params { display: block; }
+    .mc-param-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .mc-param-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-3);
+      white-space: nowrap;
+    }
+    .mc-inline-btn {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-3);
+      background: var(--navy-700);
+      border: 1px solid var(--navy-600);
+      border-radius: var(--radius-sm);
+      padding: 5px 12px;
+      cursor: pointer;
+      transition: border-color 150ms ease, color 150ms ease;
+    }
+    .mc-inline-btn.active,
+    .mc-inline-btn:hover {
+      border-color: rgba(197,146,58,0.4);
+      color: var(--gold-mid);
+    }
+    .mc-inline-input {
+      width: 80px;
+      background: var(--navy-700);
+      border: 1px solid var(--navy-600);
+      border-radius: var(--radius-sm);
+      padding: 6px 10px;
+      color: var(--text-1);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8125rem;
+      transition: border-color 150ms ease;
+    }
+    .mc-inline-input:focus {
+      outline: none;
+      border-color: rgba(197,146,58,0.4);
+    }
+
+    /* ── Global sim params ── */
+    .mc-global-params {
+      background: var(--navy-700);
+      border: 1px solid var(--navy-600);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+      margin-bottom: 28px;
+    }
+    .mc-global-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.625rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold-mid);
+      margin-bottom: 18px;
+    }
+    .mc-global-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .mc-field { display: flex; flex-direction: column; gap: 8px; }
+    .mc-field-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-3);
+    }
+    .mc-btn-group { display: flex; gap: 6px; flex-wrap: wrap; }
+    .mc-btn-opt {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-3);
+      background: var(--navy-800);
+      border: 1px solid var(--navy-600);
+      border-radius: var(--radius-sm);
+      padding: 7px 13px;
+      cursor: pointer;
+      transition: border-color 150ms ease, color 150ms ease, background 150ms ease;
+    }
+    .mc-btn-opt.active {
+      border-color: rgba(197,146,58,0.4);
+      color: var(--gold-warm);
+      background: rgba(197,146,58,0.06);
+    }
+    .mc-slider-wrap { display: flex; align-items: center; gap: 10px; }
+    .mc-slider {
+      flex: 1;
+      -webkit-appearance: none;
+      height: 3px;
+      border-radius: 2px;
+      background: var(--navy-600);
+      outline: none;
+    }
+    .mc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--gold-mid);
+      cursor: pointer;
+    }
+    .mc-slider-val {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--gold-mid);
+      min-width: 38px;
+      text-align: right;
+    }
+
+    /* ── Volatility table ── */
+    .mc-vol-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+    .mc-vol-table th {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-3);
+      text-align: left;
+      padding: 0 0 10px;
+      border-bottom: 1px solid var(--navy-600);
+    }
+    .mc-vol-table td {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--navy-700);
+      vertical-align: middle;
+    }
+    .mc-vol-input {
+      width: 72px;
+      background: var(--navy-700);
+      border: 1px solid var(--navy-600);
+      border-radius: var(--radius-sm);
+      padding: 5px 8px;
+      color: var(--text-1);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      text-align: right;
+      transition: border-color 150ms ease;
+    }
+    .mc-vol-input:focus {
+      outline: none;
+      border-color: rgba(197,146,58,0.4);
+    }
+
+    /* ── Trade positions table ── */
+    .mc-pos-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .mc-pos-table th {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-3);
+      text-align: left;
+      padding: 0 12px 10px 0;
+      border-bottom: 1px solid var(--navy-600);
+    }
+    .mc-pos-table td {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      padding: 10px 12px 10px 0;
+      border-bottom: 1px solid var(--navy-700);
+      color: var(--text-2);
+    }
+    .mc-pos-table td:first-child { color: var(--text-1); font-weight: 500; }
+    .pos-long { color: var(--teal-light) !important; }
+    .pos-short { color: rgba(220,100,80,0.9) !important; }
+
+    /* ── Results section ── */
+    #mc-results { display: none; }
+    #mc-params-section { display: none; }
+
+    .mc-result-cards {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .mc-result-card {
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+      border: 1px solid var(--navy-600);
+      background: var(--navy-800);
+      position: relative;
+      overflow: hidden;
+    }
+    .mc-result-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+    }
+    .mc-result-card[data-strategy="A"]::before { background: rgba(220,80,80,0.8); }
+    .mc-result-card[data-strategy="B"]::before { background: rgba(197,146,58,0.8); }
+    .mc-result-card[data-strategy="C"]::before { background: rgba(61,140,130,0.8); }
+    .mc-result-card[data-strategy="D"]::before { background: rgba(94,122,150,0.8); }
+    .mc-result-strat-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.15rem;
+      color: var(--text-1);
+      margin-bottom: 16px;
+    }
+    .mc-result-metrics {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+    .mc-metric { display: flex; flex-direction: column; gap: 5px; }
+    .mc-metric-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.575rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-3);
+    }
+    .mc-metric-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.35rem;
+      color: var(--gold-warm);
+    }
+    .mc-metric-value.negative { color: rgba(220,100,80,0.9); }
+    .mc-metric-value.positive { color: var(--teal-light); }
+    .mc-metric-value.neutral { color: var(--text-2); }
+
+    /* ── Charts ── */
+    .mc-chart-card {
+      background: var(--navy-800);
+      border: 1px solid var(--navy-600);
+      border-radius: var(--radius-md);
+      padding: 32px 32px 24px;
+      margin-bottom: 20px;
+    }
+    .mc-chart-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.625rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold-mid);
+      margin-bottom: 6px;
+    }
+    .mc-chart-subtitle {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      color: var(--text-3);
+      margin-bottom: 24px;
+    }
+    .mc-chart-wrap {
+      position: relative;
+      height: 300px;
+    }
+    .mc-chart-wrap-sm {
+      position: relative;
+      height: 220px;
+    }
+
+    /* ── Run button state ── */
+    .mc-run-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .mc-spinner {
+      display: none;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(197,146,58,0.3);
+      border-top-color: var(--gold-mid);
+      border-radius: 50%;
+      animation: mc-spin 0.7s linear infinite;
+    }
+    @keyframes mc-spin { to { transform: rotate(360deg); } }
+    .mc-running .mc-spinner { display: block; }
+
+    /* ── Misc ── */
+    .mc-section-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.625rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold-mid);
+      margin-bottom: 20px;
+    }
+    .mc-error-box {
+      background: rgba(220,60,60,0.08);
+      border: 1px solid rgba(220,60,60,0.2);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: rgba(220,100,80,0.9);
+      display: none;
+      margin-top: 12px;
+    }
+    .mc-error-box.visible { display: block; }
+    .mc-info-box {
+      background: rgba(197,146,58,0.05);
+      border: 1px solid rgba(197,146,58,0.15);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+    }
+    .mc-csv-textarea {
+      width: 100%;
+      background: var(--navy-700);
+      border: 1px solid var(--navy-600);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      color: var(--text-1);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8125rem;
+      line-height: 1.7;
+      resize: vertical;
+      min-height: 180px;
+      transition: border-color 150ms ease, box-shadow 150ms ease;
+      box-sizing: border-box;
+    }
+    .mc-csv-textarea:focus {
+      outline: none;
+      border-color: rgba(197,146,58,0.4);
+      box-shadow: 0 0 0 3px rgba(197,146,58,0.06);
+    }
+    .mc-parse-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .mc-link-btn {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8125rem;
+      color: var(--text-3);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 150ms ease;
+    }
+    .mc-link-btn:hover { color: var(--gold-mid); }
+    .mc-divider { border: none; border-top: 1px solid var(--navy-600); margin: 28px 0; }
+    .mc-parsed-section { display: none; }
+    .mc-parsed-section.visible { display: block; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .mc-strategy-grid { grid-template-columns: 1fr; }
+      .mc-global-grid { grid-template-columns: 1fr 1fr; }
+      .mc-result-metrics { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    }
+    @media (max-width: 600px) {
+      .mc-global-grid { grid-template-columns: 1fr; }
+      .mc-result-metrics { grid-template-columns: repeat(2, 1fr); }
+      .mc-chart-wrap { height: 220px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="60" r="56" stroke="url(#mc-nfg)" stroke-width="1" opacity="0.35"/>
+        <path d="M28 32 L92 32 L57 59 L92 86 L28 86" stroke="url(#mc-nsg)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+        <defs>
+          <linearGradient id="mc-nsg" x1="28" y1="32" x2="92" y2="86" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#C5923A"/>
+            <stop offset="50%" stop-color="#DFB06A"/>
+            <stop offset="100%" stop-color="#C5923A"/>
+          </linearGradient>
+          <linearGradient id="mc-nfg" x1="4" y1="4" x2="116" y2="116" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#C5923A" stop-opacity="0.6"/>
+            <stop offset="1" stop-color="#C5923A" stop-opacity="0.1"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      PrudentSigma
+    </a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="newsletter.html">Financial News</a>
+      <a href="consulting.html">Consulting</a>
+      <a href="insights.html">Insights</a>
+      <a href="tools.html" class="active">Tools</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary">Book a Call</a>
+      <button class="nav-burger" id="nav-burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- TICKER BAR -->
+<div class="ticker-bar">
+  <div class="tradingview-widget-container" style="height:100%;width:100%;">
+    <div class="tradingview-widget-container__widget" style="height:100%;"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+      "symbols": [
+        {"proName": "TVC:SPX", "title": "S&P 500"},
+        {"proName": "TVC:NDX", "title": "Nasdaq 100"},
+        {"description": "DXY", "proName": "TVC:DXY"},
+        {"description": "Gold", "proName": "TVC:GOLD"},
+        {"description": "Silver", "proName": "TVC:SILVER"},
+        {"description": "WTI Crude", "proName": "TVC:USOIL"},
+        {"description": "BTC/USD", "proName": "BITSTAMP:BTCUSD"},
+        {"description": "EUR/USD", "proName": "FX:EURUSD"},
+        {"description": "GBP/USD", "proName": "FX:GBPUSD"},
+        {"description": "USD/JPY", "proName": "FX:USDJPY"}
+      ],
+      "showSymbolLogo": false,
+      "isTransparent": true,
+      "displayMode": "adaptive",
+      "colorTheme": "dark",
+      "locale": "en"
+    }
+    </script>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="label anim-1">Tool 04</span>
+    <h1 class="display anim-2" style="max-width:760px;">Monte Carlo Risk Simulator.</h1>
+    <p class="subtitle anim-3" style="max-width:600px; margin-top:24px;">Model how your brokerage or market-making desk performs under thousands of simulated market scenarios — and compare the risk-return trade-off of competing hedging strategies.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- STEP 1: TRADE BOOK INPUT -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+
+    <div class="reveal" style="margin-bottom:40px;">
+      <span class="label">Step 01</span>
+      <h2 class="title">Load your trade book</h2>
+    </div>
+
+    <div class="calc-card reveal">
+      <div class="grid-2-col" style="gap:48px; align-items:flex-start;">
+
+        <!-- Left: Input -->
+        <div>
+          <h3 class="tool-title">Paste your client trade book</h3>
+          <p class="tool-desc">Paste a CSV of executed client trades — one row per trade. The simulator will aggregate your net exposure per instrument and model the firm's P&amp;L under each hedging strategy.</p>
+
+          <div style="margin-bottom:8px; display:flex; justify-content:space-between; align-items:center;">
+            <span class="mc-section-title" style="margin-bottom:0;">Trade data — CSV format</span>
+            <button class="mc-link-btn" onclick="loadSampleTrades()">Load sample book</button>
+          </div>
+          <textarea class="mc-csv-textarea" id="mc-csv-input" placeholder="EURUSD,BUY,1000000,1.0850&#10;EURUSD,SELL,600000,1.0848&#10;GBPUSD,BUY,500000,1.2650&#10;..."></textarea>
+
+          <div class="mc-parse-actions">
+            <button class="btn btn-primary" onclick="parseTrades()">Parse Trades</button>
+            <button class="mc-link-btn" onclick="clearAll()">Clear</button>
+          </div>
+          <div class="mc-error-box" id="mc-parse-error"></div>
+        </div>
+
+        <!-- Right: Format guide -->
+        <div>
+          <div class="mc-info-box" style="margin-bottom:16px;">
+            <div class="mc-section-title" style="margin-bottom:12px;">CSV format</div>
+            <div style="font-family:'DM Mono',monospace; font-size:0.75rem; color:var(--text-2); line-height:1.9;">
+              <span style="color:var(--text-3);">SYMBOL , DIRECTION , SIZE , PRICE</span><br>
+              EURUSD,BUY,1000000,1.0850<br>
+              EURUSD,SELL,600000,1.0848<br>
+              GBPUSD,BUY,500000,1.2650<br>
+              XAUUSD,BUY,100,1985.00
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <span style="font-family:'DM Mono',monospace; font-size:0.6875rem; color:var(--gold-mid); min-width:70px;">SYMBOL</span>
+              <span style="font-family:'DM Sans',sans-serif; font-size:0.8125rem; color:var(--text-3);">Any instrument — FX pairs, commodities, indices, crypto or equity</span>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <span style="font-family:'DM Mono',monospace; font-size:0.6875rem; color:var(--gold-mid); min-width:70px;">DIRECTION</span>
+              <span style="font-family:'DM Sans',sans-serif; font-size:0.8125rem; color:var(--text-3);">BUY or SELL (the client's direction — firm takes opposite side)</span>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <span style="font-family:'DM Mono',monospace; font-size:0.6875rem; color:var(--gold-mid); min-width:70px;">SIZE</span>
+              <span style="font-family:'DM Sans',sans-serif; font-size:0.8125rem; color:var(--text-3);">Units, contracts, or shares — must be positive</span>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <span style="font-family:'DM Mono',monospace; font-size:0.6875rem; color:var(--gold-mid); min-width:70px;">PRICE</span>
+              <span style="font-family:'DM Sans',sans-serif; font-size:0.8125rem; color:var(--text-3);">Execution price. Rows per symbol are averaged into a weighted entry price</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Parsed: Position Summary + Volatility Table -->
+      <div class="mc-parsed-section" id="mc-parsed-section">
+        <hr class="mc-divider">
+
+        <div class="grid-2-col" style="gap:48px; align-items:flex-start;">
+
+          <!-- Net Exposure Table -->
+          <div>
+            <div class="mc-section-title">Net exposure by instrument</div>
+            <table class="mc-pos-table">
+              <thead>
+                <tr>
+                  <th>Symbol</th>
+                  <th>Net Position</th>
+                  <th>Avg Price</th>
+                  <th>Net $ Exposure</th>
+                </tr>
+              </thead>
+              <tbody id="mc-pos-tbody"></tbody>
+            </table>
+            <div id="mc-total-notional" style="margin-top:14px; font-family:'DM Mono',monospace; font-size:0.75rem; color:var(--text-3);"></div>
+          </div>
+
+          <!-- Volatility Assumptions Table -->
+          <div>
+            <div class="mc-section-title">Volatility assumptions (annualised %)</div>
+            <p style="font-family:'DM Sans',sans-serif; font-size:0.8125rem; color:var(--text-3); margin-bottom:16px; line-height:1.6;">Auto-detected from instrument type. Override any value to reflect your own vol estimate or current market conditions.</p>
+            <table class="mc-vol-table">
+              <thead>
+                <tr>
+                  <th style="padding-right:16px;">Symbol</th>
+                  <th style="padding-right:16px;">Type</th>
+                  <th>Ann. Vol (%)</th>
+                </tr>
+              </thead>
+              <tbody id="mc-vol-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Proceed CTA -->
+        <div style="margin-top:28px; display:flex; align-items:center; gap:16px;">
+          <button class="btn btn-primary" onclick="showParamsSection()">Configure Simulation &#8594;</button>
+          <span style="font-family:'DM Mono',monospace; font-size:0.6875rem; color:var(--text-3);" id="mc-trade-count-label"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- STEP 2: SIMULATION PARAMETERS -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section class="section" id="mc-params-section">
+  <div class="container">
+
+    <div style="margin-bottom:40px;">
+      <span class="label">Step 02</span>
+      <h2 class="title">Configure hedging strategies</h2>
+    </div>
+
+    <div class="calc-card">
+
+      <!-- Strategy selector -->
+      <div class="mc-section-title">Select strategies to compare</div>
+      <p style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:var(--text-3); margin-bottom:20px;">Select one or more strategies. The simulator will run each in parallel and present a side-by-side comparison.</p>
+
+      <div class="mc-strategy-grid">
+
+        <!-- Strategy A: Full Internalization -->
+        <div class="mc-strategy-card active" id="mc-card-A" onclick="toggleStrategy('A')">
+          <div class="mc-strategy-header">
+            <div class="mc-check">
+              <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                <polyline points="1,4 3.5,6.5 9,1" stroke="#060B17" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="mc-strategy-badge">Strategy A</div>
+              <div class="mc-strategy-name">Full Internalization</div>
+            </div>
+          </div>
+          <p class="mc-strategy-desc">Firm absorbs 100% of client exposure. No hedges placed — pure P&amp;L from market moves over the full holding period. Maximum risk, zero hedge cost.</p>
+        </div>
+
+        <!-- Strategy B: Periodic Hedging -->
+        <div class="mc-strategy-card active" id="mc-card-B" onclick="toggleStrategy('B')">
+          <div class="mc-strategy-header">
+            <div class="mc-check">
+              <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                <polyline points="1,4 3.5,6.5 9,1" stroke="#060B17" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="mc-strategy-badge">Strategy B</div>
+              <div class="mc-strategy-name">Periodic Hedging</div>
+            </div>
+          </div>
+          <p class="mc-strategy-desc">Firm hedges accumulated net exposure at fixed time intervals, then re-internalizes new flow. Balances market risk against hedging frequency costs.</p>
+          <div class="mc-strategy-params" onclick="event.stopPropagation()">
+            <div class="mc-param-row">
+              <span class="mc-param-label">Hedge interval</span>
+              <button class="mc-inline-btn active" data-group="interval" data-val="5" onclick="selectParam('interval',5,this)">5 min</button>
+              <button class="mc-inline-btn" data-group="interval" data-val="15" onclick="selectParam('interval',15,this)">15 min</button>
+              <button class="mc-inline-btn" data-group="interval" data-val="30" onclick="selectParam('interval',30,this)">30 min</button>
+              <button class="mc-inline-btn" data-group="interval" data-val="60" onclick="selectParam('interval',60,this)">60 min</button>
+              <input class="mc-inline-input" id="mc-interval-custom" type="number" min="1" max="1440" placeholder="custom" style="width:70px;" oninput="customInterval(this)">
+              <span class="mc-param-label">min</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Strategy C: VaR Boundary -->
+        <div class="mc-strategy-card active" id="mc-card-C" onclick="toggleStrategy('C')">
+          <div class="mc-strategy-header">
+            <div class="mc-check">
+              <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                <polyline points="1,4 3.5,6.5 9,1" stroke="#060B17" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="mc-strategy-badge">Strategy C</div>
+              <div class="mc-strategy-name">VaR Boundary Hedging</div>
+            </div>
+          </div>
+          <p class="mc-strategy-desc">Firm hedges when unrealized P&amp;L breaches a defined VaR threshold. A risk-limit trigger that adapts hedge frequency to actual market conditions.</p>
+          <div class="mc-strategy-params" onclick="event.stopPropagation()">
+            <div class="mc-param-row" style="gap:16px; flex-wrap:wrap;">
+              <div style="display:flex; flex-direction:column; gap:6px;">
+                <span class="mc-param-label">VaR threshold ($)</span>
+                <div class="input-prefix" style="width:140px;">
+                  <span class="prefix-symbol">$</span>
+                  <input type="number" id="mc-var-threshold" class="form-input mc-inline-input" style="width:140px; padding-left:26px;" value="50000" min="1000" step="1000">
+                </div>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:6px;">
+                <span class="mc-param-label">Confidence</span>
+                <div class="mc-btn-group">
+                  <button class="mc-inline-btn active" data-group="conf" data-val="95" onclick="selectParam('conf',95,this)">95%</button>
+                  <button class="mc-inline-btn" data-group="conf" data-val="99" onclick="selectParam('conf',99,this)">99%</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Strategy D: Full Externalization -->
+        <div class="mc-strategy-card active" id="mc-card-D" onclick="toggleStrategy('D')">
+          <div class="mc-strategy-header">
+            <div class="mc-check">
+              <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                <polyline points="1,4 3.5,6.5 9,1" stroke="#060B17" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="mc-strategy-badge">Strategy D</div>
+              <div class="mc-strategy-name">Full Externalization (A-Book)</div>
+            </div>
+          </div>
+          <p class="mc-strategy-desc">All client trades are immediately passed to a liquidity provider. Zero market risk — firm earns spread only. Used as the risk-free baseline for comparison.</p>
+        </div>
+
+      </div>
+
+      <!-- Global parameters -->
+      <div class="mc-global-params">
+        <div class="mc-global-label">Simulation parameters</div>
+        <div class="mc-global-grid">
+          <div class="mc-field">
+            <span class="mc-field-label">Simulations</span>
+            <div class="mc-slider-wrap">
+              <input type="range" class="mc-slider" id="mc-nsims-slider" min="1000" max="10000" step="500" value="5000" oninput="document.getElementById('mc-nsims-val').textContent=this.value">
+              <span class="mc-slider-val" id="mc-nsims-val">5000</span>
+            </div>
+          </div>
+          <div class="mc-field">
+            <span class="mc-field-label">Time horizon</span>
+            <div class="mc-btn-group">
+              <button class="mc-btn-opt" data-group="horizon" data-val="4h" onclick="selectGlobal('horizon','4h',this)">4 hrs</button>
+              <button class="mc-btn-opt active" data-group="horizon" data-val="1d" onclick="selectGlobal('horizon','1d',this)">1 day</button>
+              <button class="mc-btn-opt" data-group="horizon" data-val="1w" onclick="selectGlobal('horizon','1w',this)">1 week</button>
+            </div>
+          </div>
+          <div class="mc-field">
+            <span class="mc-field-label">LP Spread (bps)</span>
+            <div class="input-prefix">
+              <input type="number" id="mc-spread" class="form-input" style="padding:9px 12px;" value="1.5" min="0.1" max="50" step="0.1">
+            </div>
+          </div>
+          <div class="mc-field">
+            <span class="mc-field-label">Capital buffer ($)</span>
+            <div class="input-prefix">
+              <span class="prefix-symbol">$</span>
+              <input type="number" id="mc-capital" class="form-input" value="500000" min="0" step="50000">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Run button -->
+      <div style="display:flex; align-items:center; gap:16px;">
+        <button class="btn btn-primary mc-run-btn" id="mc-run-btn" onclick="runSimulation()">
+          <span class="mc-spinner" id="mc-spinner"></span>
+          Run Simulation
+        </button>
+        <div class="mc-error-box" id="mc-run-error" style="margin-top:0;"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="rule" id="mc-results-divider" style="display:none;">
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- STEP 3: RESULTS -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<section class="section" id="mc-results">
+  <div class="container">
+
+    <div style="margin-bottom:40px; display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+      <div>
+        <span class="label">Step 03</span>
+        <h2 class="title">Simulation results</h2>
+      </div>
+      <div id="mc-run-info" style="font-family:'DM Mono',monospace; font-size:0.6875rem; color:var(--text-3); text-align:right;"></div>
+    </div>
+
+    <!-- Strategy summary cards -->
+    <div class="mc-result-cards" id="mc-result-cards"></div>
+
+    <!-- Distribution chart -->
+    <div class="mc-chart-card">
+      <div class="mc-chart-title">P&amp;L distribution</div>
+      <div class="mc-chart-subtitle">Simulated firm P&amp;L outcomes across all scenarios — area shows frequency of each outcome</div>
+      <div class="mc-chart-wrap">
+        <canvas id="mc-chart-dist"></canvas>
+      </div>
+    </div>
+
+    <!-- Risk vs Hedge Cost chart -->
+    <div class="mc-chart-card">
+      <div class="mc-chart-title">Risk vs hedge cost</div>
+      <div class="mc-chart-subtitle">VaR 95% (downside risk) vs estimated hedge execution cost per strategy</div>
+      <div class="mc-chart-wrap-sm">
+        <canvas id="mc-chart-rvc"></canvas>
+      </div>
+    </div>
+
+    <p class="result-note">
+      Monte Carlo simulation using Geometric Brownian Motion with user-defined annualised volatility per instrument.
+      Volatility is scaled to the chosen time horizon: σ_T = σ_annual × √(T/252).
+      Strategy A: firm holds full net position for duration T.
+      Strategy B: firm holds position for T/m (where m = T ÷ interval), then hedges — one spread execution cost.
+      Strategy C: path-simulated over 50 fine steps; hedge triggered whenever |unrealised P&amp;L| ≥ threshold.
+      Strategy D: deterministic — zero market risk, spread cost only.
+      VaR = 5th percentile of simulated P&amp;L. CVaR = mean of worst 5% of outcomes.
+      Ruin probability = % of simulations where loss exceeds capital buffer.
+      This tool is for institutional risk analysis only and does not constitute financial advice.
+    </p>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <svg width="24" height="24" viewBox="0 0 120 120" fill="none">
+            <path d="M28 32 L92 32 L57 59 L92 86 L28 86" stroke="url(#mc-ffg)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+            <defs>
+              <linearGradient id="mc-ffg" x1="28" y1="32" x2="92" y2="86" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#C5923A"/>
+                <stop offset="50%" stop-color="#DFB06A"/>
+                <stop offset="100%" stop-color="#C5923A"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          PrudentSigma
+        </div>
+        <p class="footer-tagline">A finance and decision-intelligence platform for serious people.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="newsletter.html">Financial News</a></li>
+          <li><a href="insights.html">Insights</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="consulting.html">Consulting</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Philosophy</h4>
+        <div class="footer-beliefs">
+          <div class="footer-belief"><span class="footer-belief-num">01</span><span class="footer-belief-text">Risk comes before return</span></div>
+          <div class="footer-belief"><span class="footer-belief-num">02</span><span class="footer-belief-text">Clarity beats complexity</span></div>
+          <div class="footer-belief"><span class="footer-belief-num">03</span><span class="footer-belief-text">Discipline compounds</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom-copy">&copy; 2025 PrudentSigma. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- JAVASCRIPT -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<script>
+// ─── Scroll reveal ───────────────────────────────────────────
+const reveals = document.querySelectorAll('.reveal');
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }});
+}, { threshold: 0.1 });
+reveals.forEach(r => ro.observe(r));
+const burger = document.getElementById('nav-burger');
+const navEl = document.getElementById('main-nav');
+if (burger) burger.addEventListener('click', () => navEl.classList.toggle('nav-open'));
+
+// ─── State ───────────────────────────────────────────────────
+let parsedPositions = [];
+var simParams = { interval: 5, conf: 95, horizon: '1d' };
+var selectedStrategies = new Set(['A','B','C','D']);
+var distChart = null, rvcChart = null;
+
+// ─── Utilities ───────────────────────────────────────────────
+function randn() {
+  var u, v;
+  do { u = Math.random(); } while (u === 0);
+  do { v = Math.random(); } while (v === 0);
+  return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+}
+
+function fmtMoney(n) {
+  var abs = Math.abs(n);
+  var sign = n < 0 ? '-' : '+';
+  var str;
+  if (abs >= 1e6) str = (abs / 1e6).toFixed(2) + 'M';
+  else if (abs >= 1e3) str = (abs / 1e3).toFixed(1) + 'K';
+  else str = abs.toFixed(0);
+  return sign + '$' + str;
+}
+
+function fmtDollar(n) {
+  return '$' + Math.abs(n).toLocaleString('en-US', {maximumFractionDigits: 0});
+}
+
+function fmtNum(n, dec) {
+  return n.toLocaleString('en-US', {minimumFractionDigits: dec, maximumFractionDigits: dec});
+}
+
+function pct(arr, p) {
+  var sorted = arr.slice().sort(function(a,b){ return a-b; });
+  var idx = Math.floor(sorted.length * p / 100);
+  return sorted[Math.min(idx, sorted.length - 1)];
+}
+
+function avg(arr) {
+  return arr.reduce(function(s,v){ return s+v; }, 0) / arr.length;
+}
+
+// ─── Symbol detection ────────────────────────────────────────
+var FX_CCY = ['EUR','GBP','USD','JPY','CHF','AUD','NZD','CAD','SEK','NOK','DKK','SGD','HKD','MXN','ZAR','TRY','PLN','CZK'];
+var CRYPTO_K = ['BTC','ETH','XRP','ADA','SOL','BNB','DOGE','LTC','AVAX','MATIC'];
+var GOLD_K = ['XAU','GOLD'];
+var OIL_K = ['OIL','WTI','USOIL','BRENT','CL'];
+var INDEX_K = ['SPX','SPY','NDX','NAS','DAX','FTSE','CAC','NIKKEI','DJ','DOW','VIX','STOXX'];
+
+function detectType(sym) {
+  var s = sym.toUpperCase().replace('/','').replace('-','').replace('_','');
+  if (CRYPTO_K.some(function(c){ return s.includes(c); })) return 'crypto';
+  if (GOLD_K.some(function(c){ return s.includes(c); })) return 'gold';
+  if (OIL_K.some(function(c){ return s.includes(c); })) return 'commodity';
+  if (INDEX_K.some(function(c){ return s.includes(c); })) return 'index';
+  if (s.length === 6) {
+    var base = s.slice(0,3), quote = s.slice(3,6);
+    if (FX_CCY.includes(base) && FX_CCY.includes(quote)) return 'fx';
+  }
+  return 'stock';
+}
+
+var VOL_ANN = { fx: 8, gold: 14, commodity: 25, index: 16, crypto: 80, stock: 30 };
+function defaultVol(sym) { return VOL_ANN[detectType(sym)] || 15; }
+
+var TYPE_LABELS = { fx: 'FX Pair', gold: 'Gold', commodity: 'Commodity', index: 'Index', crypto: 'Crypto', stock: 'Equity/Other' };
+
+// ─── CSV Parsing ─────────────────────────────────────────────
+function parseCSV(raw) {
+  var lines = raw.trim().split('\n');
+  var trades = [], errors = [];
+  lines.forEach(function(line, i) {
+    var t = line.trim();
+    if (!t || t.startsWith('#') || t.toLowerCase().startsWith('symbol')) return;
+    var parts = t.split(',').map(function(p){ return p.trim(); });
+    if (parts.length < 4) { errors.push('Row ' + (i+1) + ': needs 4 columns'); return; }
+    var sym = parts[0].toUpperCase();
+    var dir = parts[1].toUpperCase();
+    var size = parseFloat(parts[2].replace(/,/g,''));
+    var price = parseFloat(parts[3].replace(/,/g,''));
+    if (!sym) { errors.push('Row ' + (i+1) + ': empty symbol'); return; }
+    if (!['BUY','SELL','B','S'].includes(dir)) { errors.push('Row ' + (i+1) + ': direction must be BUY or SELL'); return; }
+    if (isNaN(size) || size <= 0) { errors.push('Row ' + (i+1) + ': invalid size'); return; }
+    if (isNaN(price) || price <= 0) { errors.push('Row ' + (i+1) + ': invalid price'); return; }
+    trades.push({ symbol: sym, direction: dir.startsWith('B') ? 'BUY' : 'SELL', size: size, price: price });
+  });
+  return { trades: trades, errors: errors };
+}
+
+function aggregatePositions(trades) {
+  var bySymbol = {};
+  trades.forEach(function(t) {
+    if (!bySymbol[t.symbol]) bySymbol[t.symbol] = { sym: t.symbol, buyUnits: 0, sellUnits: 0, totalCost: 0, totalUnits: 0 };
+    var s = bySymbol[t.symbol];
+    if (t.direction === 'BUY') s.buyUnits += t.size;
+    else s.sellUnits += t.size;
+    s.totalCost += t.size * t.price;
+    s.totalUnits += t.size;
+  });
+  return Object.values(bySymbol).map(function(s) {
+    var avgPx = s.totalCost / s.totalUnits;
+    var netUnits = s.buyUnits - s.sellUnits;
+    return {
+      symbol: s.sym,
+      netUnits: netUnits,
+      avgPrice: avgPx,
+      buyUnits: s.buyUnits,
+      sellUnits: s.sellUnits,
+      netDollar: netUnits * avgPx,
+      type: detectType(s.sym)
+    };
+  }).filter(function(p){ return p.netDollar !== 0; });
+}
+
+// ─── Simulation Strategies ───────────────────────────────────
+var HORIZONS = { '4h': 4/24, '1d': 1.0, '1w': 5.0 };
+
+function getVolInputs() {
+  var vols = {};
+  document.querySelectorAll('.mc-vol-input').forEach(function(el) {
+    vols[el.dataset.sym] = parseFloat(el.value) || defaultVol(el.dataset.sym);
+  });
+  return vols;
+}
+
+function positionsWithVol(positions, volInputs) {
+  return positions.map(function(p) {
+    var pCopy = Object.assign({}, p);
+    pCopy.sigmaAnn = (volInputs[p.symbol] || defaultVol(p.symbol)) / 100.0;
+    return pCopy;
+  });
+}
+
+function spreadCostTotal(positions, spreadBps) {
+  return positions.reduce(function(s, p) { return s + Math.abs(p.netDollar) * spreadBps / 10000.0; }, 0);
+}
+
+// Strategy A: Full Internalization — hold full net position for T
+function runA(positions, nSims, horizon) {
+  var T = HORIZONS[horizon];
+  var pnls = [];
+  for (var s = 0; s < nSims; s++) {
+    var pnl = 0;
+    for (var i = 0; i < positions.length; i++) {
+      var p = positions[i];
+      var sigmaT = p.sigmaAnn * Math.sqrt(T / 252.0);
+      pnl += -p.netDollar * randn() * sigmaT;
+    }
+    pnls.push(pnl);
+  }
+  return { pnls: pnls, avgHedgeCost: 0 };
+}
+
+// Strategy B: Periodic Hedging — hold for T/m then one hedge execution
+function runB(positions, nSims, horizon, intervalMin, spreadBps) {
+  var T_days = HORIZONS[horizon];
+  var T_min = T_days * 24 * 60;
+  var m = Math.max(1, Math.floor(T_min / intervalMin));
+  var holdDays = T_days / m;
+  var sCost = spreadCostTotal(positions, spreadBps);
+  var pnls = [];
+  for (var s = 0; s < nSims; s++) {
+    var pnl = 0;
+    for (var i = 0; i < positions.length; i++) {
+      var p = positions[i];
+      var sigmaStep = p.sigmaAnn * Math.sqrt(holdDays / 252.0);
+      pnl += -p.netDollar * randn() * sigmaStep;
+    }
+    pnl -= sCost;
+    pnls.push(pnl);
+  }
+  return { pnls: pnls, avgHedgeCost: sCost, m: m };
+}
+
+// Strategy C: VaR Boundary — trigger hedge when |cumPnL| >= threshold
+function runC(positions, nSims, horizon, varThreshold, spreadBps) {
+  var T_days = HORIZONS[horizon];
+  var nSteps = 50;
+  var dt = T_days / nSteps;
+  var sCost = spreadCostTotal(positions, spreadBps);
+  var pnls = [];
+  var totalHedges = 0;
+  for (var s = 0; s < nSims; s++) {
+    var cumPnl = 0;
+    var nHedges = 0;
+    for (var step = 0; step < nSteps; step++) {
+      var stepPnl = 0;
+      for (var i = 0; i < positions.length; i++) {
+        var p = positions[i];
+        var sigmaStep = p.sigmaAnn * Math.sqrt(dt / 252.0);
+        stepPnl += -p.netDollar * randn() * sigmaStep;
+      }
+      cumPnl += stepPnl;
+      if (Math.abs(cumPnl) >= varThreshold) {
+        nHedges++;
+        cumPnl = 0;
+      }
+    }
+    pnls.push(cumPnl - nHedges * sCost);
+    totalHedges += nHedges;
+  }
+  var avgHedges = totalHedges / nSims;
+  return { pnls: pnls, avgHedgeCost: avgHedges * sCost, avgHedges: avgHedges };
+}
+
+// Strategy D: Full Externalization — deterministic, zero market risk
+function runD(positions, nSims, spreadBps) {
+  var sCost = spreadCostTotal(positions, spreadBps);
+  var pnls = new Array(nSims).fill(-sCost);
+  return { pnls: pnls, avgHedgeCost: sCost };
+}
+
+// Compute metrics
+function computeMetrics(pnls, capitalBuffer) {
+  var n = pnls.length;
+  var sorted = pnls.slice().sort(function(a,b){ return a-b; });
+  var var95 = sorted[Math.floor(n * 0.05)];
+  var var99 = sorted[Math.floor(n * 0.01)];
+  var tail = sorted.slice(0, Math.floor(n * 0.05) + 1);
+  var cvar95 = avg(tail);
+  var ePnl = avg(pnls);
+  var ruinCount = sorted.filter(function(v){ return v < -Math.abs(capitalBuffer); }).length;
+  return {
+    var95: var95,
+    var99: var99,
+    cvar95: cvar95,
+    ePnl: ePnl,
+    ruinPct: (ruinCount / n) * 100
+  };
+}
+
+// ─── UI: Load sample ─────────────────────────────────────────
+function loadSampleTrades() {
+  document.getElementById('mc-csv-input').value =
+    '# Sample market-maker trade book\n' +
+    'EURUSD,BUY,1000000,1.0850\n' +
+    'EURUSD,SELL,600000,1.0848\n' +
+    'EURUSD,BUY,200000,1.0852\n' +
+    'GBPUSD,BUY,500000,1.2650\n' +
+    'GBPUSD,SELL,800000,1.2655\n' +
+    'USDJPY,SELL,2000000,149.85\n' +
+    'USDJPY,BUY,1500000,149.80\n' +
+    'XAUUSD,BUY,100,1985.00\n' +
+    'XAUUSD,SELL,30,1984.50\n' +
+    'USOIL,SELL,5000,82.30\n' +
+    'USOIL,BUY,2000,82.25';
+}
+
+function clearAll() {
+  document.getElementById('mc-csv-input').value = '';
+  document.getElementById('mc-parsed-section').classList.remove('visible');
+  document.getElementById('mc-params-section').style.display = 'none';
+  document.getElementById('mc-results').style.display = 'none';
+  document.getElementById('mc-results-divider').style.display = 'none';
+  hideError('mc-parse-error');
+  parsedPositions = [];
+}
+
+// ─── UI: Parse trades ─────────────────────────────────────────
+function parseTrades() {
+  var raw = document.getElementById('mc-csv-input').value;
+  hideError('mc-parse-error');
+
+  if (!raw.trim()) {
+    showError('mc-parse-error', 'Please paste your trade data or click "Load sample book".');
+    return;
+  }
+
+  var result = parseCSV(raw);
+  if (result.errors.length > 0 && result.trades.length === 0) {
+    showError('mc-parse-error', result.errors.join('\n'));
+    return;
+  }
+  if (result.trades.length === 0) {
+    showError('mc-parse-error', 'No valid trades found in the pasted data.');
+    return;
+  }
+
+  var positions = aggregatePositions(result.trades);
+  if (positions.length === 0) {
+    showError('mc-parse-error', 'All instruments have balanced books (zero net exposure). No risk to simulate.');
+    return;
+  }
+
+  parsedPositions = positions;
+  renderTradeTable(positions);
+  renderVolTable(positions);
+
+  var totalNotional = positions.reduce(function(s,p){ return s + Math.abs(p.netDollar); }, 0);
+  document.getElementById('mc-total-notional').textContent =
+    'Total net notional exposure: ' + fmtDollar(totalNotional) +
+    (result.errors.length > 0 ? ' · ' + result.errors.length + ' row(s) skipped' : '');
+  document.getElementById('mc-trade-count-label').textContent =
+    result.trades.length + ' trades · ' + positions.length + ' instrument(s)';
+
+  document.getElementById('mc-parsed-section').classList.add('visible');
+
+  if (result.errors.length > 0) {
+    showError('mc-parse-error', 'Warning: ' + result.errors.length + ' row(s) skipped — ' + result.errors[0]);
+  }
+}
+
+function renderTradeTable(positions) {
+  var tbody = document.getElementById('mc-pos-tbody');
+  tbody.innerHTML = '';
+  positions.forEach(function(p) {
+    var tr = document.createElement('tr');
+    var dirClass = p.netUnits > 0 ? 'pos-long' : 'pos-short';
+    var dirLabel = p.netUnits > 0 ? '▲ Long' : '▼ Short';
+    tr.innerHTML =
+      '<td>' + p.symbol + '</td>' +
+      '<td class="' + dirClass + '">' + dirLabel + ' ' + Math.abs(p.netUnits).toLocaleString('en-US') + '</td>' +
+      '<td>' + fmtNum(p.avgPrice, p.avgPrice > 100 ? 2 : 4) + '</td>' +
+      '<td class="' + dirClass + '">' + fmtMoney(p.netDollar) + '</td>';
+    tbody.appendChild(tr);
+  });
+}
+
+function renderVolTable(positions) {
+  var tbody = document.getElementById('mc-vol-tbody');
+  tbody.innerHTML = '';
+  positions.forEach(function(p) {
+    var defVol = defaultVol(p.symbol);
+    var tr = document.createElement('tr');
+    tr.innerHTML =
+      '<td style="padding-right:16px; color:var(--text-1);">' + p.symbol + '</td>' +
+      '<td style="padding-right:16px;"><span style="font-family:\'DM Mono\',monospace; font-size:0.6875rem; text-transform:uppercase; color:var(--text-3);">' + (TYPE_LABELS[p.type] || 'Other') + '</span></td>' +
+      '<td><input class="mc-vol-input" type="number" min="0.1" max="500" step="0.1" value="' + defVol + '" data-sym="' + p.symbol + '"> <span style="font-family:\'DM Mono\',monospace; font-size:0.6875rem; color:var(--text-3); margin-left:4px;">%</span></td>';
+    tbody.appendChild(tr);
+  });
+}
+
+function showParamsSection() {
+  var sec = document.getElementById('mc-params-section');
+  sec.style.display = 'block';
+  setTimeout(function() {
+    sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 100);
+}
+
+// ─── UI: Strategy toggle ──────────────────────────────────────
+function toggleStrategy(id) {
+  var card = document.getElementById('mc-card-' + id);
+  if (card.classList.contains('active')) {
+    if (selectedStrategies.size <= 1) return; // keep at least one
+    card.classList.remove('active');
+    selectedStrategies.delete(id);
+  } else {
+    card.classList.add('active');
+    selectedStrategies.add(id);
+  }
+}
+
+function selectParam(group, val, btn) {
+  simParams[group] = val;
+  document.querySelectorAll('[data-group="' + group + '"]').forEach(function(b) {
+    b.classList.remove('active');
+  });
+  btn.classList.add('active');
+}
+
+function customInterval(input) {
+  var v = parseInt(input.value);
+  if (!isNaN(v) && v > 0) {
+    simParams.interval = v;
+    document.querySelectorAll('[data-group="interval"]').forEach(function(b) {
+      if (b !== input) b.classList.remove('active');
+    });
+  }
+}
+
+function selectGlobal(group, val, btn) {
+  simParams[group] = val;
+  document.querySelectorAll('[data-group="' + group + '"]').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+}
+
+// ─── Run Simulation ───────────────────────────────────────────
+function runSimulation() {
+  hideError('mc-run-error');
+
+  if (parsedPositions.length === 0) {
+    showError('mc-run-error', 'No positions loaded. Go back to Step 1 and parse your trade book.');
+    return;
+  }
+  if (selectedStrategies.size === 0) {
+    showError('mc-run-error', 'Select at least one strategy to simulate.');
+    return;
+  }
+
+  var nSims = parseInt(document.getElementById('mc-nsims-slider').value);
+  var spreadBps = parseFloat(document.getElementById('mc-spread').value) || 1.5;
+  var capital = parseFloat(document.getElementById('mc-capital').value) || 0;
+  var horizon = simParams.horizon || '1d';
+  var intervalMin = simParams.interval || 5;
+  var varThreshold = parseFloat(document.getElementById('mc-var-threshold').value) || 50000;
+  var volInputs = getVolInputs();
+  var positions = positionsWithVol(parsedPositions, volInputs);
+
+  // Show spinner
+  var runBtn = document.getElementById('mc-run-btn');
+  runBtn.classList.add('mc-running');
+  runBtn.disabled = true;
+
+  setTimeout(function() {
+    try {
+      var results = {};
+
+      if (selectedStrategies.has('A')) {
+        var rA = runA(positions, nSims, horizon);
+        results.A = Object.assign(rA, computeMetrics(rA.pnls, capital), { label: 'Full Internalization', strategy: 'A' });
+      }
+      if (selectedStrategies.has('B')) {
+        var rB = runB(positions, nSims, horizon, intervalMin, spreadBps);
+        results.B = Object.assign(rB, computeMetrics(rB.pnls, capital), { label: 'Periodic Hedging (' + intervalMin + 'min)', strategy: 'B', m: rB.m });
+      }
+      if (selectedStrategies.has('C')) {
+        var rC = runC(positions, nSims, horizon, varThreshold, spreadBps);
+        results.C = Object.assign(rC, computeMetrics(rC.pnls, capital), { label: 'VaR Boundary ($' + fmtNum(varThreshold/1000,0) + 'K)', strategy: 'C' });
+      }
+      if (selectedStrategies.has('D')) {
+        var rD = runD(positions, nSims, spreadBps);
+        results.D = Object.assign(rD, computeMetrics(rD.pnls, capital), { label: 'Full Externalization', strategy: 'D' });
+      }
+
+      renderResults(results, nSims, horizon, spreadBps);
+
+    } catch(e) {
+      showError('mc-run-error', 'Simulation error: ' + e.message);
+    } finally {
+      runBtn.classList.remove('mc-running');
+      runBtn.disabled = false;
+    }
+  }, 20);
+}
+
+// ─── Render Results ───────────────────────────────────────────
+var STRAT_COLORS = {
+  A: { bg: 'rgba(220,80,80,0.15)', border: 'rgba(220,80,80,0.85)', area: 'rgba(220,80,80,0.12)' },
+  B: { bg: 'rgba(197,146,58,0.15)', border: 'rgba(197,146,58,0.85)', area: 'rgba(197,146,58,0.12)' },
+  C: { bg: 'rgba(61,140,130,0.15)', border: 'rgba(61,140,130,0.85)', area: 'rgba(61,140,130,0.12)' },
+  D: { bg: 'rgba(94,122,150,0.15)', border: 'rgba(94,122,150,0.85)', area: 'rgba(94,122,150,0.12)' }
+};
+
+function renderResults(results, nSims, horizon, spreadBps) {
+  // Update run info
+  var horizonLabel = { '4h': '4 hours', '1d': '1 trading day', '1w': '1 trading week' };
+  document.getElementById('mc-run-info').innerHTML =
+    nSims.toLocaleString() + ' simulations &middot; ' + (horizonLabel[horizon] || horizon) +
+    ' horizon &middot; ' + spreadBps + 'bps LP spread';
+
+  // Render summary cards
+  var cardsEl = document.getElementById('mc-result-cards');
+  cardsEl.innerHTML = '';
+  var stratOrder = ['A','B','C','D'];
+  stratOrder.forEach(function(id) {
+    if (!results[id]) return;
+    var r = results[id];
+    var card = document.createElement('div');
+    card.className = 'mc-result-card';
+    card.dataset.strategy = id;
+
+    var ePnlClass = r.ePnl >= 0 ? 'positive' : 'negative';
+    var var95Class = r.var95 >= 0 ? 'positive' : 'negative';
+    var ruinClass = r.ruinPct < 1 ? 'positive' : r.ruinPct < 5 ? '' : 'negative';
+    var costClass = r.avgHedgeCost === 0 ? 'neutral' : '';
+    var extraInfo = '';
+    if (id === 'B' && r.m) extraInfo = '<span style="font-family:\'DM Mono\',monospace;font-size:0.625rem;color:var(--text-3);margin-left:12px;">(' + r.m + ' hedge intervals)</span>';
+    if (id === 'C' && r.avgHedges !== undefined) extraInfo = '<span style="font-family:\'DM Mono\',monospace;font-size:0.625rem;color:var(--text-3);margin-left:12px;">(avg ' + fmtNum(r.avgHedges,1) + ' hedges/sim)</span>';
+
+    card.innerHTML =
+      '<div class="mc-result-strat-name">' + r.label + extraInfo + '</div>' +
+      '<div class="mc-result-metrics">' +
+        '<div class="mc-metric"><span class="mc-metric-label">E[P&amp;L]</span><span class="mc-metric-value ' + ePnlClass + '">' + fmtMoney(r.ePnl) + '</span></div>' +
+        '<div class="mc-metric"><span class="mc-metric-label">VaR 95%</span><span class="mc-metric-value ' + var95Class + '">' + fmtMoney(r.var95) + '</span></div>' +
+        '<div class="mc-metric"><span class="mc-metric-label">CVaR 95%</span><span class="mc-metric-value negative">' + fmtMoney(r.cvar95) + '</span></div>' +
+        '<div class="mc-metric"><span class="mc-metric-label">Ruin prob</span><span class="mc-metric-value ' + ruinClass + '">' + fmtNum(r.ruinPct, 1) + '%</span></div>' +
+        '<div class="mc-metric"><span class="mc-metric-label">Hedge cost</span><span class="mc-metric-value ' + costClass + '">' + (r.avgHedgeCost > 0 ? fmtMoney(-r.avgHedgeCost) : '—') + '</span></div>' +
+      '</div>';
+    cardsEl.appendChild(card);
+  });
+
+  // Show results section
+  document.getElementById('mc-results').style.display = 'block';
+  document.getElementById('mc-results-divider').style.display = 'block';
+
+  renderCharts(results);
+
+  setTimeout(function() {
+    document.getElementById('mc-results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 100);
+}
+
+// ─── Charts ───────────────────────────────────────────────────
+function destroyCharts() {
+  if (distChart) { distChart.destroy(); distChart = null; }
+  if (rvcChart) { rvcChart.destroy(); rvcChart = null; }
+}
+
+function buildHistogramData(allResults, nBins) {
+  nBins = nBins || 60;
+  var allPnls = [];
+  Object.values(allResults).forEach(function(r) { allPnls = allPnls.concat(r.pnls); });
+  var globalMin = Math.min.apply(null, allPnls);
+  var globalMax = Math.max.apply(null, allPnls);
+  var range = globalMax - globalMin;
+  globalMin -= range * 0.04;
+  globalMax += range * 0.04;
+  var binSize = (globalMax - globalMin) / nBins;
+
+  var labels = [];
+  for (var b = 0; b < nBins; b++) {
+    labels.push(fmtMoney(globalMin + (b + 0.5) * binSize));
+  }
+
+  var datasets = [];
+  var stratOrder = ['A','B','C','D'];
+  stratOrder.forEach(function(id) {
+    if (!allResults[id]) return;
+    var r = allResults[id];
+    var counts = new Array(nBins).fill(0);
+    r.pnls.forEach(function(v) {
+      var bin = Math.floor((v - globalMin) / binSize);
+      bin = Math.max(0, Math.min(nBins - 1, bin));
+      counts[bin]++;
+    });
+    // Normalize to % of simulations
+    var total = r.pnls.length;
+    var freq = counts.map(function(c){ return (c / total) * 100; });
+    // Smooth with 3-point moving avg
+    var smoothed = freq.map(function(v, i) {
+      var sum = v, n = 1;
+      if (i > 0) { sum += freq[i-1]; n++; }
+      if (i < freq.length-1) { sum += freq[i+1]; n++; }
+      return sum / n;
+    });
+    datasets.push({
+      label: r.label,
+      data: smoothed,
+      backgroundColor: STRAT_COLORS[id].area,
+      borderColor: STRAT_COLORS[id].border,
+      borderWidth: 1.5,
+      fill: true,
+      tension: 0.35,
+      pointRadius: 0,
+      pointHoverRadius: 0
+    });
+  });
+
+  return { labels: labels, datasets: datasets };
+}
+
+function renderCharts(results) {
+  destroyCharts();
+
+  // Chart 1: P&L Distribution
+  var distData = buildHistogramData(results, 60);
+  var distCtx = document.getElementById('mc-chart-dist').getContext('2d');
+  distChart = new Chart(distCtx, {
+    type: 'line',
+    data: distData,
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: {
+          labels: {
+            color: 'rgba(168,189,212,0.8)',
+            font: { family: "'DM Mono', monospace", size: 11 },
+            padding: 20,
+            usePointStyle: true,
+            pointStyleWidth: 10
+          }
+        },
+        tooltip: {
+          backgroundColor: 'rgba(11,21,38,0.95)',
+          borderColor: 'rgba(197,146,58,0.2)',
+          borderWidth: 1,
+          titleFont: { family: "'DM Mono', monospace", size: 10 },
+          bodyFont: { family: "'DM Mono', monospace", size: 11 },
+          titleColor: 'rgba(197,146,58,0.8)',
+          bodyColor: 'rgba(168,189,212,0.9)',
+          callbacks: {
+            label: function(ctx) {
+              return ctx.dataset.label + ': ' + fmtNum(ctx.parsed.y, 2) + '%';
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(23,37,64,0.8)', drawBorder: false },
+          ticks: {
+            color: 'rgba(94,122,150,0.7)',
+            font: { family: "'DM Mono', monospace", size: 9 },
+            maxTicksLimit: 10,
+            maxRotation: 0
+          }
+        },
+        y: {
+          grid: { color: 'rgba(23,37,64,0.8)', drawBorder: false },
+          ticks: {
+            color: 'rgba(94,122,150,0.7)',
+            font: { family: "'DM Mono', monospace", size: 9 },
+            callback: function(v) { return fmtNum(v,1) + '%'; }
+          }
+        }
+      }
+    }
+  });
+
+  // Chart 2: Risk vs Hedge Cost
+  var stratOrder = ['A','B','C','D'];
+  var labels2 = [], var95Data = [], costData = [];
+  stratOrder.forEach(function(id) {
+    if (!results[id]) return;
+    var r = results[id];
+    labels2.push(r.label);
+    var95Data.push(Math.abs(r.var95));
+    costData.push(r.avgHedgeCost);
+  });
+
+  var rvcCtx = document.getElementById('mc-chart-rvc').getContext('2d');
+  rvcChart = new Chart(rvcCtx, {
+    type: 'bar',
+    data: {
+      labels: labels2,
+      datasets: [
+        {
+          label: '|VaR 95%| — Downside Risk',
+          data: var95Data,
+          backgroundColor: 'rgba(220,80,80,0.25)',
+          borderColor: 'rgba(220,80,80,0.7)',
+          borderWidth: 1.5,
+          borderRadius: 3
+        },
+        {
+          label: 'Avg Hedge Cost',
+          data: costData,
+          backgroundColor: 'rgba(197,146,58,0.2)',
+          borderColor: 'rgba(197,146,58,0.65)',
+          borderWidth: 1.5,
+          borderRadius: 3
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          labels: {
+            color: 'rgba(168,189,212,0.8)',
+            font: { family: "'DM Mono', monospace", size: 11 },
+            padding: 20,
+            usePointStyle: true
+          }
+        },
+        tooltip: {
+          backgroundColor: 'rgba(11,21,38,0.95)',
+          borderColor: 'rgba(197,146,58,0.2)',
+          borderWidth: 1,
+          titleFont: { family: "'DM Mono', monospace", size: 10 },
+          bodyFont: { family: "'DM Mono', monospace", size: 11 },
+          titleColor: 'rgba(197,146,58,0.8)',
+          bodyColor: 'rgba(168,189,212,0.9)',
+          callbacks: {
+            label: function(ctx) {
+              return ctx.dataset.label + ': ' + fmtDollar(ctx.parsed.y);
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(23,37,64,0.8)', drawBorder: false },
+          ticks: { color: 'rgba(94,122,150,0.8)', font: { family: "'DM Mono', monospace", size: 10 } }
+        },
+        y: {
+          grid: { color: 'rgba(23,37,64,0.8)', drawBorder: false },
+          ticks: {
+            color: 'rgba(94,122,150,0.7)',
+            font: { family: "'DM Mono', monospace", size: 9 },
+            callback: function(v) {
+              if (v >= 1e6) return '$' + (v/1e6).toFixed(1) + 'M';
+              if (v >= 1e3) return '$' + (v/1e3).toFixed(0) + 'K';
+              return '$' + v.toFixed(0);
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
+// ─── Helper UI ────────────────────────────────────────────────
+function showError(id, msg) {
+  var el = document.getElementById(id);
+  el.textContent = msg;
+  el.classList.add('visible');
+}
+function hideError(id) {
+  var el = document.getElementById(id);
+  el.textContent = '';
+  el.classList.remove('visible');
+}
+</script>
+
+</body>
+</html>
