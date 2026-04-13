@@ -12,6 +12,19 @@
         "Mkt Cap": "$397B",
         "Verdict": "Overvalued"
       }
+    },
+    {
+      "ticker": "NKE",
+      "company": "Nike, Inc.",
+      "date": "2026-04-13",
+      "type": "Deep Dive",
+      "file": "research-reports/NKE_2026-04-13.html",
+      "excerpt": "Nike trades 47% below DCF fair value of $63 as tariffs and China headwinds mask a genuine turnaround under CEO Elliott Hill.",
+      "metrics": {
+        "Price": "$42.62",
+        "Mkt Cap": "$63B",
+        "Verdict": "Undervalued"
+      }
     }
   ]
 }
