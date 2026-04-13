@@ -1,3 +1,17 @@
 {
-  "reports": []
+  "reports": [
+    {
+      "ticker": "ORCL",
+      "company": "Oracle Corporation",
+      "date": "2026-04-13",
+      "type": "DCF Valuation",
+      "file": "research-reports/ORCL_2026-04-13.html",
+      "excerpt": "Oracle trades at a 35% premium to FCF-based DCF fair value of $102, pricing in AI cloud monetisation optionality.",
+      "metrics": {
+        "Price": "$138.09",
+        "Mkt Cap": "$397B",
+        "Verdict": "Overvalued"
+      }
+    }
+  ]
 }
