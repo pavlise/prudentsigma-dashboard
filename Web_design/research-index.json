@@ -26,5 +26,19 @@
         "Verdict": "Undervalued"
       }
     }
+  ,
+    {
+      "ticker": "VOW3",
+      "company": "Volkswagen AG",
+      "date": "2026-04-13",
+      "type": "Deep Dive",
+      "file": "research-reports/VOW3_2026-04-13.html",
+      "excerpt": "Volkswagen trades at 4-6x P/E with €34B automotive net cash and a 6% dividend yield, pricing in near-total restructuring failure.",
+      "metrics": {
+        "Price": "€88.24",
+        "Mkt Cap": "€45B",
+        "Verdict": "Undervalued"
+      }
+    }
   ]
 }
