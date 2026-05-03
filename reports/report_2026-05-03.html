@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market Report May 3, 2026 — PrudentSigma</title>
+  <meta name="description" content="PrudentSigma Daily Market Report for May 3, 2026. Macro analysis, technical snapshot, investment ideas.">
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="PrudentSigma">
+  <meta property="og:title" content="Market Report May 3, 2026 — PrudentSigma">
+  <meta property="og:description" content="PrudentSigma Daily Market Report for May 3, 2026. Macro analysis, technical snapshot, investment ideas.">
+  <meta property="og:url" content="https://pavlise.github.io/prudentsigma-dashboard/reports/report_2026-05-03.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Market Report May 3, 2026 — PrudentSigma">
+  <meta name="twitter:description" content="PrudentSigma Daily Market Report for May 3, 2026. Macro analysis, technical snapshot, investment ideas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .report-wrapper {
+      background: var(--navy-800);
+      border: 1px solid var(--navy-600);
+      border-radius: var(--radius-md);
+      padding: 40px;
+      overflow-x: auto;
+    }
+    .report-pre {
+      font-family: 'DM Mono', 'Courier New', monospace;
+      font-size: 0.8125rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--text-2);
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      margin: 0;
+    }
+    .rpt-rule {
+      color: var(--gold-deep);
+      opacity: 0.6;
+      display: block;
+    }
+    .rpt-header {
+      color: var(--gold-warm);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      display: block;
+    }
+    .rpt-sep {
+      color: var(--navy-600);
+      display: block;
+    }
+    .rpt-section {
+      color: var(--gold-mid);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      display: block;
+      padding: 4px 0;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold-mid);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 400;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color var(--transition-fast);
+      margin-bottom: 48px;
+      display: block;
+    }
+    .back-link:hover { color: var(--gold-warm); }
+    .report-meta {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .report-meta-badge {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-3);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .report-nav-btn {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--gold-mid);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: color 150ms ease;
+    }
+    .report-nav-btn:hover { color: var(--gold-warm); }
+    .read-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold-deep), var(--gold-mid));
+      z-index: 9999;
+      transition: width 0.1s linear;
+      width: 0%;
+    }
+  </style>
+</head>
+<body>
+<div class="read-progress" id="read-progress"></div>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <div class="container">
+    <a href="../index.html" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="60" r="56" stroke="url(#rpt-nfg)" stroke-width="1" opacity="0.35"/>
+        <path d="M28 32 L92 32 L57 59 L92 86 L28 86" stroke="url(#rpt-nsg)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+        <defs>
+          <linearGradient id="rpt-nsg" x1="28" y1="32" x2="92" y2="86" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#C5923A"/>
+            <stop offset="50%" stop-color="#DFB06A"/>
+            <stop offset="100%" stop-color="#C5923A"/>
+          </linearGradient>
+          <linearGradient id="rpt-nfg" x1="4" y1="4" x2="116" y2="116" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#C5923A" stop-opacity="0.6"/>
+            <stop offset="1" stop-color="#C5923A" stop-opacity="0.1"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      PrudentSigma
+    </a>
+    <div class="nav-links">
+      <a href="../about.html">About</a>
+      <a href="../newsletter.html" class="active">Financial News</a>
+      <a href="../consulting.html">Consulting</a>
+      <a href="../insights.html">Insights</a>
+      <a href="../tools.html">Tools</a>
+    </div>
+    <div class="nav-cta">
+      <a href="../contact.html" class="btn btn-primary">Book a Call</a>
+      <button class="nav-burger" id="nav-burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- TICKER BAR -->
+<div class="ticker-bar">
+  <div class="tradingview-widget-container" style="height:100%;width:100%;">
+    <div class="tradingview-widget-container__widget" style="height:100%;"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+      "symbols": [
+        {"proName": "TVC:SPX", "title": "S&P 500"},
+        {"proName": "TVC:NDX", "title": "Nasdaq 100"},
+        {"description": "DXY", "proName": "TVC:DXY"},
+        {"description": "Gold", "proName": "TVC:GOLD"},
+        {"description": "Silver", "proName": "TVC:SILVER"},
+        {"description": "WTI Crude", "proName": "TVC:USOIL"},
+        {"description": "BTC/USD", "proName": "BITSTAMP:BTCUSD"},
+        {"description": "EUR/USD", "proName": "FX:EURUSD"},
+        {"description": "GBP/USD", "proName": "FX:GBPUSD"},
+        {"description": "USD/JPY", "proName": "FX:USDJPY"}
+      ],
+      "showSymbolLogo": false,
+      "isTransparent": true,
+      "displayMode": "adaptive",
+      "colorTheme": "dark",
+      "locale": "en"
+    }
+    </script>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="label anim-1">Daily Market Report</span>
+    <h1 class="display anim-2" style="max-width:700px;">May 3, 2026</h1>
+    <p class="subtitle anim-3" style="max-width:500px; margin-top:16px;">PrudentSigma Market Intelligence — Macro, Technicals, and Ideas.</p>
+  </div>
+</section>
+
+<!-- REPORT CONTENT -->
+<section class="section">
+  <div class="container">
+    <a href="../newsletter.html#daily-reports" class="back-link">&#8592; Back to all reports</a>
+    <div class="report-meta">
+      <span class="report-meta-badge">Date: 2026-05-03</span>
+      <span class="report-meta-badge">Source: PrudentSigma AI Research</span>
+      <span class="report-meta-badge">11 min read</span>
+    </div>
+    <div class="report-wrapper reveal">
+      <pre class="report-pre"><span class="rpt-rule">════════════════════════════════════════════════════════════════════════════════</span>
+<span class="rpt-header">PRUDENTSIGMA DAILY MARKET REPORT  |  2026-05-03  |  06:30 UTC</span>
+  "Smarter Strategies. Prudent Growth."
+<span class="rpt-rule">════════════════════════════════════════════════════════════════════════════════</span>
+
+<span class="rpt-rule">════════════════════════════════════════════════════════════════════════════════</span>
+SECTION 1 — MACRO PULSE (5-MINUTE READ)
+<span class="rpt-rule">════════════════════════════════════════════════════════════════════════════════</span>
+
+<strong style="color:var(--text-1);font-weight:500;">Dominant Macro Theme Today:</strong>
+Equities printed fresh all-time highs on Sunday's open as Apple's fiscal Q2 blowout
+(+3% AH surge, EPS beat + better-than-expected Q3 revenue guide) combined with an
+Iran peace proposal that briefly released geopolitical pressure built up over the
+past fortnight. However, beneath the surface, the Federal Reserve is entering a
+historic leadership transition: Jerome Powell's term officially expires May 15, the
+April 28–29 FOMC saw four dissenting votes — the most since 1992 — and Kevin Warsh
+is expected to be confirmed as incoming Chair the week of May 11. This policy
+uncertainty, layered over elevated Middle East risk (WTI up +77.84% YTD at $101.94),
+creates a fragile but still-bullish regime.
+
+<strong style="color:var(--text-1);font-weight:500;">Key Data Points:</strong>
+
+| Asset           | Price/Level | 1D%   | 5D%    | Key Level to Watch                     |
+|-----------------|-------------|-------|--------|----------------------------------------|
+| SPX             | 7,230.12    | 0.00% | +0.78% | ATH = resistance; SMA20 @ 7,008 support|
+| NDX             | 27,710      | 0.00% | +1.48% | BB upper band at ~27,700; RSI 75 = risk|
+| DXY             | 98.210      | 0.00% | -0.27% | Below all SMAs — 97.50 is next support |
+| Gold (XAU/USD)  | 4,629.90    | 0.00% | -0.97% | SMA50 @ 4,833 = near-term ceiling      |
+| Silver (XAG/USD)| 75.951      | 0.00% | +1.26% | SMA20 @ 76.12 — reclaim = bullish turn |
+| WTI Crude       | 101.940     | 0.00% | +5.78% | SMA50 @ 91.18 is deep support; $112 cap|
+| US 10Y Yield    | 4.38%       | 0.00% | +0.97% | 4.40–4.60 range top = equity headwind  |
+| VIX             | 16.99       | 0.00% | -5.72% | 15.00 = floor; spike above 20 = hedge  |
+| BTC/USD         | 78,366      | 0.00% | +2.64% | SMA200 @ 83,846 = key resistance above |
+
+<strong style="color:var(--text-1);font-weight:500;">Market Regime Today:</strong> Risk-On / Cautiously Overbought
+<strong style="color:var(--text-1);font-weight:500;">Conviction Level:</strong> Medium
+<strong style="color:var(--text-1);font-weight:500;">Reason:</strong> Equities are trading at all-time highs above all key moving averages with
+bullish MACD across SPX/NDX, but RSI readings of 71 (SPX) and 75 (NDX), QQQ put/call
+volume spiking to 2.38, and a historic Fed dissent signal that institutional hedgers
+are not complacent. The rally is real but increasingly priced for perfection.
+
+<span class="rpt-rule">════════════════════════════════════════════════════════════════════════════════</span>
+SECTION 2 — TECHNICAL SNAPSHOT
+<span class="rpt-rule">════════════════════════════════════════════════════════════════════════════════</span>
+
+<strong style="color:var(--text-1);font-weight:500;">Technical Condition Summary:</strong>
+
+- <strong style="color:var(--text-1);font-weight:500;">Trend structure:</strong> SPX and NDX are in pristine bull structure — above SMA20, SMA50,
+  and SMA200, with the 20D range for SPX stretching from 6,612 to today's ATH of 7,230.
+  WTI Crude is the other standout bull: +47.8% above its SMA200. Gold and Silver remain
+  in longer-term uptrends (above SMA200) but are consolidating — Gold is 4.2% below
+  SMA50 and 1.9% below SMA20, suggesting a local top was formed near $4,857 in late
+  April. BTC is the lone structural laggard: above SMA20/50 but 6.5% below its SMA200
+  at $83,846 — a bear-structure holdout in an otherwise risk-on world.
+
+- <strong style="color:var(--text-1);font-weight:500;">Momentum:</strong> RSI divergences are the key concern. NDX at RSI 75 and SPX at 71 are
+  technically overbought, creating asymmetric downside risk on any negative catalyst.
+  WTI at RSI 56 has room to run. Silver at RSI 50 is neutral — a reset after the
+  recent pullback — making it the most technically attractive precious metal entry here.
+  Gold at RSI 44 is drifting toward oversold on the daily, which is constructive for
+  medium-term re-entry once SMA20 is reclaimed.
+
+- <strong style="color:var(--text-1);font-weight:500;">Volatility:</strong> VIX at 16.99 is compressed (-28.82% over 1M), with the term structure
+  in normal contango (VIX3M at 20.37). This contango is healthy — no panic — but the
+  3M implied premium of ~3.4 VIX points reflects latent concern about summer catalysts
+  (Fed Chair transition, NFP trajectory, Iran resolution/escalation). ATR% is elevated
+  in WTI (7.50%) and Silver (3.97%) — both assets require wider position sizing.
+
+- <strong style="color:var(--text-1);font-weight:500;">Cross-asset signals:</strong> SPX/HYG correlation at 0.88 and HYG holding at $80.06
+  (+1.16% 1M) is the most bullish confirmation signal: no credit stress. The DXY bear
+  signal (below all three SMAs, bearish MACD) is supportive for gold and EM risk — yet
+  Gold/DXY correlation sits at only -0.28, weaker than normal. Gold declining despite
+  a falling dollar suggests internal metal selling (profit-taking from the $5,318 high).
+  The SPX/VIX correlation of -0.87 is functioning normally — no structural divergence.
+
+- <strong style="color:var(--text-1);font-weight:500;">Options sentiment:</strong> SPY P/C volume at 1.17 signals neutral institutional
+  positioning on large-caps. QQQ P/C volume at 2.38 is the tell — elevated put buying
+  confirms that smart money is hedging the tech rally after NDX's +15.24% 1M run. This
+  is not necessarily bearish; it can extend the rally as put sellers absorb premiums.
+
+<strong style="color:var(--text-1);font-weight:500;">Sector Rotation:</strong>
+Tech (XLK) is the decisive 1M leader: +19.03% vs SPX's +9.84%, a +9.2% relative
+outperformance. This is mega-cap earnings-driven — AAPL, MSFT, NVDA, AMZN, GOOGL, and
+META all beat Q1 estimates by meaningful margins. Defensives are being gutted: Healthcare
+(XLV) -10.96% relative, Utilities (XLU) -9.38%, Energy (XLE) -10.51% relative despite
+WTI's +77% YTD run. This XLE underperformance vs. WTI is a glaring divergence —
+E&amp;P margins and refining crack spreads may be compressing, or the market is pricing a
+near-term oil pullback. Rotation signal: pure risk-on, growth/momentum leadership.
+
+<span class="rpt-rule">════════════════════════════════════════════════════════════════════════════════</span>
+SECTION 3 — KEY EVENTS &amp; CATALYSTS (NEXT 5 TRADING DAYS)
+<span class="rpt-rule">════════════════════════════════════════════════════════════════════════════════</span>
+
+| Date        | Event                                    | Impact  | Direction Bias              |
+|-------------|------------------------------------------|---------|-----------------------------|
+| Mon May 4   | ISM Services PMI (April)                 | High    | Bullish if &gt;52; Bearish &lt;50 |
+| Tue May 5   | US Trade Balance (March)                 | Medium  | Bearish (tariff widening)   |
+| Wed May 6   | ADP Private Payrolls (April)             | High    | NFP preview; Neutral        |
+| Thu May 7   | Initial Jobless Claims; Wholesale Inv.   | Medium  | Neutral                     |
+| Fri May 8   | April Nonfarm Payrolls + Unemployment    | CRITICAL| Asymmetric — see below      |
+
+<strong style="color:var(--text-1);font-weight:500;">HIGHEST IMPACT EVENT — April NFP (Friday, May 8):</strong>
+March NFP came in at +178K, a dramatic reversal from February's -133K and nearly 3×
+the +60K consensus. The market will be watching to see whether that rebound was a
+one-month anomaly or the start of a re-acceleration. With the April 28–29 FOMC holding
+at 3.50–3.75% and the statement noting "elevated inflation" from energy prices, the Fed
+is in a stagflation-adjacent bind — Powell's final act explicitly signaled no cuts in
+2026 (June cut probability: ~5%). A strong NFP (&gt;150K) would cement the "higher for
+longer" narrative, likely steepening the 10Y toward 4.50–4.60% and pressuring
+rate-sensitive sectors (Real Estate, Utilities). A weak print (&lt;75K) would reignite
+cut expectations and could spike VIX as recession fears re-emerge. The asymmetry is
+skewed bearish: if the number disappoints and 10Y yields spike simultaneously (i.e.,
+stagflation read), equities at ATH have significant retracement risk. Watch the ADP
+Wednesday print as a directional tell.
+
+<span class="rpt-rule">════════════════════════════════════════════════════════════════════════════════</span>
+SECTION 4 — INVESTMENT IDEAS (RANKED BY CONVICTION)
+<span class="rpt-rule">════════════════════════════════════════════════════════════════════════════════</span>
+
+<strong style="color:var(--text-1);font-weight:500;">#1 — LONG WTI Crude Oil  |  Conviction: HIGH</strong>
+
+- <strong style="color:var(--text-1);font-weight:500;">Thesis:</strong> WTI is the cleanest trend in global macro. Brent touched $126 intraday
+  last week on Iran escalation; even with the peace-proposal relief, geopolitical risk
+  premium is structurally elevated. Iran's Supreme Leader comments were hawkish, and
+  any Strait of Hormuz disruption would send WTI toward the $112 52W high. MACD is
+  bullish; RSI 56 has room. The US-India tariff deal (lower tariffs contingent on
+  reduced Russian oil imports) is redirecting global flows, tightening net supply to
+  Western markets.
+- <strong style="color:var(--text-1);font-weight:500;">Technical setup:</strong> Price at $101.94, above SMA20 ($97.48), SMA50 ($91.18), and
+  SMA200 ($68.99). RSI 56 — not overbought. MACD bullish. BB% 0.65. ATR% 7.50%.
+- <strong style="color:var(--text-1);font-weight:500;">Entry:</strong> $99.50–$101.50 (pullback toward SMA20 area)
+- <strong style="color:var(--text-1);font-weight:500;">Target 1:</strong> $108.00  |  <strong style="color:var(--text-1);font-weight:500;">Target 2:</strong> $112.95 (52W high retest)
+- <strong style="color:var(--text-1);font-weight:500;">Stop Loss:</strong> $94.50  |  <strong style="color:var(--text-1);font-weight:500;">Why:</strong> Close below SMA20 invalidates trend continuation
+- <strong style="color:var(--text-1);font-weight:500;">Risk/Reward:</strong> ~2.5:1 to T1; ~3.5:1 to T2
+- <strong style="color:var(--text-1);font-weight:500;">Position Size:</strong> 4–5% of portfolio
+- <strong style="color:var(--text-1);font-weight:500;">Instrument:</strong> USO ETF / WTI Futures (CL)
+
+---
+
+<strong style="color:var(--text-1);font-weight:500;">#2 — LONG Silver (XAG/USD)  |  Conviction: MEDIUM</strong>
+
+- <strong style="color:var(--text-1);font-weight:500;">Thesis:</strong> Silver reset from $81.74 to $75.95 over the past month (-7% from range
+  high), pulling RSI back to 50 — a neutral reset in a structural bull. Silver is
+  +22.9% above its SMA200 ($61.80), the strongest long-term trend among metals. With
+  gold consolidating and industrial demand intact (Copper holding SMA50), silver offers
+  a better technical entry than gold right now. DXY weakness (below all SMAs) is a
+  structural tailwind. A reclaim of SMA20 ($76.12) confirms re-entry.
+- <strong style="color:var(--text-1);font-weight:500;">Technical setup:</strong> Price $75.95, 0.2% below SMA20 ($76.12); 2.9% below SMA50
+  ($78.22); +22.9% above SMA200 ($61.80). RSI 50 (neutral reset). MACD bearish
+  (near-term) but momentum waning. ATR% 3.97%.
+- <strong style="color:var(--text-1);font-weight:500;">Entry:</strong> $74.50–$76.50 (current range; add on SMA20 reclaim)
+- <strong style="color:var(--text-1);font-weight:500;">Target 1:</strong> $81.74 (recent range high)  |  <strong style="color:var(--text-1);font-weight:500;">Target 2:</strong> $90.00
+- <strong style="color:var(--text-1);font-weight:500;">Stop Loss:</strong> $70.50  |  <strong style="color:var(--text-1);font-weight:500;">Why:</strong> Below recent swing low breaks bull structure
+- <strong style="color:var(--text-1);font-weight:500;">Risk/Reward:</strong> 2.5:1 to T1
+- <strong style="color:var(--text-1);font-weight:500;">Position Size:</strong> 3–4% of portfolio
+- <strong style="color:var(--text-1);font-weight:500;">Instrument:</strong> SLV ETF / XAGUSD spot / Silver futures (SI)
+
+---
+
+<strong style="color:var(--text-1);font-weight:500;">#3 — SHORT NDX (Hedge)  |  Conviction: MEDIUM</strong>
+
+- <strong style="color:var(--text-1);font-weight:500;">Thesis:</strong> NDX is up +15.24% in one month and RSI has reached 75 — a level that
+  has historically preceded short-term corrections of 5–8%. The QQQ P/C volume ratio
+  of 2.38 signals elevated institutional hedging. The earnings tailwind (all Mag-7
+  beat Q1) is now fully priced; the next catalyst is macro (NFP May 8). A weak jobs
+  print + sticky 10Y yield = stagflation read that hits NDX disproportionately.
+  Powell's exit and Warsh uncertainty adds further near-term policy risk.
+- <strong style="color:var(--text-1);font-weight:500;">Technical setup:</strong> NDX 27,710 — +10.1% above SMA50, +11.6% above SMA200. RSI 75
+  overbought. BB% 0.84 (near upper band). MACD bullish but stretched. ATR% 1.41%.
+- <strong style="color:var(--text-1);font-weight:500;">Entry:</strong> 27,500–27,710 (sell strength; use QQQ puts or inverse ETF)
+- <strong style="color:var(--text-1);font-weight:500;">Target 1:</strong> 26,235 (SMA20)  |  <strong style="color:var(--text-1);font-weight:500;">Target 2:</strong> 25,500 (prior breakout zone)
+- <strong style="color:var(--text-1);font-weight:500;">Stop Loss:</strong> 28,300  |  <strong style="color:var(--text-1);font-weight:500;">Why:</strong> New ATH above BB upper band changes regime
+- <strong style="color:var(--text-1);font-weight:500;">Risk/Reward:</strong> ~2.5:1 to T1
+- <strong style="color:var(--text-1);font-weight:500;">Position Size:</strong> 2–3% of portfolio (hedge sizing, not full short)
+- <strong style="color:var(--text-1);font-weight:500;">Instrument:</strong> QQQ puts (June expiry, ~5% OTM) / SQQQ
+
+---
+
+<strong style="color:var(--text-1);font-weight:500;">#4 — LONG EUR/USD  |  Conviction: MEDIUM</strong>
+
+- <strong style="color:var(--text-1);font-weight:500;">Thesis:</strong> DXY is in structural decline — below SMA20, SMA50, and SMA200
+  simultaneously, with bearish MACD. EUR/USD is above all three SMAs with a bullish
+  trend. The Fed's policy paralysis (no cuts, but 4 dissenters, chair transition) adds
+  dollar uncertainty. Meanwhile, EUR macro data has been outperforming expectations.
+  This is a carry trade with trend alignment.
+- <strong style="color:var(--text-1);font-weight:500;">Technical setup:</strong> EUR/USD 1.17233, above SMA20 (1.1707), SMA50 (1.1647), SMA200
+  (1.1677). RSI moderate. 20D range 1.1510–1.1809. DXY RSI 43, bearish MACD.
+- <strong style="color:var(--text-1);font-weight:500;">Entry:</strong> 1.1700–1.1730 (current level or mild dip)
+- <strong style="color:var(--text-1);font-weight:500;">Target 1:</strong> 1.1850  |  <strong style="color:var(--text-1);font-weight:500;">Target 2:</strong> 1.2000
+- <strong style="color:var(--text-1);font-weight:500;">Stop Loss:</strong> 1.1540  |  <strong style="color:var(--text-1);font-weight:500;">Why:</strong> Reclaim of DXY SMA20 invalidates the thesis
+- <strong style="color:var(--text-1);font-weight:500;">Risk/Reward:</strong> ~2.5:1 to T1
+- <strong style="color:var(--text-1);font-weight:500;">Position Size:</strong> 3% of portfolio
+- <strong style="color:var(--text-1);font-weight:500;">Instrument:</strong> EUR/USD spot / FXE ETF
+
+---
+
+<strong style="color:var(--text-1);font-weight:500;">#5 — LONG XLE (Energy Sector Catch-Up)  |  Conviction: MEDIUM</strong>
+
+- <strong style="color:var(--text-1);font-weight:500;">Thesis:</strong> WTI is up +77.84% YTD yet XLE has underperformed SPX by -10.51% over the
+  past month — a historically anomalous divergence. Either oil reverses (bearish XLE
+  confirmed) or E&amp;P stocks catch up to commodity prices. Given the sustained geopolitical
+  premium in WTI and major oil company earnings beats (XOM +$0.15, CVX +$0.44 vs.
+  estimates), the catch-up trade looks attractive. Forward P/E for XOM (15.0×) and CVX
+  (16.1×) are cheap relative to the broader market (SPX fwd ~26×).
+- <strong style="color:var(--text-1);font-weight:500;">Technical setup:</strong> XLE $58.85, sector lagging SPX by 10.51% over 1M.
+  XOM and CVX both beat Q1 EPS handily. WTI RSI 56, MACD bullish.
+- <strong style="color:var(--text-1);font-weight:500;">Entry:</strong> $58.00–$59.50
+- <strong style="color:var(--text-1);font-weight:500;">Target 1:</strong> $64.00  |  <strong style="color:var(--text-1);font-weight:500;">Target 2:</strong> $68.00
+- <strong style="color:var(--text-1);font-weight:500;">Stop Loss:</strong> $55.50  |  <strong style="color:var(--text-1);font-weight:500;">Why:</strong> Oil breaks below SMA50 ($91.18) = thesis invalid
+- <strong style="color:var(--text-1);font-weight:500;">Risk/Reward:</strong> ~2.3:1 to T1
+- <strong style="color:var(--text-1);font-weight:500;">Position Size:</strong> 3% of portfolio
+- <strong style="color:var(--text-1);font-weight:500;">Instrument:</strong> XLE ETF / individual XOM, CVX positions
+
+---
+
+<strong style="color:var(--text-1);font-weight:500;">#6 — NEUTRAL BTC/USD (Watch Only)  |  Conviction: LOW</strong>
+
+- <strong style="color:var(--text-1);font-weight:500;">Thesis:</strong> BTC at $78,366 is above SMA20/50 but 6.5% below its SMA200 at $83,846 —
+  a structurally mixed signal. YTD return of -11.68% vs. equities ATH is a relative
+  weakness flag. MACD bearish. The SMA200 at $83,846 is the key level: a convincing
+  close above it would shift the technical regime to bullish and warrant a long entry.
+  Until then, crypto is not the highest-conviction vehicle in this macro environment.
+  Monitor for a clean SMA200 breakout before initiating.
+- <strong style="color:var(--text-1);font-weight:500;">Watch level:</strong> $83,846 (SMA200) — long trigger on daily close above with volume
+- <strong style="color:var(--text-1);font-weight:500;">Do not chase:</strong> Current BB% of 0.81 near upper band limits asymmetry on the upside
+
+<span class="rpt-rule">════════════════════════════════════════════════════════════════════════════════</span>
+<span class="rpt-header">PRUDENTSIGMA  |  Risk Disclosure: For informational purposes only.</span>
+  Not financial advice. Always size positions within your risk parameters.
+<span class="rpt-rule">════════════════════════════════════════════════════════════════════════════════</span>
+```
+
+---
+
+<strong style="color:var(--text-1);font-weight:500;">Sources:</strong>
+- [May Starts Merrily on Apple Earnings, Peace Hopes — Charles Schwab](https://www.schwab.com/learn/story/stock-market-update-open)
+- [Federal Reserve FOMC Statement — April 29, 2026](https://www.federalreserve.gov/newsevents/pressreleases/monetary20260429a.htm)
+- [Fed Live Updates: Powell Final Meeting, Warsh Confirmation — Yahoo Finance](https://finance.yahoo.com/economy/policy/live/fed-meeting-live-updates-federal-reserve-holds-interest-rates-steady-in-powells-final-meeting-as-chair-111906007.html)
+- [FOMC Meeting 2026 Highlights: Fed Holds at 3.75% — CoinGabbar](https://www.coingabbar.com/en/crypto-currency-news/fed-interest-rate-us-inflation-powell-fomc-meeting-update-2026)
+- [Energy Market Report — May 1, 2026 — Prestige Business Solutions](https://www.prestigebusiness.energy/marketreports/energy-market-update01may2026)
+- [Oil Price Surge 2026: Middle East Tensions — Impact Wealth](https://impactwealth.org/oil-price-surge-2026-middle-east-global-impact/)
+- [US Non-Farm Payrolls Calendar — Trading Economics](https://tradingeconomics.com/united-states/non-farm-payrolls)
+- [IMF April 2026 World Economic Outlook](https://www.imf.org/-/media/files/publications/weo/2026/april/english/ch1.pdf)</pre>
+    </div>
+  </div>
+</section>
+
+
+<!-- PREV / NEXT NAVIGATION -->
+<section style="padding:40px 0; border-top:1px solid var(--navy-600);">
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;">
+      <a href="report_2026-05-01.html" class="report-nav-btn" style="margin-right:auto;">&#8592; May 1, 2026</a>
+      
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <svg width="24" height="24" viewBox="0 0 120 120" fill="none">
+            <path d="M28 32 L92 32 L57 59 L92 86 L28 86" stroke="url(#rpt-ffg)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+            <defs>
+              <linearGradient id="rpt-ffg" x1="28" y1="32" x2="92" y2="86" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#C5923A"/>
+                <stop offset="50%" stop-color="#DFB06A"/>
+                <stop offset="100%" stop-color="#C5923A"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          PrudentSigma
+        </div>
+        <p class="footer-tagline">A finance and decision-intelligence platform for serious people.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../newsletter.html">Financial News</a></li>
+          <li><a href="../insights.html">Insights</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../consulting.html">Consulting</a></li>
+          <li><a href="../tools.html">Tools</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Philosophy</h4>
+        <div class="footer-beliefs">
+          <div class="footer-belief"><span class="footer-belief-num">01</span><span class="footer-belief-text">Risk comes before return</span></div>
+          <div class="footer-belief"><span class="footer-belief-num">02</span><span class="footer-belief-text">Clarity beats complexity</span></div>
+          <div class="footer-belief"><span class="footer-belief-num">03</span><span class="footer-belief-text">Discipline compounds</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom-copy">&copy; 2025 PrudentSigma. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const ro = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }});
+  }, { threshold: 0.1 });
+  reveals.forEach(r => ro.observe(r));
+
+  const burger = document.getElementById('nav-burger');
+  const nav = document.getElementById('main-nav');
+  if (burger) burger.addEventListener('click', () => nav.classList.toggle('nav-open'));
+
+  // Reading progress bar
+  const progressBar = document.getElementById('read-progress');
+  if (progressBar) {
+    window.addEventListener('scroll', function() {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+      progressBar.style.width = Math.min(pct, 100) + '%';
+    });
+  }
+</script>
+</body>
+</html>
