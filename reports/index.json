@@ -1,6 +1,12 @@
 {
   "reports": [
     {
+      "date": "2026-08-03",
+      "display_date": "August 3, 2026",
+      "filename": "report_2026-08-03.html",
+      "title": "Daily Market Report — August 3, 2026"
+    },
+    {
       "date": "2026-08-02",
       "display_date": "August 2, 2026",
       "filename": "report_2026-08-02.html",
