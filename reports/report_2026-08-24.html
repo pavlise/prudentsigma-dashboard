@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market Report August 24, 2026 — PrudentSigma</title>
+  <meta name="description" content="PrudentSigma Daily Market Report for August 24, 2026. Macro analysis, technical snapshot, investment ideas.">
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="PrudentSigma">
+  <meta property="og:title" content="Market Report August 24, 2026 — PrudentSigma">
+  <meta property="og:description" content="PrudentSigma Daily Market Report for August 24, 2026. Macro analysis, technical snapshot, investment ideas.">
+  <meta property="og:url" content="https://pavlise.github.io/prudentsigma-dashboard/reports/report_2026-08-24.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Market Report August 24, 2026 — PrudentSigma">
+  <meta name="twitter:description" content="PrudentSigma Daily Market Report for August 24, 2026. Macro analysis, technical snapshot, investment ideas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .report-wrapper {
+      background: var(--navy-800);
+      border: 1px solid var(--navy-600);
+      border-radius: var(--radius-md);
+      padding: 40px;
+      overflow-x: auto;
+    }
+    .report-pre {
+      font-family: 'DM Mono', 'Courier New', monospace;
+      font-size: 0.8125rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--text-2);
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      margin: 0;
+    }
+    .rpt-rule {
+      color: var(--gold-deep);
+      opacity: 0.6;
+      display: block;
+    }
+    .rpt-header {
+      color: var(--gold-warm);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      display: block;
+    }
+    .rpt-sep {
+      color: var(--navy-600);
+      display: block;
+    }
+    .rpt-section {
+      color: var(--gold-mid);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      display: block;
+      padding: 4px 0;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold-mid);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 400;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color var(--transition-fast);
+      margin-bottom: 48px;
+      display: block;
+    }
+    .back-link:hover { color: var(--gold-warm); }
+    .report-meta {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .report-meta-badge {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-3);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .report-nav-btn {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--gold-mid);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: color 150ms ease;
+    }
+    .report-nav-btn:hover { color: var(--gold-warm); }
+    .read-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold-deep), var(--gold-mid));
+      z-index: 9999;
+      transition: width 0.1s linear;
+      width: 0%;
+    }
+  </style>
+</head>
+<body>
+<div class="read-progress" id="read-progress"></div>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <div class="container">
+    <a href="../index.html" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="60" r="56" stroke="url(#rpt-nfg)" stroke-width="1" opacity="0.35"/>
+        <path d="M28 32 L92 32 L57 59 L92 86 L28 86" stroke="url(#rpt-nsg)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+        <defs>
+          <linearGradient id="rpt-nsg" x1="28" y1="32" x2="92" y2="86" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#C5923A"/>
+            <stop offset="50%" stop-color="#DFB06A"/>
+            <stop offset="100%" stop-color="#C5923A"/>
+          </linearGradient>
+          <linearGradient id="rpt-nfg" x1="4" y1="4" x2="116" y2="116" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#C5923A" stop-opacity="0.6"/>
+            <stop offset="1" stop-color="#C5923A" stop-opacity="0.1"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      PrudentSigma
+    </a>
+    <div class="nav-links">
+      <a href="../about.html">About</a>
+      <a href="../newsletter.html" class="active">Financial News</a>
+      <a href="../consulting.html">Consulting</a>
+      <a href="../insights.html">Insights</a>
+      <a href="../tools.html">Tools</a>
+    </div>
+    <div class="nav-cta">
+      <a href="../contact.html" class="btn btn-primary">Book a Call</a>
+      <button class="nav-burger" id="nav-burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- TICKER BAR -->
+<div class="ticker-bar">
+  <div class="tradingview-widget-container" style="height:100%;width:100%;">
+    <div class="tradingview-widget-container__widget" style="height:100%;"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+      "symbols": [
+        {"proName": "TVC:SPX", "title": "S&P 500"},
+        {"proName": "TVC:NDX", "title": "Nasdaq 100"},
+        {"description": "DXY", "proName": "TVC:DXY"},
+        {"description": "Gold", "proName": "TVC:GOLD"},
+        {"description": "Silver", "proName": "TVC:SILVER"},
+        {"description": "WTI Crude", "proName": "TVC:USOIL"},
+        {"description": "BTC/USD", "proName": "BITSTAMP:BTCUSD"},
+        {"description": "EUR/USD", "proName": "FX:EURUSD"},
+        {"description": "GBP/USD", "proName": "FX:GBPUSD"},
+        {"description": "USD/JPY", "proName": "FX:USDJPY"}
+      ],
+      "showSymbolLogo": false,
+      "isTransparent": true,
+      "displayMode": "adaptive",
+      "colorTheme": "dark",
+      "locale": "en"
+    }
+    </script>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="label anim-1">Daily Market Report</span>
+    <h1 class="display anim-2" style="max-width:700px;">August 24, 2026</h1>
+    <p class="subtitle anim-3" style="max-width:500px; margin-top:16px;">PrudentSigma Market Intelligence — Macro, Technicals, and Ideas.</p>
+  </div>
+</section>
+
+<!-- REPORT CONTENT -->
+<section class="section">
+  <div class="container">
+    <a href="../newsletter.html#daily-reports" class="back-link">&#8592; Back to all reports</a>
+    <div class="report-meta">
+      <span class="report-meta-badge">Date: 2026-08-24</span>
+      <span class="report-meta-badge">Source: PrudentSigma AI Research</span>
+      <span class="report-meta-badge">9 min read</span>
+    </div>
+    <div class="report-wrapper reveal">
+      <pre class="report-pre"><span class="rpt-rule">════════════════════════════════════════════════════════════════════════════════</span>
+<span class="rpt-header">PRUDENTSIGMA DAILY MARKET REPORT  |  2026-08-24  |  06:30 UTC</span>
+  "Smarter Strategies. Prudent Growth."
+<span class="rpt-rule">════════════════════════════════════════════════════════════════════════════════</span>
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 1 — MACRO PULSE (5-MINUTE READ)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+<strong style="color:var(--text-1);font-weight:500;">Dominant Macro Theme Today:</strong> Markets enter a pivotal five-day stretch bookended by Nvidia's Q2 FY27 earnings (Wednesday after close, ~$93–95B revenue expected) and the Fed's Jackson Hole Symposium (Aug 27–29, Chair Warsh keynote Thursday). Asian tech sold off overnight — Samsung fell 6%+ on its $80B buyback news and Alibaba dropped as much as 10% in Hong Kong after an $10.2B AI-capex raise diluted holders — reinforcing that AI-capex funding mechanics, not just chip demand, are now a live risk factor for the trade heading into NVDA's print.
+
+<strong style="color:var(--text-1);font-weight:500;">Key Data Points:</strong>
+
+| Asset           | Price/Level | 1D%   | 5D%    | Key Level to Watch      |
+|-----------------|-------------|-------|--------|--------------------------|
+| SPX             | 7,674.37    | +0.00%| -0.91% | Support at SMA20 (7,644); a break risks a test of SMA50 (7,541) ahead of NVDA/PCE |
+| NDX             | 29,309      | +0.00%| -2.29% | Sitting just below SMA50 (29,325) — reclaim needed to confirm bull structure into NVDA |
+| DXY             | 98.843      | +0.00%| -0.81% | RSI 31 near-oversold, hugging BB lower band (0.14) — bounce risk into Jackson Hole |
+| Gold (XAU/USD)  | 4,694.80    | +0.00%| +7.53% | RSI 76 overbought, BB 0.98 near upper band — parabolic move vulnerable to a DXY bounce |
+| Silver (XAG/USD)| 68.875      | +0.00%| +7.72% | Testing 20D high (69.47); below 200-SMA (71.16) — key resistance cluster |
+| WTI Crude       | 85.550      | +0.00%| +0.72% | Holding above all major MAs; 82.34 (SMA20) is first support |
+| US 10Y Yield     | 4.74        | +0.00%| +0.30% | At 52-week high — bond market stress is the swing factor for equities this week |
+| VIX             | 15.13       | +0.00%| -0.39% | Contango intact (VIX3M 18.50) but complacent given event risk load |
+| BTC/USD         | 76,962      | +0.00%| +11.11%| RSI 80 overbought; 20D range top ~78,335 is next resistance |
+
+<strong style="color:var(--text-1);font-weight:500;">Market Regime Today:</strong> Mixed / Consolidation (bullish equity structure, but risk building beneath the surface)
+<strong style="color:var(--text-1);font-weight:500;">Conviction Level:</strong> Medium
+<strong style="color:var(--text-1);font-weight:500;">Reason:</strong> SPX/NDX remain in bull structure (above 50/200-day MAs) but momentum is fading (5D% negative across equities, tech underperforming) while gold, silver, and BTC are all overbought and stretched. The 10Y yield sitting at a 52-week high alongside SPX/HYG correlation of 0.84 means any further bond selloff would likely pull credit and equities down together — this is a "wait for the catalyst" tape, not a trending one.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 2 — TECHNICAL SNAPSHOT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+<strong style="color:var(--text-1);font-weight:500;">Technical Condition Summary:</strong>
+- <strong style="color:var(--text-1);font-weight:500;">Trend structure:</strong> SPX is in a clean bull structure (above SMA20/50/200 by +0.4%/+1.8%/+8.2%). NDX is more fragile — above SMA20 and SMA200 but just *below* SMA50 (-0.1%), a rare short-term crack in mega-cap tech leadership ahead of NVDA earnings. DXY is in a bear structure below all three MAs, while Gold/BTC are firmly bullish across all timeframes.
+- <strong style="color:var(--text-1);font-weight:500;">Momentum:</strong> MACD is bearish on both SPX and NDX despite price still near highs — classic early-stage momentum divergence. RSI is neutral on equities (54/50) but flashing overbought on Gold (76), BTC (80), and ETH (79), raising two-sided risk: a "sell the print" reaction in crypto/gold is plausible even without new negative news.
+- <strong style="color:var(--text-1);font-weight:500;">Volatility:</strong> VIX at 15.13 sits in the bottom quartile of its 52-week range even as term structure shows a healthy contango premium (VIX3M 18.50) — the market is pricing event risk into the 3-month tenor, not the front month, which is typical positioning ahead of a known catalyst cluster (NVDA + Jackson Hole + PCE) rather than complacency about it.
+- <strong style="color:var(--text-1);font-weight:500;">Cross-asset signals:</strong> SPX/HYG correlation is high (0.84) and both are holding up — no credit stress yet. However, WTI/SPX correlation is sharply negative (-0.64) while oil holds a bull trend (+49% YTD) — a further crude rally into supply-driven strength (not demand) would be a genuine equity headwind. Gold/DXY correlation is negative (-0.47), confirming gold's rally is currently dollar-driven rather than a pure risk-off flight — a DXY bounce off oversold RSI (31) is the single biggest near-term threat to precious metals.
+- <strong style="color:var(--text-1);font-weight:500;">Options sentiment:</strong> SPY put/call at 1.16 is neutral, but QQQ put/call at 1.34 shows elevated put buying — traders are hedging tech specifically into NVDA earnings, consistent with the NDX/SMA50 technical crack noted above.
+
+<strong style="color:var(--text-1);font-weight:500;">Sector Rotation:</strong> Healthcare (XLV, +5.44% relative 5D) and Energy (XLE, +2.61% relative) are leading, while Industrials (XLI, -2.35% relative) and Utilities/Real Estate lag. This is a defensive-to-cyclical barbell rather than a clean risk-on or risk-off rotation — money is favoring earnings-resilient healthcare and inflation-hedge energy over rate-sensitive utilities/REITs, consistent with a market bracing for yield-curve pressure rather than a growth scare.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 3 — KEY EVENTS &amp; CATALYSTS (NEXT 5 TRADING DAYS)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+| Date        | Event                                                   | Expected Impact | Direction Bias           |
+|-------------|----------------------------------------------------------|------------------|---------------------------|
+| Mon Aug 24  | Quiet session; no major US data (Asian tech selloff spillover — Samsung buyback, Alibaba dilution) | Low | Neutral/Slightly Bearish (tech) |
+| Tue Aug 25  | Aug Consumer Confidence, July New Home Sales; earnings: INTU, ZM, DKS, BMO | Medium | Neutral |
+| Wed Aug 26  | US GDP (revision) + Durable Goods (July); <strong style="color:var(--text-1);font-weight:500;">NVDA Q2 FY27 earnings (after close)</strong> | High | Bullish if NVDA beats/guides strong; Bearish if margins/guidance disappoint |
+| Thu Aug 27  | Jackson Hole Symposium begins; Fed Chair Warsh keynote on monetary policy | High | Bearish if hawkish; Bullish if dovish pivot signaled |
+| Fri Aug 28  | PCE Price Index (Fed's preferred inflation gauge), Personal Income/Spending, annual NFP revisions | High | Bearish if PCE hot (reinforces 10Y at highs); Bullish if in-line/cool |
+
+<strong style="color:var(--text-1);font-weight:500;">HIGHEST IMPACT EVENT:</strong> The Wednesday-Thursday combination of NVDA earnings and the start of Jackson Hole is the week's fulcrum. NVDA needs to clear a high bar (~$93–95B revenue, ~96% YoY growth priced in) with the QQQ put/call ratio already at 1.34 signaling hedged positioning — a beat-but-guide-cautious outcome (similar to the pattern seen with META last quarter) could trigger outsized downside given NDX is already testing its SMA50 from below. Simultaneously, Warsh's Thursday keynote lands with the 10Y yield at a 52-week high (4.74%) and DXY oversold (RSI 31) — any hawkish framing on rate-cut timing would compound tech's post-earnings volatility by pushing yields higher into Friday's PCE print, creating a scenario where all three catalysts reinforce a single downside path rather than offsetting each other. The asymmetry favors hedged/defined-risk positioning into Wednesday's close rather than net-long directional exposure.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 4 — INVESTMENT IDEAS (RANKED BY CONVICTION)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+<strong style="color:var(--text-1);font-weight:500;">#1 — LONG XLV (Healthcare Sector ETF)  |  Conviction: HIGH</strong>
+- <strong style="color:var(--text-1);font-weight:500;">Thesis:</strong> Healthcare is the top-performing sector on both a 5D (+4.53%) and 1M (+7.41%) absolute and relative basis, backed by broad-based earnings beats (UNH +$1.46 surprise) and defensive positioning ahead of a volatile catalyst week.
+- <strong style="color:var(--text-1);font-weight:500;">Technical setup:</strong> Price 174.62, trending firmly above its recent range with strong relative momentum vs SPX (+5.44% rel 5D, +3.87% rel 1M).
+- <strong style="color:var(--text-1);font-weight:500;">Entry:</strong> 172.50–174.60 (near current levels/pullback)
+- <strong style="color:var(--text-1);font-weight:500;">Target 1:</strong> 180.00 | <strong style="color:var(--text-1);font-weight:500;">Target 2:</strong> 185.00 (extension if Jackson Hole triggers a defensive rotation)
+- <strong style="color:var(--text-1);font-weight:500;">Stop Loss:</strong> 168.50 | <strong style="color:var(--text-1);font-weight:500;">Why:</strong> Invalidates the relative-strength breakout and 1M uptrend
+- <strong style="color:var(--text-1);font-weight:500;">Risk/Reward:</strong> ~2.3:1
+- <strong style="color:var(--text-1);font-weight:500;">Position Size:</strong> 5% of portfolio
+- <strong style="color:var(--text-1);font-weight:500;">Instrument:</strong> ETF (spot)
+
+<strong style="color:var(--text-1);font-weight:500;">#2 — SHORT NDX (via QQQ puts or futures) into NVDA earnings  |  Conviction: MEDIUM</strong>
+- <strong style="color:var(--text-1);font-weight:500;">Thesis:</strong> NDX is below its SMA50 (-0.1%) with bearish MACD despite an 8-month uptrend, and QQQ put/call (1.34) shows the market already hedging a binary NVDA outcome — asymmetric setup to fade a "sell the news" reaction.
+- <strong style="color:var(--text-1);font-weight:500;">Technical setup:</strong> NDX 29,309 vs SMA50 29,325 (resistance-turned-flip level), ATR 1.58% (elevated), RSI neutral at 50 (room to fall without being oversold).
+- <strong style="color:var(--text-1);font-weight:500;">Entry:</strong> Pre-earnings Wed Aug 26, near 29,200–29,400
+- <strong style="color:var(--text-1);font-weight:500;">Target 1:</strong> 28,335 (20D range low area) | <strong style="color:var(--text-1);font-weight:500;">Target 2:</strong> 27,192 (20D range floor, bear scenario)
+- <strong style="color:var(--text-1);font-weight:500;">Stop Loss:</strong> 29,800 (above 20D range high, invalidates fade thesis on a strong NVDA beat)
+- <strong style="color:var(--text-1);font-weight:500;">Risk/Reward:</strong> ~2:1
+- <strong style="color:var(--text-1);font-weight:500;">Position Size:</strong> 3% of portfolio (defined-risk options preferred over futures)
+- <strong style="color:var(--text-1);font-weight:500;">Instrument:</strong> QQQ put options (short-dated, post-earnings expiry)
+
+<strong style="color:var(--text-1);font-weight:500;">#3 — LONG Gold (XAU/USD) on pullback  |  Conviction: MEDIUM</strong>
+- <strong style="color:var(--text-1);font-weight:500;">Thesis:</strong> Structural bull trend intact (above all MAs, +8.82% YTD) driven by dollar weakness, but RSI 76/BB 0.98 signal near-term exhaustion — better entry likely appears on a DXY-bounce-driven dip rather than chasing here.
+- <strong style="color:var(--text-1);font-weight:500;">Technical setup:</strong> Price 4,694.80 vs SMA20 4,309 (+8.9%) — extended; wait for retracement toward SMA20/SMA50 confluence.
+- <strong style="color:var(--text-1);font-weight:500;">Entry:</strong> 4,450–4,500 on pullback (avoid chasing at highs)
+- <strong style="color:var(--text-1);font-weight:500;">Target 1:</strong> 4,800 | <strong style="color:var(--text-1);font-weight:500;">Target 2:</strong> 5,000 (round-number extension)
+- <strong style="color:var(--text-1);font-weight:500;">Stop Loss:</strong> 4,300 (below SMA20, invalidates uptrend)
+- <strong style="color:var(--text-1);font-weight:500;">Risk/Reward:</strong> ~2:1
+- <strong style="color:var(--text-1);font-weight:500;">Position Size:</strong> 4% of portfolio
+- <strong style="color:var(--text-1);font-weight:500;">Instrument:</strong> Spot/futures (GC) or GLD
+
+<strong style="color:var(--text-1);font-weight:500;">#4 — SHORT DXY (via short-dollar basket or long EUR/USD) fading a dead-cat bounce  |  Conviction: MEDIUM</strong>
+- <strong style="color:var(--text-1);font-weight:500;">Thesis:</strong> DXY is oversold (RSI 31) below all major MAs in a confirmed bear structure; any Jackson Hole-driven bounce is a fade opportunity given the structural downtrend and negative correlation feeding Gold/Silver's bull case.
+- <strong style="color:var(--text-1);font-weight:500;">Technical setup:</strong> DXY 98.843 vs SMA20 99.752 / SMA50 100.463 — resistance zone for a bounce; BB 0.14 near lower band supports mean-reversion risk first.
+- <strong style="color:var(--text-1);font-weight:500;">Entry:</strong> Fade a bounce toward 99.50–100.00 (SMA20/50 confluence)
+- <strong style="color:var(--text-1);font-weight:500;">Target 1:</strong> 98.80 (20D low) | <strong style="color:var(--text-1);font-weight:500;">Target 2:</strong> 96.22 (52-week low)
+- <strong style="color:var(--text-1);font-weight:500;">Stop Loss:</strong> 101.00 | <strong style="color:var(--text-1);font-weight:500;">Why:</strong> Breaks the bear structure and 50-day resistance
+- <strong style="color:var(--text-1);font-weight:500;">Risk/Reward:</strong> ~2.5:1
+- <strong style="color:var(--text-1);font-weight:500;">Position Size:</strong> 3% of portfolio
+- <strong style="color:var(--text-1);font-weight:500;">Instrument:</strong> EUR/USD long or DXY futures short
+
+<strong style="color:var(--text-1);font-weight:500;">#5 — LONG WTI Crude on pullback  |  Conviction: LOW-MEDIUM</strong>
+- <strong style="color:var(--text-1);font-weight:500;">Thesis:</strong> Crude is in a strong bull trend (+49.25% YTD, above all MAs) with bullish MACD, but its strong negative correlation to SPX (-0.64) means a rally here works against equity risk appetite — sizing kept small and used partly as a portfolio hedge.
+- <strong style="color:var(--text-1);font-weight:500;">Technical setup:</strong> Price 85.55 vs SMA20 82.34 (+3.9%); ATR 4.10% (high volatility, size accordingly).
+- <strong style="color:var(--text-1);font-weight:500;">Entry:</strong> 83.50–84.50 on dip toward SMA20
+- <strong style="color:var(--text-1);font-weight:500;">Target 1:</strong> 87.83 (20D high) | <strong style="color:var(--text-1);font-weight:500;">Target 2:</strong> 90.00
+- <strong style="color:var(--text-1);font-weight:500;">Stop Loss:</strong> 81.50 (below SMA20/SMA50 confluence)
+- <strong style="color:var(--text-1);font-weight:500;">Risk/Reward:</strong> ~1.8:1
+- <strong style="color:var(--text-1);font-weight:500;">Position Size:</strong> 2% of portfolio
+- <strong style="color:var(--text-1);font-weight:500;">Instrument:</strong> WTI futures or USO
+
+*This report reflects data as of 2026-08-24 06:30 UTC. Position sizes are illustrative and should be adjusted to individual risk tolerance and portfolio constraints.*
+
+Sources:
+- [Asian Stocks Dip With AI in Focus, Oil Declines: Markets Wrap - Bloomberg](https://www.bloomberg.com/news/articles/2026-08-23/stock-market-today-dow-s-p-live-updates)
+- [Stock market next week: Outlook for Aug. 24-28, 2026 - CNBC](https://www.cnbc.com/2026/08/21/stock-market-next-week-outlook-for-aug-24-28-2026.html)
+- [Newsquawk Weekly Economic Calendar - 24th-28th August 2026](https://www.newsquawk.com/headlines/newsquawk-weekly-economic-calendar---24th-28th-august-2026)
+- [NVDA Earnings August 2026: Date, Time &amp; What to Expect | Finance Calendar](https://www.financecalendar.com/event/nvda-earnings-august-2026/)</pre>
+    </div>
+  </div>
+</section>
+
+
+<!-- PREV / NEXT NAVIGATION -->
+<section style="padding:40px 0; border-top:1px solid var(--navy-600);">
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;">
+      <a href="report_2026-08-23.html" class="report-nav-btn" style="margin-right:auto;">&#8592; August 23, 2026</a>
+      
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <svg width="24" height="24" viewBox="0 0 120 120" fill="none">
+            <path d="M28 32 L92 32 L57 59 L92 86 L28 86" stroke="url(#rpt-ffg)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+            <defs>
+              <linearGradient id="rpt-ffg" x1="28" y1="32" x2="92" y2="86" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#C5923A"/>
+                <stop offset="50%" stop-color="#DFB06A"/>
+                <stop offset="100%" stop-color="#C5923A"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          PrudentSigma
+        </div>
+        <p class="footer-tagline">A finance and decision-intelligence platform for serious people.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../newsletter.html">Financial News</a></li>
+          <li><a href="../insights.html">Insights</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../consulting.html">Consulting</a></li>
+          <li><a href="../tools.html">Tools</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Philosophy</h4>
+        <div class="footer-beliefs">
+          <div class="footer-belief"><span class="footer-belief-num">01</span><span class="footer-belief-text">Risk comes before return</span></div>
+          <div class="footer-belief"><span class="footer-belief-num">02</span><span class="footer-belief-text">Clarity beats complexity</span></div>
+          <div class="footer-belief"><span class="footer-belief-num">03</span><span class="footer-belief-text">Discipline compounds</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom-copy">&copy; 2025 PrudentSigma. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const ro = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }});
+  }, { threshold: 0.1 });
+  reveals.forEach(r => ro.observe(r));
+
+  const burger = document.getElementById('nav-burger');
+  const nav = document.getElementById('main-nav');
+  if (burger) burger.addEventListener('click', () => nav.classList.toggle('nav-open'));
+
+  // Reading progress bar
+  const progressBar = document.getElementById('read-progress');
+  if (progressBar) {
+    window.addEventListener('scroll', function() {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+      progressBar.style.width = Math.min(pct, 100) + '%';
+    });
+  }
+</script>
+</body>
+</html>
