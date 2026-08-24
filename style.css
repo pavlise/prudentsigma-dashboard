@@ -221,17 +221,18 @@ button, input, select, textarea {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
   font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
-  font-size: 1.125rem;
-  letter-spacing: 0.04em;
-  color: var(--text-1);
+  font-weight: 400;
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+  color: var(--gold-warm);
   white-space: nowrap;
 }
 
 .nav-logo svg {
   flex-shrink: 0;
+  filter: drop-shadow(0 0 10px rgba(197,146,58,0.45)) drop-shadow(0 0 2px rgba(197,146,58,0.6));
 }
 
 .nav-links {
